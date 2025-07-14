@@ -1,8 +1,10 @@
 # hananabsike.github.io
 
 👩‍🔬 Welcome to my academic and research website. 
-I am a physicist specializing in quantum transport, electronic structure modeling, and materials science using first-principles simulations (DFT/NEGF).  
-This site showcases my research, publications, and activities in teaching, computational physics, and scientific outreach.
+
+👩‍🔬 Physicist with a PhD in Materials Science
+    Specialized in quantum transport & computational modeling.  
+    This site showcases my research, publications, and activities in teaching, computational physics, and scientific outreach.
 
 🔬 Main Topics
 - Quantum transport 
@@ -15,5 +17,13 @@ This site showcases my research, publications, and activities in teaching, compu
 - Fabrication & analysis of photovoltaic and optoelectronic materials
 
 🌐 Website
-This repository powers my academic portfolio at:  
+## 🔗 Academic Profiles
+
+- 📚 [Google Scholar](https://scholar.google.com/citations?user=vj-nkYIAAAAJ&hl=fr)  
+- 🔬 [ResearchGate](https://www.researchgate.net/profile/H-Absike?ev=hdr_xprf)  
+- 🧪 [ORCID](https://orcid.org/0000-0003-3600-0937)  
+- 🧑‍🏫 [Publons](https://www.webofscience.com/wos/author/record) *(optionnel si tu y es inscrite)*  
+- 📦 [Zenodo](https://zenodo.org) *(si tu publies du code ou des datasets)*  
+- 👩‍💻 [GitHub](https://github.com/HananAbsike)
+
 🔗 [https://hananabsike.github.io](https://hananabsike.github.io)
