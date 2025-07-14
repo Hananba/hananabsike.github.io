@@ -17,7 +17,7 @@
 - Fabrication & analysis of photovoltaic and optoelectronic materials
 
 🌐 Website
-## 🔗 Academic Profiles
+ 🔗 Academic Profiles
 
 - 📚 [Google Scholar](https://scholar.google.com/citations?user=vj-nkYIAAAAJ&hl=fr)  
 - 🔬 [ResearchGate](https://www.researchgate.net/profile/H-Absike?ev=hdr_xprf)  
