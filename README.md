@@ -23,4 +23,4 @@
 - 🔬 [ResearchGate](https://www.researchgate.net/profile/H-Absike?ev=hdr_xprf)  
 - 🧪 [ORCID](https://orcid.org/0000-0003-3600-0937)  
 - 👩‍💻 [GitHub](https://github.com/HananAbsike)
-- 🔗 [https://hananabsike.github.io](https://hananabsike.github.io)
+
