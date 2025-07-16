@@ -5,7 +5,7 @@ title: "Hanan ABSIKE, PhD"
 
 <link rel="stylesheet" href="assets/css/style.css">
 
-<img src="doc/123.jpg" alt="Hanan ABSIKE, PhD" width="180" style="float: right; margin-right: 20px; border-radius: 10px;">
+<img src="doc/123.jpg" width="180" style="float: right; margin-left: 20px; border-radius: 10px; box-shadow: 0 0 10px #00e5ff;">
 
 
 # 👩‍🔬 Dr. Hanan Absike  
