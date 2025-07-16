@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dr. Hanan Absike"
+title: "Hanan ABSIKE, PhD"
 ---
 
 <link rel="stylesheet" href="assets/css/style.css">
