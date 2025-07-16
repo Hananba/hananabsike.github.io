@@ -1,2 +1,2 @@
-![Ma photo](123.jpg)
+![Ma photo](doc/123.jpg)
 
