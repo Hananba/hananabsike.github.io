@@ -5,7 +5,8 @@ title: "Dr. Hanan Absike"
 
 <link rel="stylesheet" href="assets/css/style.css">
 
-<img src="doc/123.jpg" width="180" style="float: left; margin-right: 20px; border-radius: 10px; box-shadow: 0 0 10px #00e5ff;">
+<img src="doc/123.jpg" alt="Hanan ABSIKE, PhD" width="180" style="float: right; margin-right: 20px; border-radius: 10px;">
+
 
 # 👩‍🔬 Dr. Hanan Absike  
 Physicienne chercheuse spécialisée en **transport quantique**, **modélisation des matériaux**, et **DFT/NEGF**.
