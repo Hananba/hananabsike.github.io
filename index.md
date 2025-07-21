@@ -8,8 +8,8 @@ title: "Hanan ABSIKE, PhD"
 <img src="doc/123.jpg" width="180" style="float: right; margin-left: 20px; border-radius: 10px; box-shadow: 0 0 10px #00e5ff;">
 
 
-# 👩‍🔬 Dr. Hanan Absike  
-Physicienne chercheuse spécialisée en **transport quantique**, **modélisation des matériaux**, et **DFT/NEGF**.
+# 👩‍🔬 Hanan Absike, PhD
+Physicien
 
 ---
 
