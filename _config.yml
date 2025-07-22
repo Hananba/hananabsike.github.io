@@ -5,5 +5,9 @@ minima:
   skin: dark
 title: "Hanan Absike, PhD"
 description: "Independent Researcher in Theoretical & Computational Physics"
+sass:
+  style: compressed
+include:
+  - assets/css
 
 
