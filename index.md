@@ -47,7 +47,7 @@ nav.navtop a:hover {
 
 <hr>
 
-<h2 id="interests">🌱 Intérêts</h2>
+<h2 id="interests">🌱 Interests</h2>
 <ul>
   <li>Material Modelling</li>
   <li>Quantum transport</li>
