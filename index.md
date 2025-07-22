@@ -83,6 +83,12 @@ Physicien
 
 <h1>✨ Enjoy physics ✨</h1>
 <p> Computational material, Material modelling Quantum transport, Experimental physicsc... 🌌</p>
+<p align="center">
+  <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge"/>
+  <br>
+  🔢 You’re visitor number above 👆 — thanks for stopping by!
+</p>
+
 
 
 ---
