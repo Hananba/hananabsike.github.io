@@ -5,15 +5,14 @@ title: "Hanan ABSIKE, PhD"
 
 <link rel="stylesheet" href="assets/css/style.css">
 <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff;">
-  <h1>✨ Hanan Absike, PhD ✨</h1>
+  <h1>✨ Welcome! ✨</h1>
   <p>Exploring the Universe Through my expertise 🌌🪐🧠</p>
 </div>
 
 <img src="doc/123.jpg" width="180" style="float: right; margin-left: 20px; border-radius: 10px; box-shadow: 0 0 10px #00e5ff;">
 
 
-# 👩‍🔬 Welcome !
-Physicien
+# 👩‍🔬 Hanan Absike, PhD
 
 ---
 ### 🔭 Interests
