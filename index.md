@@ -2,9 +2,11 @@
 layout: default
 ---
 
-<<style>
+<!-- MENU DE NAVIGATION PERSONNALISÉ EN HAUT -->
+
+<style>
 nav.navtop {
-  background-color: #000000;
+  background-color: #000;
   padding: 10px 0;
   text-align: center;
   border-bottom: 1px solid #00e5ff;
