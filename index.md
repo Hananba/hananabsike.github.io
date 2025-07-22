@@ -32,7 +32,6 @@ nav.navtop a:hover {
   <a href="#cv">📄 CV</a>
 </nav>
 
-
 <link rel="stylesheet" href="assets/css/style.css">
 <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff;">
   <h1>✨ Welcome! ✨</h1>
@@ -118,6 +117,29 @@ nav.navtop a:hover {
   🔢 You’re visitor number above 👆 — thanks for stopping by!
 </p>
 
+<h2 id="home">🏠 Home</h2>
+<p>Bienvenue sur mon site ! 👩‍🔬</p>
+
+<h2 id="experience">🧪 Expérience</h2>
+<p>Mes projets de recherche en modélisation des matériaux...</p>
+
+<h2 id="publications">📚 Publications</h2>
+<p>Voir ma liste complète sur Google Scholar...</p>
+
+<h2 id="teaching">🎓 Enseignement</h2>
+<p>J’ai enseigné la physique computationnelle à distance...</p>
+
+<h2 id="service">🤝 Activités</h2>
+<p>Participation à des écoles et projets collaboratifs...</p>
+
+<h2 id="interests">🌱 Intérêts</h2>
+<p>Physique quantique, calcul haute performance, DFT...</p>
+
+<h2 id="phd">🧠 Projet PhD</h2>
+<p>Simulation atomique et transport quantique...</p>
+
+<h2 id="cv">📄 CV</h2>
+<p>Télécharger mon <a href="doc/CV-HananAbsike.pdf">CV en PDF</a></p>
 
 
 ---
