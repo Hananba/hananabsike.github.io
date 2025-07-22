@@ -13,8 +13,6 @@ layout: default
   <a href="#cv">📄 CV</a>
 </p>
 
-<h1 id="home">✨ Bienvenue sur mon site ✨</h1>
-
 <link rel="stylesheet" href="assets/css/style.css">
 <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff;">
   <h1>✨ Welcome! ✨</h1>
