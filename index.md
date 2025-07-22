@@ -37,36 +37,93 @@ nav.navtop a:hover {
 :target::before {
   content: "";
   display: block;
-  height: 60px; /* Ajuster selon la hauteur du menu */
+  height: 60px;
   margin-top: -60px;
   visibility: hidden;
 }
 
 /* Conteneur principal */
 .content {
-  padding-top: 70px; /* Doit correspondre à la hauteur du menu */
-  position: relative; /* Pour positionnement relatif */
+  padding-top: 70px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Style pour le conteneur de la photo et du titre */
-.header-container {
-  display: flex;
-  align-items: flex-start; /* Alignement en haut */
-  gap: 20px; /* Espacement entre la photo et le texte */
-  margin-bottom: 20px;
+/* Colonne gauche - Photo */
+.left-column {
+  text-align: center;
 }
 
-/* Style pour la photo */
 .profile-photo {
   width: 180px;
   border-radius: 10px;
   box-shadow: 0 0 10px #00e5ff;
-  flex-shrink: 0; /* Empêche le rétrécissement */
+  margin-top: 20px;
 }
 
-/* Style pour le titre */
-.profile-title {
-  flex-grow: 1; /* Prend l'espace disponible */
+/* Colonne droite - Contenu */
+.right-column {
+  padding-right: 20px;
+}
+
+/* Supprimer le gras des titres */
+h1, h2, h3 {
+  font-weight: normal !important;
+}
+
+.welcome-section {
+  background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%);
+  padding: 20px;
+  text-align: center;
+  color: #00e5ff;
+  margin-bottom: 30px;
+  grid-column: 1 / -1;
+}
+
+.stars {
+  background: transparent url('https://raw.githubusercontent.com/CodeExplainedRepo/HTML-CSS-Star-Background/master/img/stars.png') repeat top center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  animation: move-stars 200s linear infinite;
+}
+
+@keyframes move-stars {
+  0% { background-position: 0 0; }
+  100% { background-position: 10000px 5000px; }
+}
+
+/* Style pour les listes */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
+  
+  .left-column {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  nav.navtop a {
+    font-size: 0.9em;
+    margin: 0 8px;
+    padding: 3px 5px;
+  }
 }
 </style>
 
@@ -81,23 +138,65 @@ nav.navtop a:hover {
   <a href="#cv">📄 CV</a>
 </nav>
 
-<div class="content">
-  <link rel="stylesheet" href="assets/css/style.css">
+<div class="stars"></div>
 
-  <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff; margin-top: 10px; margin-bottom: 20px;">
+<div class="content">
+  <div class="welcome-section">
     <h1>✨ Welcome! ✨</h1>
     <p>Exploring the Universe Through my expertise 🌌🪐🧠</p>
   </div>
-
-  <!-- Conteneur pour la photo et le titre -->
-  <div class="header-container">
+  
+  <!-- Colonne gauche - Photo -->
+  <div class="left-column">
     <img src="doc/123.jpg" class="profile-photo">
-    
-    <div class="profile-title">
-      <h1 id="home">👩‍🔬 Hanan Absike, PhD</h1>
-    </div>
   </div>
-
-  <hr>
-
-  <!-- Le reste de votre contenu... -->
+  
+  <!-- Colonne droite - Contenu principal -->
+  <div class="right-column">
+    <h1 id="home">👩‍🔬 Hanan Absike, PhD</h1>
+    
+    <hr>
+    
+    <h2 id="interests">🌱 Interests</h2>
+    <ul>
+      <li>Material Modelling</li>
+      <li>Quantum transport</li>
+      <li>Experimental Physics</li>
+      <li>Scientific programming</li>
+      <li>HPC Calculations</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>🔗 Contact ME :</h3>
+    <ul>
+      <li>🔬 <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ">Google Scholar</a></li>
+      <li>📘 <a href="https://www.researchgate.net/profile/H-Absike">ResearchGate</a></li>
+      <li>💼 CV PDF à venir</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>🧪 Education :</h3>
+    <ul>
+      <li>PhD in Physics, 2019<br>University of Mohammed V RABAT</li>
+      <li>MSc in Computational Physics, 2015<br>University of Mohammed V RABAT</li>
+      <li>BSc in Science Physics, 2013<br>University of Mohammed V RABAT</li>
+    </ul>
+    
+    <hr>
+    
+    <h1>✨ Enjoy physics ✨</h1>
+    <p>Computational material, Material modelling Quantum transport, Experimental physics... 🌌</p>
+    
+    <p align="center">
+      <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge"/>
+      <br>
+      🔢 You're visitor number above 👆 — thanks for stopping by!
+    </p>
+    
+    <p style="color:#999; font-size: 14px; margin-top: 3rem;">
+      Ce site est maintenu par Dr. Hanan Absike – pour toute collaboration ou proposition d'enseignement, merci de me contacter.
+    </p>
+  </div>
+</div>
