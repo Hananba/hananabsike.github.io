@@ -1,3 +1,9 @@
 title: "Hanan ABSIKE, PhD"
 logo: doc/123.jpg
 theme: minima  # Simple, elegant GitHub Pages theme
+minima:
+  skin: dark
+title: "Hanan Absike, PhD"
+description: "Independent Researcher in Theoretical & Computational Physics"
+
+
