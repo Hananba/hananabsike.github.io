@@ -1,8 +1,4 @@
 ---
-layout: default
-title: "Hanan ABSIKE, PhD"
----
-
 <nav style="background-color:#000; padding: 15px; text-align: center; border-bottom: 1px solid #00e5ff;">
   <a href="#home" style="color:#00e5ff; margin: 0 15px; text-decoration:none;">🏠 Home</a>
   <a href="#experience" style="color:#00e5ff; margin: 0 15px; text-decoration:none;">🧪 Experience</a>
@@ -13,7 +9,7 @@ title: "Hanan ABSIKE, PhD"
   <a href="#phd" style="color:#00e5ff; margin: 0 15px; text-decoration:none;">🧠 PhD Project</a>
   <a href="#cv" style="color:#00e5ff; margin: 0 15px; text-decoration:none;">📄 CV</a>
 </nav>
-
+---
 
 <link rel="stylesheet" href="assets/css/style.css">
 <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff;">
