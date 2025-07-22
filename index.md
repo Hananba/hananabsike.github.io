@@ -42,9 +42,31 @@ nav.navtop a:hover {
   visibility: hidden;
 }
 
-/* Espacement pour le contenu principal */
+/* Conteneur principal */
 .content {
-  padding-top: 60px; /* Doit correspondre à la hauteur du menu */
+  padding-top: 70px; /* Doit correspondre à la hauteur du menu */
+  position: relative; /* Pour positionnement relatif */
+}
+
+/* Style pour le conteneur de la photo et du titre */
+.header-container {
+  display: flex;
+  align-items: flex-start; /* Alignement en haut */
+  gap: 20px; /* Espacement entre la photo et le texte */
+  margin-bottom: 20px;
+}
+
+/* Style pour la photo */
+.profile-photo {
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00e5ff;
+  flex-shrink: 0; /* Empêche le rétrécissement */
+}
+
+/* Style pour le titre */
+.profile-title {
+  flex-grow: 1; /* Prend l'espace disponible */
 }
 </style>
 
@@ -59,30 +81,23 @@ nav.navtop a:hover {
   <a href="#cv">📄 CV</a>
 </nav>
 
-<div class="content"> <!-- Nouveau conteneur -->
-<link rel="stylesheet" href="assets/css/style.css">
+<div class="content">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-<div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff; margin-top: 20px;">
-  <h1>✨ Welcome! ✨</h1>
-  <p>Exploring the Universe Through my expertise 🌌🪐🧠</p>
-</div>
+  <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff; margin-top: 10px; margin-bottom: 20px;">
+    <h1>✨ Welcome! ✨</h1>
+    <p>Exploring the Universe Through my expertise 🌌🪐🧠</p>
+  </div>
 
-<!-- Le reste de votre contenu ici... -->
+  <!-- Conteneur pour la photo et le titre -->
+  <div class="header-container">
+    <img src="doc/123.jpg" class="profile-photo">
+    
+    <div class="profile-title">
+      <h1 id="home">👩‍🔬 Hanan Absike, PhD</h1>
+    </div>
+  </div>
 
-<h1 id="home">👩‍🔬 Hanan Absike, PhD</h1> <!-- Ajout d'ID pour l'ancre Home -->
+  <hr>
 
-<!-- ... (votre contenu existant) ... -->
-
-<style>
-  body {
-    background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #000000 100%);
-    color: #00e5ff;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0; /* Modification importante */
-  }
-
-  /* ... (votre CSS existant) ... */
-</style>
-
-<!-- ... (le reste de votre contenu) ... -->
+  <!-- Le reste de votre contenu... -->
