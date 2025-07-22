@@ -36,10 +36,53 @@ Physicien
 ---
 
 ### 🧪 Projets GitHub à explorer :
-
 - `Graphene-TB-Modeling`
 - `QuantumTransport-Simulation`
 - `DFT-Thermoelectric-Properties`
+
+
+<style>
+  body {
+    background: radial-gradient(ellipse at bottom, #0a0a0a 0%, #000000 100%);
+    color: #00e5ff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .stars {
+    background: transparent url('https://raw.githubusercontent.com/CodeExplainedRepo/HTML-CSS-Star-Background/master/img/stars.png') repeat top center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    animation: move-stars 200s linear infinite;
+  }
+
+  @keyframes move-stars {
+    0% { background-position: 0 0; }
+    100% { background-position: 10000px 5000px; }
+  }
+
+  h1 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+
+  img {
+    float: right;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00e5ff;
+  }
+
+</style>
+
+<div class="stars"></div>
+
+<h1>✨ Dr. Hanan Absike ✨</h1>
+<p>Physicienne – Simulation Quantique, Matériaux, Électrons... 🌌</p>
+
 
 ---
 
