@@ -2,16 +2,36 @@
 layout: default
 ---
 
-<p align="center">
-  <a href="#home">🏠 Home</a> |
-  <a href="#experience">🧪 Expérience</a> |
-  <a href="#publications">📚 Publications</a> |
-  <a href="#teaching">🎓 Enseignement</a> |
-  <a href="#service">🤝 Activités</a> |
-  <a href="#interests">🌱 Intérêts</a> |
-  <a href="#phd">🧠 Projet PhD</a> |
+<<style>
+nav.navtop {
+  background-color: #000000;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid #00e5ff;
+  font-family: monospace;
+}
+nav.navtop a {
+  color: #00e5ff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1em;
+}
+nav.navtop a:hover {
+  text-shadow: 0 0 5px #00ffff;
+}
+</style>
+
+<nav class="navtop">
+  <a href="#home">🏠 Home</a>
+  <a href="#experience">🧪 Expérience</a>
+  <a href="#publications">📚 Publications</a>
+  <a href="#teaching">🎓 Enseignement</a>
+  <a href="#service">🤝 Activités</a>
+  <a href="#interests">🌱 Intérêts</a>
+  <a href="#phd">🧠 Projet PhD</a>
   <a href="#cv">📄 CV</a>
-</p>
+</nav>
+
 
 <link rel="stylesheet" href="assets/css/style.css">
 <div style="background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%); padding: 20px; text-align: center; color: #00e5ff;">
