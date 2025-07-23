@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hanan Absike - Physicienne</title>
+    <title>Dr. Hanan Absike - Computational Physicist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -101,30 +100,20 @@
             padding: 30px;
             display: flex;
             flex-direction: column;
-            align-items: center;
         }
 
         /* Vertical sections */
         .vertical-section {
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 10px;
-            padding: 50px;
+            border-radius: 8px;
+            padding: 40px;
             border: 1px solid var(--accent-neon);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 10;
-            margin-bottom: 60px;
-            width: 90%;
-            max-width: 900px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .vertical-section.active {
-            opacity: 1;
-            transform: translateY(0);
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         /* Profile section */
@@ -138,7 +127,7 @@
         .profile-photo {
             width: 220px;
             height: 220px;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
             margin-bottom: 30px;
@@ -210,7 +199,7 @@
         /* Welcome section */
         .welcome-section {
             text-align: center;
-            padding: 60px 30px;
+            padding: 50px 30px;
         }
 
         .welcome-section h1 {
@@ -234,7 +223,6 @@
         /* Content sections */
         .content-section {
             margin-bottom: 40px;
-            width: 100%;
         }
 
         .content-section h2 {
@@ -310,8 +298,6 @@
             padding: 40px 20px;
             margin-top: 20px;
             border-top: 1px solid var(--accent-neon);
-            width: 100%;
-            max-width: 900px;
         }
 
         .visitor-counter {
@@ -336,17 +322,6 @@
             text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideInFromBottom {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
         /* Responsive design */
         @media (max-width: 768px) {
             .content {
@@ -356,7 +331,6 @@
             
             .vertical-section {
                 padding: 30px 20px;
-                width: 100%;
             }
             
             .welcome-section h1 {
@@ -438,8 +412,8 @@
     
     <div class="content">
         <!-- Profile section -->
-        <section id="home" class="vertical-section profile-section">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Dr. Hanan Absike" class="profile-photo">
+        <div class="vertical-section profile-section" id="home">
+            <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
             
             <div class="profile-title">
                 <h1>Dr. Hanan Absike</h1>
@@ -458,16 +432,16 @@
                     <i class="fas fa-file-pdf"></i> Download CV (PDF)
                 </a>
             </div>
-        </section>
+        </div>
         
         <!-- Welcome section -->
-        <section class="vertical-section welcome-section">
+        <div class="vertical-section welcome-section">
             <h1>✨ Welcome to My Cosmic Journey ✨</h1>
             <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
-        </section>
+        </div>
         
         <!-- Research Interests -->
-        <section class="vertical-section">
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-seedling"></i> Research Interests</h2>
                 <p>My research explores the intersection of computational physics and material science, focusing on quantum phenomena and material behaviors at atomic scales.</p>
@@ -479,10 +453,10 @@
                     <li>Computational Astrophysics</li>
                 </ul>
             </div>
-        </section>
+        </div>
         
         <!-- Education -->
-        <section class="vertical-section">
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-graduation-cap"></i> Education</h2>
                 <div class="education-item">
@@ -501,10 +475,10 @@
                     <p>Specialization: Theoretical Physics</p>
                 </div>
             </div>
-        </section>
+        </div>
         
         <!-- Technical Expertise -->
-        <section class="vertical-section">
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-code"></i> Technical Expertise</h2>
                 <p>I leverage advanced computational tools and programming languages to explore the fundamental properties of materials.</p>
@@ -517,10 +491,10 @@
                     <li>Machine Learning in Physics</li>
                 </ul>
             </div>
-        </section>
+        </div>
         
         <!-- Current Projects -->
-        <section class="vertical-section">
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-project-diagram"></i> Current Projects</h2>
                 <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
@@ -532,10 +506,10 @@
                     <li>Development of new simulation algorithms</li>
                 </ul>
             </div>
-        </section>
+        </div>
         
         <!-- Footer section -->
-        <section class="footer-section">
+        <div class="footer-section">
             <div class="visitor-counter">
                 <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
                 <p style="margin-top: 15px; font-size: 1.1rem;">🔭 You are visitor number above 👆 — thank you for exploring my universe!</p>
@@ -544,7 +518,7 @@
             <p class="copyright">
                 This cosmic portfolio is maintained by Dr. Hanan Absike • For collaboration or teaching opportunities, please contact me
             </p>
-        </section>
+        </div>
     </div>
 
     <script>
@@ -599,30 +573,9 @@
             }
         }
         
-        // Scroll animations
-        function setupScrollAnimations() {
-            const sections = document.querySelectorAll('.vertical-section');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        }
-        
         // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
             createGalaxy();
-            setupScrollAnimations();
             
             // Add scroll effect to navigation
             window.addEventListener('scroll', function() {
@@ -642,15 +595,9 @@
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
         });
