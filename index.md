@@ -93,138 +93,186 @@
             transform: translateY(-3px);
         }
 
-        /* Main content */
+        /* Main content - Vertical layout */
         .content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 100px auto 60px;
             padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
-        }
-
-        /* Left column - Profile */
-        .left-column {
-            background: rgba(10, 5, 40, 0.4);
-            border-radius: 8px; /* More rectangular */
-            padding: 30px;
-            border: 1px solid var(--accent-neon);
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
-            position: relative;
-            z-index: 10;
-        }
-
-        .profile-photo {
-            width: 100%;
-            border-radius: 5px; /* More rectangular */
-            border: 2px solid var(--accent-neon);
-            box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
-            margin-bottom: 25px;
-            transition: all 0.5s;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 50px rgba(0, 238, 255, 0.8);
-        }
-
-        .profile-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-title h1 {
-            font-size: 2.4rem;
-            color: var(--accent-neon);
-            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .profile-title p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            color: var(--accent-neon);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--accent-neon);
-            font-size: 1.8rem;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 300;
+            flex-direction: column;
         }
 
-        .section-title i {
-            text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
-        }
-
-        .contact-links a {
-            display: block;
-            color: var(--text-glow);
-            text-decoration: none;
-            padding: 12px 0;
-            padding-left: 40px;
-            transition: all 0.4s;
-            position: relative;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            border-radius: 4px; /* More rectangular */
-        }
-
-        .contact-links a:hover {
-            color: var(--accent-neon);
-            padding-left: 50px;
-            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
-            background: rgba(0, 238, 255, 0.1);
-        }
-
-        .contact-links a i {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.4rem;
-            width: 35px;
-            color: var(--accent-neon);
-            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
-        }
-
-        /* Right column - Content */
-        .right-column {
+        /* Vertical sections */
+        .vertical-section {
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 8px; /* More rectangular */
+            border-radius: 8px;
             padding: 40px;
             border: 1px solid var(--accent-neon);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 10;
-        }
-
-        .welcome-message {
             margin-bottom: 40px;
+            width: 100%;
         }
 
-        .welcome-message h1 {
+        /* Profile section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-neon);
+            box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
+            margin-bottom: 30px;
+            object-fit: cover;
+        }
+
+        .profile-title h1 {
+            font-size: 2.8rem;
+            color: var(--accent-neon);
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .profile-title p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--accent-neon);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--accent-neon);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 300;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            color: var(--text-glow);
+            text-decoration: none;
+            padding: 12px 20px;
+            transition: all 0.4s;
+            border-radius: 8px;
+            background: rgba(0, 26, 51, 0.3);
+            border: 1px solid rgba(0, 238, 255, 0.3);
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-neon);
+            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
+            background: rgba(0, 238, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .contact-links a i {
+            font-size: 1.4rem;
+            margin-right: 10px;
+            color: var(--accent-neon);
+            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
+        }
+
+        /* Welcome section */
+        .welcome-section {
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .welcome-section h1 {
             font-size: 3.2rem;
             color: var(--accent-neon);
             text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-weight: 300;
             line-height: 1.2;
         }
 
-        .welcome-message p {
-            font-size: 1.6rem;
+        .welcome-section p {
+            font-size: 1.8rem;
             opacity: 0.9;
             letter-spacing: 1px;
             line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: var(--accent-neon);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .content-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .content-section ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .content-section li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .content-section li:before {
+            content: "✦";
+            color: var(--accent-neon);
+            position: absolute;
+            left: 0;
+            font-size: 1.4rem;
+            top: 10px;
+            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 1px solid rgba(0, 238, 255, 0.3);
+        }
+
+        .education-item h3 {
+            color: var(--accent-neon);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
         }
 
         /* Shining elements */
@@ -244,65 +292,11 @@
             100% { opacity: 1; transform: scale(1.2); }
         }
 
-        /* Rectangular content sections */
-        .content-section {
-            background: rgba(10, 5, 40, 0.4);
-            border-radius: 8px;
-            padding: 30px;
-            border: 1px solid var(--accent-neon);
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .content-section h2 {
-            color: var(--accent-neon);
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .content-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .content-section ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-
-        .content-section li {
-            padding: 10px 0;
-            padding-left: 35px;
-            position: relative;
-            border-left: 1px solid rgba(0, 238, 255, 0.2);
-            margin-left: 10px;
-            font-size: 1.1rem;
-        }
-
-        .content-section li:before {
-            content: "•";
-            color: var(--accent-neon);
-            position: absolute;
-            left: 0;
-            font-size: 1.8rem;
-            top: 0;
-            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
-        }
-
         /* Footer section */
         .footer-section {
             text-align: center;
             padding: 40px 20px;
-            margin-top: 60px;
-            grid-column: 1 / -1;
+            margin-top: 20px;
             border-top: 1px solid var(--accent-neon);
         }
 
@@ -329,23 +323,21 @@
         }
 
         /* Responsive design */
-        @media (max-width: 1100px) {
-            .content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .welcome-message h1 {
-                font-size: 2.8rem;
-            }
-        }
-
         @media (max-width: 768px) {
-            .welcome-message h1 {
-                font-size: 2.4rem;
+            .content {
+                padding: 20px 15px;
+                margin-top: 80px;
             }
             
-            .welcome-message p {
+            .vertical-section {
+                padding: 30px 20px;
+            }
+            
+            .welcome-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .welcome-section p {
                 font-size: 1.4rem;
             }
             
@@ -355,26 +347,28 @@
                 padding: 6px 12px;
             }
             
-            .content {
-                padding: 20px 15px;
-                margin-top: 80px;
-            }
-            
-            .left-column, .right-column {
-                padding: 25px;
-            }
-            
             .profile-title h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-links a {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
         }
 
         @media (max-width: 480px) {
-            .welcome-message h1 {
+            .welcome-section h1 {
                 font-size: 2rem;
             }
             
-            .welcome-message p {
+            .welcome-section p {
                 font-size: 1.2rem;
             }
             
@@ -417,8 +411,8 @@
     </nav>
     
     <div class="content">
-        <!-- Left column - Profile photo and info -->
-        <div class="left-column">
+        <!-- Profile section -->
+        <div class="vertical-section profile-section" id="home">
             <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
             
             <div class="profile-title">
@@ -440,14 +434,14 @@
             </div>
         </div>
         
-        <!-- Right column - Content -->
-        <div class="right-column">
-            <div class="welcome-message">
-                <h1>✨ Welcome to My Cosmic Journey ✨</h1>
-                <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
-            </div>
-            
-            <!-- Research Interests -->
+        <!-- Welcome section -->
+        <div class="vertical-section welcome-section">
+            <h1>✨ Welcome to My Cosmic Journey ✨</h1>
+            <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
+        </div>
+        
+        <!-- Research Interests -->
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-seedling"></i> Research Interests</h2>
                 <p>My research explores the intersection of computational physics and material science, focusing on quantum phenomena and material behaviors at atomic scales.</p>
@@ -459,28 +453,32 @@
                     <li>Computational Astrophysics</li>
                 </ul>
             </div>
-            
-            <!-- Education -->
+        </div>
+        
+        <!-- Education -->
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                <div style="margin-bottom: 20px;">
+                <div class="education-item">
                     <h3>PhD in Physics (2019)</h3>
                     <p>University of Mohammed V, Rabat</p>
                     <p>Thesis: Advanced Materials Simulation Techniques</p>
                 </div>
-                <div style="margin-bottom: 20px;">
+                <div class="education-item">
                     <h3>MSc in Computational Physics (2015)</h3>
                     <p>University of Mohammed V, Rabat</p>
                     <p>Focus: Quantum Systems Modeling</p>
                 </div>
-                <div>
+                <div class="education-item">
                     <h3>BSc in Physics (2013)</h3>
                     <p>University of Mohammed V, Rabat</p>
                     <p>Specialization: Theoretical Physics</p>
                 </div>
             </div>
-            
-            <!-- Technical Expertise -->
+        </div>
+        
+        <!-- Technical Expertise -->
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-code"></i> Technical Expertise</h2>
                 <p>I leverage advanced computational tools and programming languages to explore the fundamental properties of materials.</p>
@@ -493,8 +491,10 @@
                     <li>Machine Learning in Physics</li>
                 </ul>
             </div>
-            
-            <!-- Current Projects -->
+        </div>
+        
+        <!-- Current Projects -->
+        <div class="vertical-section">
             <div class="content-section">
                 <h2><i class="fas fa-project-diagram"></i> Current Projects</h2>
                 <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
@@ -573,33 +573,9 @@
             }
         }
         
-        // Add sparkling effect to elements
-        function addSparkles() {
-            const container = document.querySelector('.content');
-            const sparkleCount = 8;
-            
-            for (let i = 0; i < sparkleCount; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.classList.add('shine');
-                
-                // Random position within content area
-                const posX = 5 + Math.random() * 90;
-                const posY = 5 + Math.random() * 90;
-                
-                sparkle.style.left = `${posX}%`;
-                sparkle.style.top = `${posY}%`;
-                sparkle.style.animationDelay = `${Math.random() * 3}s`;
-                sparkle.style.width = `${10 + Math.random() * 20}px`;
-                sparkle.style.height = sparkle.style.width;
-                
-                container.appendChild(sparkle);
-            }
-        }
-        
         // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
             createGalaxy();
-            addSparkles();
             
             // Add scroll effect to navigation
             window.addEventListener('scroll', function() {
@@ -623,15 +599,6 @@
                         behavior: 'smooth'
                     });
                 });
-            });
-            
-            // Add hover effect to welcome text
-            const welcomeText = document.querySelector('.welcome-message');
-            welcomeText.addEventListener('mouseenter', () => {
-                welcomeText.style.textShadow = '0 0 30px rgba(0, 238, 255, 0.9)';
-            });
-            welcomeText.addEventListener('mouseleave', () => {
-                welcomeText.style.textShadow = '0 0 20px rgba(0, 238, 255, 0.8)';
             });
         });
     </script>
