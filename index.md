@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -292,14 +291,95 @@
             50% { transform: translateY(-20px); }
         }
 
+        /* Horizontal cards section */
+        .horizontal-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+            grid-column: 1 / -1;
+        }
+
+        .horizontal-card {
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(0, 238, 255, 0.3);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(5px);
+            width: 100%;
+            max-width: 650px;
+            position: relative;
+            z-index: 10;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .horizontal-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            border-radius: 25px;
+            z-index: -1;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-title {
+            color: var(--accent-neon);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+        }
+
+        .card-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .card-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .card-list li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            border-left: 1px solid rgba(0, 238, 255, 0.2);
+            margin-left: 10px;
+            transition: all 0.4s;
+            font-size: 1.1rem;
+        }
+
+        .card-list li:before {
+            content: "✦";
+            color: var(--accent-neon);
+            position: absolute;
+            left: 0;
+            font-size: 1.4rem;
+            top: 10px;
+            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
+        }
+
         /* Footer section */
         .footer-section {
             text-align: center;
             padding: 40px 20px;
             margin-top: 60px;
-            width: 100%;
-            border-top: 1px solid rgba(0, 238, 255, 0.3);
             grid-column: 1 / -1;
+            border-top: 1px solid rgba(0, 238, 255, 0.3);
         }
 
         .visitor-counter {
@@ -334,6 +414,11 @@
             .welcome-message h1 {
                 font-size: 3rem;
             }
+            
+            .horizontal-cards {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -362,6 +447,14 @@
             
             .profile-title h1 {
                 font-size: 2rem;
+            }
+            
+            .horizontal-card {
+                padding: 25px;
+            }
+            
+            .card-title {
+                font-size: 1.8rem;
             }
         }
 
@@ -441,6 +534,77 @@
             <div class="welcome-message">
                 <h1>✨ Welcome to My Cosmic Journey ✨</h1>
                 <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
+            </div>
+        </div>
+        
+        <!-- Horizontal cards section -->
+        <div class="horizontal-cards">
+            <!-- First horizontal card -->
+            <div class="horizontal-card">
+                <div class="card-content">
+                    <h2 class="card-title"><i class="fas fa-seedling"></i> Research Interests</h2>
+                    <p class="card-text">My research explores the intersection of computational physics and material science, focusing on quantum phenomena and material behaviors at atomic scales.</p>
+                    <ul class="card-list">
+                        <li>Material Modelling & Simulation</li>
+                        <li>Quantum Transport Phenomena</li>
+                        <li>Experimental Physics Techniques</li>
+                        <li>High-Performance Computing</li>
+                        <li>Computational Astrophysics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Second horizontal card -->
+            <div class="horizontal-card">
+                <div class="card-content">
+                    <h2 class="card-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <h3>PhD in Physics (2019)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Thesis: Advanced Materials Simulation Techniques</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>MSc in Computational Physics (2015)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Focus: Quantum Systems Modeling</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>BSc in Physics (2013)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Specialization: Theoretical Physics</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third horizontal card -->
+            <div class="horizontal-card">
+                <div class="card-content">
+                    <h2 class="card-title"><i class="fas fa-code"></i> Technical Expertise</h2>
+                    <p class="card-text">I leverage advanced computational tools and programming languages to explore the fundamental properties of materials.</p>
+                    <ul class="card-list">
+                        <li>Python & Scientific Libraries (NumPy, SciPy)</li>
+                        <li>Quantum ESPRESSO & VASP</li>
+                        <li>High-Performance Computing (HPC)</li>
+                        <li>MATLAB & Numerical Methods</li>
+                        <li>Data Analysis & Visualization</li>
+                        <li>Machine Learning in Physics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Fourth horizontal card -->
+            <div class="horizontal-card">
+                <div class="card-content">
+                    <h2 class="card-title"><i class="fas fa-project-diagram"></i> Current Projects</h2>
+                    <p class="card-text">My current research focuses on cutting-edge problems in computational physics and material science.</p>
+                    <ul class="card-list">
+                        <li>Quantum transport in 2D materials</li>
+                        <li>HPC simulations of material defects</li>
+                        <li>Machine learning for material discovery</li>
+                        <li>Experimental validation of computational models</li>
+                        <li>Development of new simulation algorithms</li>
+                    </ul>
+                </div>
             </div>
         </div>
         
@@ -568,6 +732,12 @@
             });
             welcomeText.addEventListener('mouseleave', () => {
                 welcomeText.style.textShadow = '0 0 20px rgba(0, 238, 255, 0.8)';
+            });
+            
+            // Add floating animation to cards
+            const cards = document.querySelectorAll('.horizontal-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.5}s`;
             });
         });
     </script>
