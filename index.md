@@ -1,202 +1,454 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanan Absike, PhD - Physicienne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<style>
-/* Menu fixe en haut */
-nav.navtop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000;
-  padding: 10px 0;
-  text-align: center;
-  border-bottom: 1px solid #00e5ff;
-  font-family: monospace;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 229, 255, 0.3);
-}
+        :root {
+            --deep-blue: #001a33;
+            --navy-blue: #00264d;
+            --dark-blue: #000d1a;
+            --accent-blue: #00aaff;
+            --light-blue: #66ccff;
+            --text-color: #e6f7ff;
+        }
 
-nav.navtop a {
-  color: #00e5ff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.1em;
-  transition: all 0.3s ease;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
+        body {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--deep-blue) 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-nav.navtop a:hover {
-  text-shadow: 0 0 5px #00ffff;
-  background: rgba(0, 229, 255, 0.1);
-}
+        /* Background effects */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent url('https://i.imgur.com/2YX9X0s.png') repeat top center;
+            z-index: -1;
+            animation: move-stars 200s linear infinite;
+        }
 
-/* Correction pour l'ancrage sous menu fixe */
-:target::before {
-  content: "";
-  display: block;
-  height: 60px;
-  margin-top: -60px;
-  visibility: hidden;
-}
+        @keyframes move-stars {
+            0% { background-position: 0 0; }
+            100% { background-position: 10000px 5000px; }
+        }
 
-/* Conteneur principal */
-.content {
-  padding-top: 70px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        /* Navigation menu */
+        nav.navtop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 13, 26, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--accent-blue);
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
 
-/* Colonne gauche - Photo */
-.left-column {
-  text-align: center;
-}
+        nav.navtop a {
+            color: var(--light-blue);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
 
-.profile-photo {
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00e5ff;
-  margin-top: 20px;
-}
+        nav.navtop a:hover {
+            color: white;
+            background: rgba(0, 170, 255, 0.2);
+            text-shadow: 0 0 10px var(--accent-blue);
+        }
 
-/* Colonne droite - Contenu */
-.right-column {
-  padding-right: 20px;
-}
+        /* Main content */
+        .content {
+            max-width: 1200px;
+            margin: 90px auto 40px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
 
-/* Supprimer le gras des titres */
-h1, h2, h3 {
-  font-weight: normal !important;
-}
+        /* Welcome banner */
+        .welcome-section {
+            background: linear-gradient(90deg, rgba(0, 13, 26, 0.8) 0%, rgba(0, 38, 77, 0.8) 100%);
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            grid-column: 1 / -1;
+            border: 1px solid rgba(0, 170, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+        }
 
-.welcome-section {
-  background: linear-gradient(90deg, #0a0a0a 0%, #001f3f 100%);
-  padding: 20px;
-  text-align: center;
-  color: #00e5ff;
-  margin-bottom: 30px;
-  grid-column: 1 / -1;
-}
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--light-blue);
+            text-shadow: 0 0 15px var(--accent-blue);
+        }
 
-.stars {
-  background: transparent url('https://raw.githubusercontent.com/CodeExplainedRepo/HTML-CSS-Star-Background/master/img/stars.png') repeat top center;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: -1;
-  animation: move-stars 200s linear infinite;
-}
+        .welcome-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
 
-@keyframes move-stars {
-  0% { background-position: 0 0; }
-  100% { background-position: 10000px 5000px; }
-}
+        /* Left column - profile */
+        .left-column {
+            background: rgba(0, 13, 26, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(0, 170, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+            height: fit-content;
+        }
 
-/* Style pour les listes */
-ul {
-  padding-left: 20px;
-}
+        .profile-photo {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.4);
+            margin-bottom: 20px;
+        }
 
-ul li {
-  margin-bottom: 8px;
-}
+        .contact-box {
+            background: rgba(0, 26, 51, 0.6);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid rgba(0, 170, 255, 0.2);
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-    padding-top: 60px;
-  }
-  
-  .left-column {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  nav.navtop a {
-    font-size: 0.9em;
-    margin: 0 8px;
-    padding: 3px 5px;
-  }
-}
-</style>
+        .contact-box h3 {
+            color: var(--light-blue);
+            border-bottom: 1px solid var(--accent-blue);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
 
-<nav class="navtop">
-  <a href="#home">🏠 Home</a>
-  <a href="#experience">🧪 Expérience</a>
-  <a href="#publications">📚 Publications</a>
-  <a href="#teaching">🎓 Enseignement</a>
-  <a href="#service">🤝 Activités</a>
-  <a href="#interests">🌱 Intérêts</a>
-  <a href="#phd">🧠 Projet PhD</a>
-  <a href="#cv">📄 CV</a>
-</nav>
+        .contact-links a {
+            display: block;
+            color: var(--light-blue);
+            text-decoration: none;
+            padding: 8px 0;
+            transition: all 0.3s;
+        }
 
-<div class="stars"></div>
+        .contact-links a:hover {
+            color: white;
+            padding-left: 10px;
+            text-shadow: 0 0 8px var(--accent-blue);
+        }
 
-<div class="content">
-  <div class="welcome-section">
-    <h1>✨ Welcome! ✨</h1>
-    <p>Exploring the Universe Through my expertise 🌌🪐🧠</p>
-  </div>
-  
-  <!-- Colonne gauche - Photo -->
-  <div class="left-column">
-    <img src="doc/123.jpg" class="profile-photo">
-  </div>
-  
-  <!-- Colonne droite - Contenu principal -->
-  <div class="right-column">
-    <h1 id="home">👩‍🔬 Hanan Absike, PhD</h1>
+        .contact-links i {
+            width: 25px;
+            margin-right: 10px;
+            color: var(--accent-blue);
+        }
+
+        /* Right column - content */
+        .right-column {
+            background: rgba(0, 13, 26, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 170, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+        }
+
+        .section-title {
+            color: var(--light-blue);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-blue);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            border-left: 2px solid rgba(0, 170, 255, 0.3);
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        ul li:hover {
+            border-left: 2px solid var(--accent-blue);
+            background: rgba(0, 170, 255, 0.05);
+            border-radius: 0 5px 5px 0;
+        }
+
+        ul li:before {
+            content: "•";
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            top: 2px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(0, 170, 255, 0.2);
+        }
+
+        .education-item strong {
+            color: var(--light-blue);
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        /* Footer section */
+        .footer-section {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            grid-column: 1 / -1;
+            border-top: 1px solid rgba(0, 170, 255, 0.3);
+        }
+
+        .visitor-counter {
+            background: rgba(0, 26, 51, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 1px solid rgba(0, 170, 255, 0.2);
+        }
+
+        .copyright {
+            color: rgba(230, 247, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+                margin-top: 80px;
+            }
+            
+            .left-column {
+                order: 2;
+            }
+            
+            nav.navtop a {
+                font-size: 0.9rem;
+                margin: 0 8px;
+                padding: 6px 10px;
+            }
+            
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav.navtop {
+                padding: 10px 0;
+            }
+            
+            nav.navtop a {
+                font-size: 0.8rem;
+                margin: 0 5px;
+                padding: 5px 8px;
+            }
+            
+            .content {
+                padding: 10px;
+                margin-top: 70px;
+            }
+            
+            .welcome-section {
+                padding: 15px;
+            }
+            
+            .welcome-section h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
     
-    <hr>
+    <!-- Navigation menu -->
+    <nav class="navtop">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#experience"><i class="fas fa-flask"></i> Expérience</a>
+        <a href="#publications"><i class="fas fa-book"></i> Publications</a>
+        <a href="#teaching"><i class="fas fa-graduation-cap"></i> Enseignement</a>
+        <a href="#service"><i class="fas fa-hands-helping"></i> Activités</a>
+        <a href="#interests"><i class="fas fa-seedling"></i> Intérêts</a>
+        <a href="#phd"><i class="fas fa-brain"></i> Projet PhD</a>
+        <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
+    </nav>
     
-    <h2 id="interests">🌱 Interests</h2>
-    <ul>
-      <li>Material Modelling</li>
-      <li>Quantum transport</li>
-      <li>Experimental Physics</li>
-      <li>Scientific programming</li>
-      <li>HPC Calculations</li>
-    </ul>
-    
-    <hr>
-    
-    <h3>🔗 Contact ME :</h3>
-    <ul>
-      <li>🔬 <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ">Google Scholar</a></li>
-      <li>📘 <a href="https://www.researchgate.net/profile/H-Absike">ResearchGate</a></li>
-      <li>💼 CV PDF à venir</li>
-    </ul>
-    
-    <hr>
-    
-    <h3>🧪 Education :</h3>
-    <ul>
-      <li>PhD in Physics, 2019<br>University of Mohammed V RABAT</li>
-      <li>MSc in Computational Physics, 2015<br>University of Mohammed V RABAT</li>
-      <li>BSc in Science Physics, 2013<br>University of Mohammed V RABAT</li>
-    </ul>
-    
-    <hr>
-    
-    <h1>✨ Enjoy physics ✨</h1>
-    <p>Computational material, Material modelling Quantum transport, Experimental physics... 🌌</p>
-    
-    <p align="center">
-      <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge"/>
-      <br>
-      🔢 You're visitor number above 👆 — thanks for stopping by!
-    </p>
-    
-    <p style="color:#999; font-size: 14px; margin-top: 3rem;">
-      Ce site est maintenu par Dr. Hanan Absike – pour toute collaboration ou proposition d'enseignement, merci de me contacter.
-    </p>
-  </div>
-</div>
+    <div class="content">
+        <!-- Welcome banner -->
+        <div class="welcome-section">
+            <h1>✨ Welcome! ✨</h1>
+            <p>Exploring the Universe Through my expertise 🌌🪐🧠</p>
+        </div>
+        
+        <!-- Left column - Profile photo and contact -->
+        <div class="left-column">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Hanan Absike" class="profile-photo">
+            
+            <div class="contact-box">
+                <h3><i class="fas fa-link"></i> Contact ME</h3>
+                <div class="contact-links">
+                    <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ" target="_blank">
+                        <i class="fab fa-google"></i> Google Scholar
+                    </a>
+                    <a href="https://www.researchgate.net/profile/H-Absike" target="_blank">
+                        <i class="fab fa-researchgate"></i> ResearchGate
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-file-pdf"></i> CV PDF à venir
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right column - Main content -->
+        <div class="right-column">
+            <h1 id="home" class="section-title">👩‍🔬 Hanan Absike, PhD</h1>
+            
+            <div class="section-content">
+                <h2 id="interests" class="section-title"><i class="fas fa-seedling"></i> Interests</h2>
+                <ul>
+                    <li>Material Modelling</li>
+                    <li>Quantum transport</li>
+                    <li>Experimental Physics</li>
+                    <li>Scientific programming</li>
+                    <li>HPC Calculations</li>
+                </ul>
+            </div>
+            
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-item">
+                    <strong>PhD in Physics, 2019</strong>
+                    <p>University of Mohammed V RABAT</p>
+                </div>
+                <div class="education-item">
+                    <strong>MSc in Computational Physics, 2015</strong>
+                    <p>University of Mohammed V RABAT</p>
+                </div>
+                <div class="education-item">
+                    <strong>BSc in Science Physics, 2013</strong>
+                    <p>University of Mohammed V RABAT</p>
+                </div>
+            </div>
+            
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-brain"></i> Research Focus</h2>
+                <ul>
+                    <li>Computational material science</li>
+                    <li>Quantum transport phenomena</li>
+                    <li>Material modeling and simulation</li>
+                    <li>High-performance computing applications</li>
+                    <li>Experimental validation of theoretical models</li>
+                </ul>
+            </div>
+            
+            <div class="section-content">
+                <h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
+                <ul>
+                    <li>Python (NumPy, SciPy, Pandas)</li>
+                    <li>MATLAB & Simulink</li>
+                    <li>Quantum ESPRESSO</li>
+                    <li>VASP</li>
+                    <li>LAMMPS</li>
+                    <li>High-Performance Computing (HPC)</li>
+                </ul>
+            </div>
+            
+            <div class="section-content">
+                <h1 class="section-title"><i class="fas fa-star"></i> Enjoy Physics</h1>
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-top: 15px;">
+                    Computational material, Material modelling Quantum transport, Experimental physics... 🌌
+                    My passion lies at the intersection of theoretical physics and computational methods, 
+                    exploring the fundamental properties of materials to unlock new possibilities in technology 
+                    and scientific understanding.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer section -->
+        <div class="footer-section">
+            <div class="visitor-counter">
+                <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
+                <p>🔢 You're visitor number above 👆 — thanks for stopping by!</p>
+            </div>
+            
+            <p class="copyright">
+                Ce site est maintenu par Dr. Hanan Absike – pour toute collaboration ou proposition d'enseignement, merci de me contacter.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Simple effect for navigation on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav.navtop');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 13, 26, 0.95)';
+                nav.style.padding = '10px 0';
+                nav.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.7)';
+            } else {
+                nav.style.background = 'rgba(0, 13, 26, 0.9)';
+                nav.style.padding = '15px 0';
+                nav.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.5)';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
