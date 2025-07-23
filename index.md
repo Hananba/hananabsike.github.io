@@ -1,8 +1,8 @@
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hanan Absike - Physicienne</title>
+    <title>Dr. Hanan Absike - Computational Physicist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -106,31 +106,18 @@
         /* Left column - Profile */
         .left-column {
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 20px;
+            border-radius: 8px; /* More rectangular */
             padding: 30px;
-            border: 1px solid rgba(0, 238, 255, 0.3);
+            border: 1px solid var(--accent-neon);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 10;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .left-column::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid rgba(0, 238, 255, 0.2);
-            border-radius: 25px;
-            z-index: -1;
         }
 
         .profile-photo {
             width: 100%;
-            border-radius: 15px;
+            border-radius: 5px; /* More rectangular */
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
             margin-bottom: 25px;
@@ -165,7 +152,7 @@
             color: var(--accent-neon);
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(0, 238, 255, 0.4);
+            border-bottom: 1px solid var(--accent-neon);
             font-size: 1.8rem;
             display: flex;
             align-items: center;
@@ -187,7 +174,7 @@
             position: relative;
             font-size: 1.1rem;
             margin-bottom: 10px;
-            border-radius: 8px;
+            border-radius: 4px; /* More rectangular */
         }
 
         .contact-links a:hover {
@@ -208,63 +195,35 @@
             text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
         }
 
-        /* Right column - Welcome message */
+        /* Right column - Content */
         .right-column {
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 20px;
-            padding: 50px;
-            border: 1px solid rgba(0, 238, 255, 0.3);
+            border-radius: 8px; /* More rectangular */
+            padding: 40px;
+            border: 1px solid var(--accent-neon);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 10;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            animation: float 8s ease-in-out infinite 1s;
-        }
-
-        .right-column::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid rgba(0, 238, 255, 0.2);
-            border-radius: 25px;
-            z-index: -1;
         }
 
         .welcome-message {
-            text-align: center;
+            margin-bottom: 40px;
         }
 
         .welcome-message h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: var(--accent-neon);
             text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-weight: 300;
             line-height: 1.2;
-            position: relative;
-        }
-
-        .welcome-message h1::after {
-            content: "";
-            display: block;
-            width: 150px;
-            height: 3px;
-            background: linear-gradient(to right, transparent, var(--accent-neon), transparent);
-            margin: 25px auto;
         }
 
         .welcome-message p {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             opacity: 0.9;
             letter-spacing: 1px;
-            max-width: 800px;
-            margin: 0 auto;
             line-height: 1.6;
         }
 
@@ -285,91 +244,56 @@
             100% { opacity: 1; transform: scale(1.2); }
         }
 
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Horizontal cards section */
-        .horizontal-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 60px 0;
-            grid-column: 1 / -1;
-        }
-
-        .horizontal-card {
+        /* Rectangular content sections */
+        .content-section {
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 20px;
+            border-radius: 8px;
             padding: 30px;
-            border: 1px solid rgba(0, 238, 255, 0.3);
+            border: 1px solid var(--accent-neon);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
-            width: 100%;
-            max-width: 650px;
+            margin-bottom: 30px;
             position: relative;
             z-index: 10;
-            animation: float 8s ease-in-out infinite;
         }
 
-        .horizontal-card::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid rgba(0, 238, 255, 0.2);
-            border-radius: 25px;
-            z-index: -1;
-        }
-
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .card-title {
+        .content-section h2 {
             color: var(--accent-neon);
             font-size: 2.2rem;
             margin-bottom: 20px;
-            text-align: center;
             text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .card-text {
+        .content-section p {
             font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 25px;
-            flex-grow: 1;
+            margin-bottom: 15px;
         }
 
-        .card-list {
+        .content-section ul {
             list-style-type: none;
             padding-left: 20px;
         }
 
-        .card-list li {
+        .content-section li {
             padding: 10px 0;
             padding-left: 35px;
             position: relative;
             border-left: 1px solid rgba(0, 238, 255, 0.2);
             margin-left: 10px;
-            transition: all 0.4s;
             font-size: 1.1rem;
         }
 
-        .card-list li:before {
-            content: "✦";
+        .content-section li:before {
+            content: "•";
             color: var(--accent-neon);
             position: absolute;
             left: 0;
-            font-size: 1.4rem;
-            top: 10px;
+            font-size: 1.8rem;
+            top: 0;
             text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
         }
 
@@ -379,16 +303,16 @@
             padding: 40px 20px;
             margin-top: 60px;
             grid-column: 1 / -1;
-            border-top: 1px solid rgba(0, 238, 255, 0.3);
+            border-top: 1px solid var(--accent-neon);
         }
 
         .visitor-counter {
             background: rgba(0, 26, 51, 0.3);
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 8px;
             display: inline-block;
             margin: 30px 0;
-            border: 1px solid rgba(0, 238, 255, 0.2);
+            border: 1px solid var(--accent-neon);
             box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
         }
@@ -412,12 +336,7 @@
             }
             
             .welcome-message h1 {
-                font-size: 3rem;
-            }
-            
-            .horizontal-cards {
-                flex-direction: column;
-                align-items: center;
+                font-size: 2.8rem;
             }
         }
 
@@ -442,19 +361,11 @@
             }
             
             .left-column, .right-column {
-                padding: 30px;
+                padding: 25px;
             }
             
             .profile-title h1 {
                 font-size: 2rem;
-            }
-            
-            .horizontal-card {
-                padding: 25px;
-            }
-            
-            .card-title {
-                font-size: 1.8rem;
             }
         }
 
@@ -529,82 +440,71 @@
             </div>
         </div>
         
-        <!-- Right column - Welcome message -->
+        <!-- Right column - Content -->
         <div class="right-column">
             <div class="welcome-message">
                 <h1>✨ Welcome to My Cosmic Journey ✨</h1>
                 <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
             </div>
-        </div>
-        
-        <!-- Horizontal cards section -->
-        <div class="horizontal-cards">
-            <!-- First horizontal card -->
-            <div class="horizontal-card">
-                <div class="card-content">
-                    <h2 class="card-title"><i class="fas fa-seedling"></i> Research Interests</h2>
-                    <p class="card-text">My research explores the intersection of computational physics and material science, focusing on quantum phenomena and material behaviors at atomic scales.</p>
-                    <ul class="card-list">
-                        <li>Material Modelling & Simulation</li>
-                        <li>Quantum Transport Phenomena</li>
-                        <li>Experimental Physics Techniques</li>
-                        <li>High-Performance Computing</li>
-                        <li>Computational Astrophysics</li>
-                    </ul>
+            
+            <!-- Research Interests -->
+            <div class="content-section">
+                <h2><i class="fas fa-seedling"></i> Research Interests</h2>
+                <p>My research explores the intersection of computational physics and material science, focusing on quantum phenomena and material behaviors at atomic scales.</p>
+                <ul>
+                    <li>Material Modelling & Simulation</li>
+                    <li>Quantum Transport Phenomena</li>
+                    <li>Experimental Physics Techniques</li>
+                    <li>High-Performance Computing</li>
+                    <li>Computational Astrophysics</li>
+                </ul>
+            </div>
+            
+            <!-- Education -->
+            <div class="content-section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3>PhD in Physics (2019)</h3>
+                    <p>University of Mohammed V, Rabat</p>
+                    <p>Thesis: Advanced Materials Simulation Techniques</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h3>MSc in Computational Physics (2015)</h3>
+                    <p>University of Mohammed V, Rabat</p>
+                    <p>Focus: Quantum Systems Modeling</p>
+                </div>
+                <div>
+                    <h3>BSc in Physics (2013)</h3>
+                    <p>University of Mohammed V, Rabat</p>
+                    <p>Specialization: Theoretical Physics</p>
                 </div>
             </div>
             
-            <!-- Second horizontal card -->
-            <div class="horizontal-card">
-                <div class="card-content">
-                    <h2 class="card-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-                    <div class="education-item">
-                        <h3>PhD in Physics (2019)</h3>
-                        <p>University of Mohammed V, Rabat</p>
-                        <p>Thesis: Advanced Materials Simulation Techniques</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>MSc in Computational Physics (2015)</h3>
-                        <p>University of Mohammed V, Rabat</p>
-                        <p>Focus: Quantum Systems Modeling</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>BSc in Physics (2013)</h3>
-                        <p>University of Mohammed V, Rabat</p>
-                        <p>Specialization: Theoretical Physics</p>
-                    </div>
-                </div>
+            <!-- Technical Expertise -->
+            <div class="content-section">
+                <h2><i class="fas fa-code"></i> Technical Expertise</h2>
+                <p>I leverage advanced computational tools and programming languages to explore the fundamental properties of materials.</p>
+                <ul>
+                    <li>Python & Scientific Libraries (NumPy, SciPy)</li>
+                    <li>Quantum ESPRESSO & VASP</li>
+                    <li>High-Performance Computing (HPC)</li>
+                    <li>MATLAB & Numerical Methods</li>
+                    <li>Data Analysis & Visualization</li>
+                    <li>Machine Learning in Physics</li>
+                </ul>
             </div>
             
-            <!-- Third horizontal card -->
-            <div class="horizontal-card">
-                <div class="card-content">
-                    <h2 class="card-title"><i class="fas fa-code"></i> Technical Expertise</h2>
-                    <p class="card-text">I leverage advanced computational tools and programming languages to explore the fundamental properties of materials.</p>
-                    <ul class="card-list">
-                        <li>Python & Scientific Libraries (NumPy, SciPy)</li>
-                        <li>Quantum ESPRESSO & VASP</li>
-                        <li>High-Performance Computing (HPC)</li>
-                        <li>MATLAB & Numerical Methods</li>
-                        <li>Data Analysis & Visualization</li>
-                        <li>Machine Learning in Physics</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Fourth horizontal card -->
-            <div class="horizontal-card">
-                <div class="card-content">
-                    <h2 class="card-title"><i class="fas fa-project-diagram"></i> Current Projects</h2>
-                    <p class="card-text">My current research focuses on cutting-edge problems in computational physics and material science.</p>
-                    <ul class="card-list">
-                        <li>Quantum transport in 2D materials</li>
-                        <li>HPC simulations of material defects</li>
-                        <li>Machine learning for material discovery</li>
-                        <li>Experimental validation of computational models</li>
-                        <li>Development of new simulation algorithms</li>
-                    </ul>
-                </div>
+            <!-- Current Projects -->
+            <div class="content-section">
+                <h2><i class="fas fa-project-diagram"></i> Current Projects</h2>
+                <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
+                <ul>
+                    <li>Quantum transport in 2D materials</li>
+                    <li>HPC simulations of material defects</li>
+                    <li>Machine learning for material discovery</li>
+                    <li>Experimental validation of computational models</li>
+                    <li>Development of new simulation algorithms</li>
+                </ul>
             </div>
         </div>
         
@@ -612,11 +512,11 @@
         <div class="footer-section">
             <div class="visitor-counter">
                 <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
-                <p style="margin-top: 15px; font-size: 1.1rem;">🔭 Vous êtes le visiteur numéro ci-dessus 👆 — merci d'explorer mon univers!</p>
+                <p style="margin-top: 15px; font-size: 1.1rem;">🔭 You are visitor number above 👆 — thank you for exploring my universe!</p>
             </div>
             
             <p class="copyright">
-                Ce portfolio cosmique est maintenu par le Dr. Hanan Absike • Pour toute collaboration ou opportunité d'enseignement, n'hésitez pas à me contacter
+                This cosmic portfolio is maintained by Dr. Hanan Absike • For collaboration or teaching opportunities, please contact me
             </p>
         </div>
     </div>
@@ -732,12 +632,6 @@
             });
             welcomeText.addEventListener('mouseleave', () => {
                 welcomeText.style.textShadow = '0 0 20px rgba(0, 238, 255, 0.8)';
-            });
-            
-            // Add floating animation to cards
-            const cards = document.querySelectorAll('.horizontal-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.5}s`;
             });
         });
     </script>
