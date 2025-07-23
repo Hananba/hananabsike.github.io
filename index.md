@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanan Absike, PhD - Astrophysicist</title>
+    <title>Dr. Hanan Absike - Physicienne</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -99,82 +99,25 @@
             max-width: 1400px;
             margin: 100px auto 60px;
             padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
         }
 
-        /* Welcome section */
-        .welcome-section {
-            background: rgba(10, 5, 40, 0.4);
-            padding: 40px;
-            text-align: center;
-            border-radius: 20px;
-            margin-bottom: 50px;
-            border: 1px solid rgba(0, 238, 255, 0.3);
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
-            max-width: 900px;
-            transform: rotate(-1deg);
-            position: relative;
-            z-index: 10;
-        }
-
-        .welcome-section::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid rgba(0, 238, 255, 0.2);
-            border-radius: 25px;
-            z-index: -1;
-        }
-
-        .welcome-section h1 {
-            font-size: 3.2rem;
-            margin-bottom: 15px;
-            color: var(--accent-neon);
-            text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
-            font-weight: 300;
-        }
-
-        .welcome-section p {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            letter-spacing: 1px;
-        }
-
-        /* Profile section */
-        .profile-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            margin-bottom: 60px;
-            width: 100%;
-        }
-
-        .profile-card {
+        /* Left column - Profile */
+        .left-column {
             background: rgba(10, 5, 40, 0.4);
             border-radius: 20px;
             padding: 30px;
             border: 1px solid rgba(0, 238, 255, 0.3);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
             backdrop-filter: blur(5px);
-            max-width: 500px;
-            transform: rotate(2deg);
             position: relative;
             z-index: 10;
+            animation: float 8s ease-in-out infinite;
         }
 
-        .profile-card:nth-child(2) {
-            transform: rotate(-1deg);
-            margin-top: 40px;
-        }
-
-        .profile-card::before {
+        .left-column::before {
             content: "";
             position: absolute;
             top: -10px;
@@ -188,17 +131,21 @@
 
         .profile-photo {
             width: 100%;
-            max-width: 250px;
             border-radius: 15px;
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
-            margin: 0 auto 25px;
-            display: block;
+            margin-bottom: 25px;
+            transition: all 0.5s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 238, 255, 0.8);
         }
 
         .profile-title {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .profile-title h1 {
@@ -210,8 +157,9 @@
         }
 
         .profile-title p {
-            font-size: 1.1rem;
-            opacity: 0.8;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
         }
 
         .section-title {
@@ -230,96 +178,6 @@
             text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
         }
 
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-
-        ul li {
-            padding: 12px 0;
-            padding-left: 35px;
-            position: relative;
-            border-left: 1px solid rgba(0, 238, 255, 0.2);
-            margin-left: 10px;
-            transition: all 0.4s;
-            font-size: 1.1rem;
-        }
-
-        ul li:hover {
-            border-left: 1px solid var(--accent-neon);
-            background: rgba(0, 238, 255, 0.05);
-            padding-left: 40px;
-        }
-
-        ul li:before {
-            content: "✦";
-            color: var(--accent-neon);
-            position: absolute;
-            left: 0;
-            font-size: 1.4rem;
-            top: 10px;
-            text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
-        }
-
-        /* Info cards */
-        .info-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            width: 100%;
-            margin-bottom: 60px;
-        }
-
-        .info-card {
-            background: rgba(10, 5, 40, 0.4);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(0, 238, 255, 0.3);
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
-            width: 100%;
-            max-width: 400px;
-            transform: rotate(-2deg);
-            position: relative;
-            z-index: 10;
-        }
-
-        .info-card:nth-child(2) {
-            transform: rotate(1deg);
-            margin-top: 30px;
-        }
-
-        .info-card:nth-child(3) {
-            transform: rotate(3deg);
-            margin-top: -20px;
-        }
-
-        .info-card::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid rgba(0, 238, 255, 0.2);
-            border-radius: 25px;
-            z-index: -1;
-        }
-
-        .education-item {
-            margin-bottom: 20px;
-            padding-left: 25px;
-            border-left: 1px solid rgba(0, 238, 255, 0.2);
-        }
-
-        .education-item strong {
-            color: var(--accent-neon);
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
         .contact-links a {
             display: block;
             color: var(--text-glow);
@@ -329,12 +187,15 @@
             transition: all 0.4s;
             position: relative;
             font-size: 1.1rem;
+            margin-bottom: 10px;
+            border-radius: 8px;
         }
 
         .contact-links a:hover {
             color: var(--accent-neon);
             padding-left: 50px;
             text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
+            background: rgba(0, 238, 255, 0.1);
         }
 
         .contact-links a i {
@@ -348,15 +209,97 @@
             text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
         }
 
+        /* Right column - Welcome message */
+        .right-column {
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(0, 238, 255, 0.3);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: float 8s ease-in-out infinite 1s;
+        }
+
+        .right-column::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            border-radius: 25px;
+            z-index: -1;
+        }
+
+        .welcome-message {
+            text-align: center;
+        }
+
+        .welcome-message h1 {
+            font-size: 3.5rem;
+            color: var(--accent-neon);
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.2;
+            position: relative;
+        }
+
+        .welcome-message h1::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--accent-neon), transparent);
+            margin: 25px auto;
+        }
+
+        .welcome-message p {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Shining elements */
+        .shine {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.9);
+            animation: shineEffect 3s infinite alternate;
+            z-index: 5;
+        }
+
+        @keyframes shineEffect {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
         /* Footer section */
         .footer-section {
             text-align: center;
             padding: 40px 20px;
-            margin-top: 40px;
+            margin-top: 60px;
             width: 100%;
             border-top: 1px solid rgba(0, 238, 255, 0.3);
-            max-width: 900px;
-            transform: rotate(1deg);
+            grid-column: 1 / -1;
         }
 
         .visitor-counter {
@@ -381,45 +324,25 @@
             text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
         }
 
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
-            50% { transform: translateY(-20px) rotate(var(--rotate, 0deg)); }
-        }
-
-        .floating {
-            animation: float 8s ease-in-out infinite;
-        }
-
         /* Responsive design */
         @media (max-width: 1100px) {
-            .profile-section {
-                flex-direction: column;
-                align-items: center;
+            .content {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
             
-            .profile-card:nth-child(2) {
-                margin-top: 0;
-            }
-            
-            .info-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .info-card {
-                margin-top: 40px !important;
-                transform: rotate(0) !important;
+            .welcome-message h1 {
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 768px) {
-            .welcome-section h1 {
+            .welcome-message h1 {
                 font-size: 2.4rem;
             }
             
-            .welcome-section p {
-                font-size: 1.2rem;
+            .welcome-message p {
+                font-size: 1.4rem;
             }
             
             nav.navtop a {
@@ -433,18 +356,22 @@
                 margin-top: 80px;
             }
             
-            .profile-card, .info-card {
-                padding: 25px;
+            .left-column, .right-column {
+                padding: 30px;
+            }
+            
+            .profile-title h1 {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .welcome-section {
-                padding: 30px 20px;
+            .welcome-message h1 {
+                font-size: 2rem;
             }
             
-            .welcome-section h1 {
-                font-size: 2rem;
+            .welcome-message p {
+                font-size: 1.2rem;
             }
             
             nav.navtop {
@@ -467,6 +394,12 @@
     <!-- Galaxy Background -->
     <div id="galaxy-bg"></div>
     
+    <!-- Shining elements -->
+    <div class="shine" style="top: 20%; left: 15%;"></div>
+    <div class="shine" style="top: 40%; left: 85%;"></div>
+    <div class="shine" style="top: 70%; left: 30%;"></div>
+    <div class="shine" style="top: 80%; left: 70%;"></div>
+    
     <!-- Navigation menu -->
     <nav class="navtop">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
@@ -480,144 +413,46 @@
     </nav>
     
     <div class="content">
-        <!-- Welcome banner -->
-        <div class="welcome-section floating" style="--rotate: -1deg;">
-            <h1>✨ Welcome to My Cosmic Journey ✨</h1>
-            <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
-        </div>
-        
-        <!-- Profile section -->
-        <div class="profile-section">
-            <div class="profile-card floating" style="--rotate: 2deg;">
-                <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
-                
-                <div class="profile-title">
-                    <h1>Dr. Hanan Absike</h1>
-                    <p>PhD in Physics | Computational Scientist</p>
-                </div>
-                
-                <div class="contact-links">
-                    <h2 class="section-title"><i class="fas fa-link"></i> Connect With Me</h2>
-                    <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ" target="_blank">
-                        <i class="fab fa-google"></i> Google Scholar
-                    </a>
-                    <a href="https://www.researchgate.net/profile/H-Absike" target="_blank">
-                        <i class="fab fa-researchgate"></i> ResearchGate
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-file-pdf"></i> Download CV (PDF)
-                    </a>
-                </div>
+        <!-- Left column - Profile photo and info -->
+        <div class="left-column">
+            <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
+            
+            <div class="profile-title">
+                <h1>Dr. Hanan Absike</h1>
+                <p>PhD in Physics | Computational Scientist</p>
             </div>
             
-            <div class="profile-card floating" style="--rotate: -1deg;">
-                <h2 class="section-title"><i class="fas fa-seedling"></i> Research Interests</h2>
-                <ul>
-                    <li>Material Modelling & Simulation</li>
-                    <li>Quantum Transport Phenomena</li>
-                    <li>Experimental Physics Techniques</li>
-                    <li>Scientific Computing & Algorithms</li>
-                    <li>High-Performance Computing</li>
-                    <li>Computational Astrophysics</li>
-                </ul>
-                
-                <h2 class="section-title" style="margin-top: 30px;"><i class="fas fa-code"></i> Technical Expertise</h2>
-                <ul>
-                    <li>Python & Scientific Libraries</li>
-                    <li>Quantum ESPRESSO & VASP</li>
-                    <li>High-Performance Computing</li>
-                    <li>Data Analysis & Visualization</li>
-                    <li>MATLAB & Numerical Methods</li>
-                    <li>Machine Learning in Physics</li>
-                </ul>
+            <h2 class="section-title"><i class="fas fa-link"></i> Connect With Me</h2>
+            <div class="contact-links">
+                <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ" target="_blank">
+                    <i class="fab fa-google"></i> Google Scholar
+                </a>
+                <a href="https://www.researchgate.net/profile/H-Absike" target="_blank">
+                    <i class="fab fa-researchgate"></i> ResearchGate
+                </a>
+                <a href="#">
+                    <i class="fas fa-file-pdf"></i> Download CV (PDF)
+                </a>
             </div>
         </div>
         
-        <!-- Info cards -->
-        <div class="info-cards">
-            <div class="info-card floating" style="--rotate: -2deg;">
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-                
-                <div class="education-item">
-                    <strong>PhD in Physics (2019)</strong>
-                    <p>University of Mohammed V, Rabat</p>
-                    <p>Thesis: Advanced Materials Simulation Techniques</p>
-                </div>
-                
-                <div class="education-item">
-                    <strong>MSc in Computational Physics (2015)</strong>
-                    <p>University of Mohammed V, Rabat</p>
-                    <p>Focus: Quantum Systems Modeling</p>
-                </div>
-                
-                <div class="education-item">
-                    <strong>BSc in Physics (2013)</strong>
-                    <p>University of Mohammed V, Rabat</p>
-                    <p>Specialization: Theoretical Physics</p>
-                </div>
-            </div>
-            
-            <div class="info-card floating" style="--rotate: 1deg;">
-                <h2 class="section-title"><i class="fas fa-star"></i> Research Focus</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                    My research explores the intersection of computational physics and material science, 
-                    focusing on quantum transport phenomena in novel materials. I combine advanced simulation 
-                    techniques with experimental validation to unlock new understandings of material behaviors 
-                    at atomic scales.
-                </p>
-                
-                <h2 class="section-title"><i class="fas fa-project-diagram"></i> Current Projects</h2>
-                <ul>
-                    <li>Quantum transport in 2D materials</li>
-                    <li>HPC simulations of material defects</li>
-                    <li>Machine learning for material discovery</li>
-                    <li>Experimental validation of computational models</li>
-                    <li>Development of new simulation algorithms</li>
-                </ul>
-            </div>
-            
-            <div class="info-card floating" style="--rotate: 3deg;">
-                <h2 class="section-title"><i class="fas fa-paper-plane"></i> Get In Touch</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                    I'm always open to discussing new research collaborations, speaking opportunities, 
-                    or potential teaching positions. Feel free to reach out through any of the platforms below.
-                </p>
-                
-                <div class="contact-links">
-                    <a href="mailto:contact@hananabsike.com">
-                        <i class="fas fa-envelope"></i> contact@hananabsike.com
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-university"></i> University Profile
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-linkedin"></i> LinkedIn Profile
-                    </a>
-                </div>
-                
-                <h2 class="section-title" style="margin-top: 30px;"><i class="fas fa-globe"></i> Location</h2>
-                <p style="font-size: 1.1rem;">
-                    <i class="fas fa-map-marker-alt" style="color: var(--accent-neon); margin-right: 10px;"></i> 
-                    Rabat, Morocco
-                </p>
+        <!-- Right column - Welcome message -->
+        <div class="right-column">
+            <div class="welcome-message">
+                <h1>✨ Welcome to My Cosmic Journey ✨</h1>
+                <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
             </div>
         </div>
         
         <!-- Footer section -->
         <div class="footer-section">
-            <h2 class="section-title"><i class="fas fa-rocket"></i> Explore the Cosmos of Knowledge</h2>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 25px auto;">
-                "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science." 
-                - Albert Einstein
-            </p>
-            
             <div class="visitor-counter">
                 <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
-                <p style="margin-top: 15px; font-size: 1.1rem;">🔭 You're visitor number above 👆 — thanks for exploring my universe!</p>
+                <p style="margin-top: 15px; font-size: 1.1rem;">🔭 Vous êtes le visiteur numéro ci-dessus 👆 — merci d'explorer mon univers!</p>
             </div>
             
             <p class="copyright">
-                This interstellar portfolio is maintained by Dr. Hanan Absike • For collaboration or teaching opportunities, please reach out
+                Ce portfolio cosmique est maintenu par le Dr. Hanan Absike • Pour toute collaboration ou opportunité d'enseignement, n'hésitez pas à me contacter
             </p>
         </div>
     </div>
@@ -674,14 +509,33 @@
             }
         }
         
-        // Initialize galaxy on load
+        // Add sparkling effect to elements
+        function addSparkles() {
+            const container = document.querySelector('.content');
+            const sparkleCount = 8;
+            
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('shine');
+                
+                // Random position within content area
+                const posX = 5 + Math.random() * 90;
+                const posY = 5 + Math.random() * 90;
+                
+                sparkle.style.left = `${posX}%`;
+                sparkle.style.top = `${posY}%`;
+                sparkle.style.animationDelay = `${Math.random() * 3}s`;
+                sparkle.style.width = `${10 + Math.random() * 20}px`;
+                sparkle.style.height = sparkle.style.width;
+                
+                container.appendChild(sparkle);
+            }
+        }
+        
+        // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
             createGalaxy();
-            
-            // Add floating animation to all floating elements with random delays
-            document.querySelectorAll('.floating').forEach(el => {
-                el.style.animationDelay = `${Math.random() * 2}s`;
-            });
+            addSparkles();
             
             // Add scroll effect to navigation
             window.addEventListener('scroll', function() {
@@ -705,6 +559,15 @@
                         behavior: 'smooth'
                     });
                 });
+            });
+            
+            // Add hover effect to welcome text
+            const welcomeText = document.querySelector('.welcome-message');
+            welcomeText.addEventListener('mouseenter', () => {
+                welcomeText.style.textShadow = '0 0 30px rgba(0, 238, 255, 0.9)';
+            });
+            welcomeText.addEventListener('mouseleave', () => {
+                welcomeText.style.textShadow = '0 0 20px rgba(0, 238, 255, 0.8)';
             });
         });
     </script>
