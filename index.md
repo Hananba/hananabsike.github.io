@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -93,13 +94,32 @@
             transform: translateY(-3px);
         }
 
-        /* Main content - Vertical layout */
+        /* Main content - Two-column layout */
         .content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 100px auto 60px;
             padding: 30px;
             display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Left column - Profile section */
+        .left-column {
+            flex: 1;
+            min-width: 350px;
+            display: flex;
             flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Right column - Content sections */
+        .right-column {
+            flex: 2;
+            min-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         /* Vertical sections */
@@ -112,7 +132,6 @@
             backdrop-filter: blur(5px);
             position: relative;
             z-index: 10;
-            margin-bottom: 40px;
             width: 100%;
         }
 
@@ -127,11 +146,12 @@
         .profile-photo {
             width: 220px;
             height: 220px;
-            border-radius: 8px;
+            border-radius: 50%;
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
             margin-bottom: 30px;
             object-fit: cover;
+            background: linear-gradient(45deg, #0d324d, #7f5a83);
         }
 
         .profile-title h1 {
@@ -164,10 +184,10 @@
 
         .contact-links {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
             margin-top: 20px;
+            width: 100%;
         }
 
         .contact-links a {
@@ -200,6 +220,11 @@
         .welcome-section {
             text-align: center;
             padding: 50px 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .welcome-section h1 {
@@ -217,12 +242,36 @@
             letter-spacing: 1px;
             line-height: 1.6;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
+        }
+
+        .cosmic-animation {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(0, 238, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--accent-neon);
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.7);
+            transform: translate(-50%, -50%);
         }
 
         /* Content sections */
         .content-section {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .content-section h2 {
@@ -323,6 +372,16 @@
         }
 
         /* Responsive design */
+        @media (max-width: 992px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .left-column, .right-column {
+                min-width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .content {
                 padding: 20px 15px;
@@ -351,15 +410,9 @@
                 font-size: 2.2rem;
             }
             
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-links a {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
+            .cosmic-animation {
+                width: 250px;
+                height: 250px;
             }
         }
 
@@ -374,16 +427,29 @@
             
             nav.navtop {
                 padding: 12px 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav.navtop a {
                 font-size: 0.8rem;
-                margin: 0 5px;
+                margin: 5px;
                 padding: 5px 8px;
             }
             
             .section-title {
                 font-size: 1.6rem;
+            }
+            
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .cosmic-animation {
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
@@ -411,113 +477,135 @@
     </nav>
     
     <div class="content">
-        <!-- Profile section -->
-        <div class="vertical-section profile-section" id="home">
-            <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
-            
-            <div class="profile-title">
-                <h1>Dr. Hanan Absike</h1>
-                <p>PhD in Physics | Computational Scientist</p>
-            </div>
-            
-            <h2 class="section-title"><i class="fas fa-link"></i> Connect With Me</h2>
-            <div class="contact-links">
-                <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ" target="_blank">
-                    <i class="fab fa-google"></i> Google Scholar
-                </a>
-                <a href="https://www.researchgate.net/profile/H-Absike" target="_blank">
-                    <i class="fab fa-researchgate"></i> ResearchGate
-                </a>
-                <a href="#">
-                    <i class="fas fa-file-pdf"></i> Download CV (PDF)
-                </a>
-            </div>
-        </div>
-        
-        <!-- Welcome section -->
-        <div class="vertical-section welcome-section">
-            <h1>✨ Welcome to My Cosmic Journey ✨</h1>
-            <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
-        </div>
-        
-        <!-- Research Interests -->
-        <div class="vertical-section">
-            <div class="content-section">
-                <h2><i class="fas fa-seedling"></i> Research Interests</h2>
-                <p>My research explores the intersection of computational physics and material science, focusing on quantum phenomena and material behaviors at atomic scales.</p>
-                <ul>
-                    <li>Material Modelling & Simulation</li>
-                    <li>Quantum Transport Phenomena</li>
-                    <li>Experimental Physics Techniques</li>
-                    <li>High-Performance Computing</li>
-                    <li>Computational Astrophysics</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Education -->
-        <div class="vertical-section">
-            <div class="content-section">
-                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                <div class="education-item">
-                    <h3>PhD in Physics (2019)</h3>
-                    <p>University of Mohammed V, Rabat</p>
-                    <p>Thesis: Advanced Materials Simulation Techniques</p>
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Profile section -->
+            <div class="vertical-section profile-section" id="home">
+                <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
+                
+                <div class="profile-title">
+                    <h1>Dr. Hanan Absike</h1>
+                    <p>PhD in Physics | Computational Scientist</p>
                 </div>
-                <div class="education-item">
-                    <h3>MSc in Computational Physics (2015)</h3>
-                    <p>University of Mohammed V, Rabat</p>
-                    <p>Focus: Quantum Systems Modeling</p>
+                
+                <h2 class="section-title"><i class="fas fa-link"></i> Connect With Me</h2>
+                <div class="contact-links">
+                    <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ" target="_blank">
+                        <i class="fab fa-google"></i> Google Scholar
+                    </a>
+                    <a href="https://www.researchgate.net/profile/H-Absike" target="_blank">
+                        <i class="fab fa-researchgate"></i> ResearchGate
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-file-pdf"></i> Download CV (PDF)
+                    </a>
+                    <a href="mailto:hanan@example.com">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/hananabsike" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
                 </div>
-                <div class="education-item">
-                    <h3>BSc in Physics (2013)</h3>
-                    <p>University of Mohammed V, Rabat</p>
-                    <p>Specialization: Theoretical Physics</p>
+            </div>
+            
+            <!-- Technical Expertise -->
+            <div class="vertical-section">
+                <div class="content-section">
+                    <h2><i class="fas fa-code"></i> Technical Expertise</h2>
+                    <p>I leverage advanced computational tools to explore fundamental properties of materials:</p>
+                    <ul>
+                        <li>Python & Scientific Libraries</li>
+                        <li>Quantum ESPRESSO & VASP</li>
+                        <li>High-Performance Computing</li>
+                        <li>MATLAB & Numerical Methods</li>
+                        <li>Data Analysis & Visualization</li>
+                        <li>Machine Learning in Physics</li>
+                    </ul>
                 </div>
             </div>
         </div>
         
-        <!-- Technical Expertise -->
-        <div class="vertical-section">
-            <div class="content-section">
-                <h2><i class="fas fa-code"></i> Technical Expertise</h2>
-                <p>I leverage advanced computational tools and programming languages to explore the fundamental properties of materials.</p>
-                <ul>
-                    <li>Python & Scientific Libraries (NumPy, SciPy)</li>
-                    <li>Quantum ESPRESSO & VASP</li>
-                    <li>High-Performance Computing (HPC)</li>
-                    <li>MATLAB & Numerical Methods</li>
-                    <li>Data Analysis & Visualization</li>
-                    <li>Machine Learning in Physics</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Current Projects -->
-        <div class="vertical-section">
-            <div class="content-section">
-                <h2><i class="fas fa-project-diagram"></i> Current Projects</h2>
-                <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
-                <ul>
-                    <li>Quantum transport in 2D materials</li>
-                    <li>HPC simulations of material defects</li>
-                    <li>Machine learning for material discovery</li>
-                    <li>Experimental validation of computational models</li>
-                    <li>Development of new simulation algorithms</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Footer section -->
-        <div class="footer-section">
-            <div class="visitor-counter">
-                <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
-                <p style="margin-top: 15px; font-size: 1.1rem;">🔭 You are visitor number above 👆 — thank you for exploring my universe!</p>
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Welcome section -->
+            <div class="vertical-section welcome-section">
+                <h1>✨ Welcome to My Cosmic Journey ✨</h1>
+                <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
+                
+                <div class="cosmic-animation">
+                    <div class="orbit" style="width: 280px; height: 280px;"></div>
+                    <div class="orbit" style="width: 200px; height: 200px;"></div>
+                    <div class="orbit" style="width: 120px; height: 120px;"></div>
+                    
+                    <div class="planet" id="planet1" style="width: 40px; height: 40px;"></div>
+                    <div class="planet" id="planet2" style="width: 30px; height: 30px;"></div>
+                    <div class="planet" id="planet3" style="width: 20px; height: 20px;"></div>
+                </div>
             </div>
             
-            <p class="copyright">
-                This cosmic portfolio is maintained by Dr. Hanan Absike • For collaboration or teaching opportunities, please contact me
-            </p>
+            <!-- Research Interests -->
+            <div class="vertical-section">
+                <div class="content-section">
+                    <h2><i class="fas fa-seedling"></i> Research Interests</h2>
+                    <p>My research explores the intersection of computational physics and material science, focusing on quantum phenomena at atomic scales.</p>
+                    <ul>
+                        <li>Material Modelling & Simulation</li>
+                        <li>Quantum Transport Phenomena</li>
+                        <li>Experimental Physics Techniques</li>
+                        <li>High-Performance Computing</li>
+                        <li>Computational Astrophysics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="vertical-section">
+                <div class="content-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <h3>PhD in Physics (2019)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Thesis: Advanced Materials Simulation Techniques</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>MSc in Computational Physics (2015)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Focus: Quantum Systems Modeling</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>BSc in Physics (2013)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Specialization: Theoretical Physics</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Current Projects -->
+            <div class="vertical-section">
+                <div class="content-section">
+                    <h2><i class="fas fa-project-diagram"></i> Current Projects</h2>
+                    <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
+                    <ul>
+                        <li>Quantum transport in 2D materials</li>
+                        <li>HPC simulations of material defects</li>
+                        <li>Machine learning for material discovery</li>
+                        <li>Experimental validation of computational models</li>
+                        <li>Development of new simulation algorithms</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer section -->
+            <div class="footer-section">
+                <div class="visitor-counter">
+                    <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
+                    <p style="margin-top: 15px; font-size: 1.1rem;">🔭 You are visitor number above 👆 — thank you for exploring my universe!</p>
+                </div>
+                
+                <p class="copyright">
+                    This cosmic portfolio is maintained by Dr. Hanan Absike • For collaboration or teaching opportunities, please contact me
+                </p>
+            </div>
         </div>
     </div>
 
@@ -573,9 +661,45 @@
             }
         }
         
+        // Animate planets
+        function animatePlanets() {
+            const planet1 = document.getElementById('planet1');
+            const planet2 = document.getElementById('planet2');
+            const planet3 = document.getElementById('planet3');
+            
+            let angle1 = 0;
+            let angle2 = 0;
+            let angle3 = 0;
+            
+            setInterval(() => {
+                angle1 += 0.005;
+                angle2 += 0.008;
+                angle3 += 0.012;
+                
+                // Planet 1 (outer orbit)
+                const x1 = Math.cos(angle1) * 140;
+                const y1 = Math.sin(angle1) * 140;
+                planet1.style.left = `calc(50% + ${x1}px)`;
+                planet1.style.top = `calc(50% + ${y1}px)`;
+                
+                // Planet 2 (middle orbit)
+                const x2 = Math.cos(angle2) * 100;
+                const y2 = Math.sin(angle2) * 100;
+                planet2.style.left = `calc(50% + ${x2}px)`;
+                planet2.style.top = `calc(50% + ${y2}px)`;
+                
+                // Planet 3 (inner orbit)
+                const x3 = Math.cos(angle3) * 60;
+                const y3 = Math.sin(angle3) * 60;
+                planet3.style.left = `calc(50% + ${x3}px)`;
+                planet3.style.top = `calc(50% + ${y3}px)`;
+            }, 20);
+        }
+        
         // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
             createGalaxy();
+            animatePlanets();
             
             // Add scroll effect to navigation
             window.addEventListener('scroll', function() {
