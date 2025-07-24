@@ -149,7 +149,7 @@ layout: none
 
         .profile-photo {
             width: 220px;
-            height: 300px;
+            height: 350px;
             border-radius: 50%;
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
@@ -448,7 +448,7 @@ layout: none
             
             .profile-photo {
                 width: 180px;
-                height: 180px;
+                height: 280px;
             }
             
             .cosmic-animation {
