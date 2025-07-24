@@ -148,7 +148,7 @@ layout: none
         }
 
         .profile-photo {
-            width: 200px;
+            width: 180px;
             height: 220px;
             border-radius: 50%;
             border: 2px solid var(--accent-neon);
