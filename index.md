@@ -448,7 +448,7 @@ layout: none
             
             .profile-photo {
                 width: 180px;
-                height: 200px;
+                height: 180px;
             }
             
             .cosmic-animation {
