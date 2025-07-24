@@ -7,7 +7,7 @@ layout: none
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hanan Absike - Computational Physicist</title>
+    <title> Hanan ABSIKE, PhD </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -149,7 +149,7 @@ layout: none
 
         .profile-photo {
             width: 220px;
-            height: 220px;
+            height: 200px;
             border-radius: 50%;
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
