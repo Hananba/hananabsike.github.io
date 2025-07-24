@@ -1,7 +1,3 @@
----
-layout: none
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +97,7 @@ layout: none
         /* Main content - Two-column layout */
         .content {
             max-width: 1400px;
-            margin: 100px auto 60px;
+            margin: 120px auto 60px; /* Increased top margin */
             padding: 30px;
             display: flex;
             flex-wrap: wrap;
@@ -147,15 +143,23 @@ layout: none
             text-align: center;
         }
 
-        .profile-photo {
+        .profile-photo-container {
+            position: relative;
             width: 220px;
             height: 220px;
+            margin-bottom: 30px;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             border: 2px solid var(--accent-neon);
             box-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
-            margin-bottom: 30px;
             object-fit: cover;
             background: linear-gradient(45deg, #0d324d, #7f5a83);
+            object-position: top center; /* Ensures head is properly positioned */
+            transform: scale(0.95); /* Slightly scaled down */
         }
 
         .profile-title h1 {
@@ -316,6 +320,32 @@ layout: none
             text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
         }
 
+        /* Technical expertise specific styling */
+        .expertise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .expertise-item {
+            background: rgba(0, 26, 51, 0.2);
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-item:hover {
+            background: rgba(0, 238, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 238, 255, 0.3);
+        }
+
         .education-item {
             margin-bottom: 25px;
             padding-left: 20px;
@@ -389,7 +419,7 @@ layout: none
         @media (max-width: 768px) {
             .content {
                 padding: 20px 15px;
-                margin-top: 80px;
+                margin-top: 100px;
             }
             
             .vertical-section {
@@ -455,6 +485,10 @@ layout: none
                 width: 200px;
                 height: 200px;
             }
+            
+            .expertise-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -485,7 +519,9 @@ layout: none
         <div class="left-column">
             <!-- Profile section -->
             <div class="vertical-section profile-section" id="home">
-                <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
+                <div class="profile-photo-container">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Dr. Hanan Absike" class="profile-photo">
+                </div>
                 
                 <div class="profile-title">
                     <h1>Dr. Hanan Absike</h1>
@@ -516,15 +552,19 @@ layout: none
             <div class="vertical-section">
                 <div class="content-section">
                     <h2><i class="fas fa-code"></i> Technical Expertise</h2>
-                    <p>I leverage advanced computational tools to explore fundamental properties of materials:</p>
-                    <ul>
-                        <li>Python & Scientific Libraries</li>
-                        <li>Quantum ESPRESSO & VASP</li>
-                        <li>High-Performance Computing</li>
-                        <li>MATLAB & Numerical Methods</li>
-                        <li>Data Analysis & Visualization</li>
-                        <li>Machine Learning in Physics</li>
-                    </ul>
+                    <p>Advanced skills in computational physics and material science:</p>
+                    <div class="expertise-list">
+                        <div class="expertise-item">🛰️ High-Performance Computing (HPC)</div>
+                        <div class="expertise-item">🌍 Simulation-Experiment Coupling</div>
+                        <div class="expertise-item">🔁 Device Simulations</div>
+                        <div class="expertise-item">🔧 Modeling of Nanomaterials</div>
+                        <div class="expertise-item">🧮 Scientific Programming</div>
+                        <div class="expertise-item">💡 Material Synthesis Techniques</div>
+                        <div class="expertise-item">🧪 Experimental Thin Film Characterization</div>
+                        <div class="expertise-item">🔬 Electronic Structure Calculations</div>
+                        <div class="expertise-item">⚙️ Quantum Transport Modeling</div>
+                        <div class="expertise-item">🧠 Density Functional Theory (DFT) Simulations</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -543,7 +583,9 @@ layout: none
                     
                     <div class="planet" id="planet1" style="width: 40px; height: 40px;"></div>
                     <div class="planet" id="planet2" style="width: 30px; height: 30px;"></div>
-                    <div class="planet" id="planet3" style="width: 20px; height: 20px;"></div>
+                    <div class="profile-photo-container">
+                        <div class="planet" id="planet3" style="width: 20px; height: 20px;"></div>
+                    </div>
                 </div>
             </div>
             
