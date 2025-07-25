@@ -592,10 +592,10 @@ layout: none
                     <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
                     <ul>
                         <li>Quantum transport in 2D materials</li>
-                        <li>HPC simulations of material defects</li>
+                        <li>HPC programming simulations </li>
                         <li>Machine learning for material discovery</li>
                         <li>Experimental validation of computational models</li>
-                        <li>Development of new simulation algorithms</li>
+                        <li>Development of new simulation algorithms & data science</li>
                     </ul>
                 </div>
             </div>
