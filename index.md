@@ -488,8 +488,8 @@ layout: none
                 <img src="doc/123.jpg" alt="Dr. Hanan Absike" class="profile-photo">
                 
                 <div class="profile-title">
-                    <h1>Dr. Hanan Absike</h1>
-                    <p>PhD in Physics | Computational Scientist</p>
+                    <h1>Hanan ABSIKE, PhD</h1>
+                    <p>PhD in Physics </p>
                 </div>
                 
                 <h2 class="section-title"><i class="fas fa-link"></i> Connect With Me</h2>
@@ -518,12 +518,13 @@ layout: none
                     <h2><i class="fas fa-code"></i> Technical Expertise</h2>
                     <p>I leverage advanced computational tools to explore fundamental properties of materials:</p>
                     <ul>
-                        <li>Python & Scientific Libraries</li>
-                        <li>Quantum ESPRESSO & VASP</li>
-                        <li>High-Performance Computing</li>
-                        <li>MATLAB & Numerical Methods</li>
+                        <li>🧮 Scientific Programming</li>
+                        <li>🔧 Modeling of Nanomaterials </li>
+                        <li>🛰️ High-Performance Computing</li>
+                        <li>⚙️ DFT & Quantum Transport Modeling </li>
                         <li>Data Analysis & Visualization</li>
-                        <li>Machine Learning in Physics</li>
+                        <li>🌍 Simulation-Experiment Coupling</li>
+                        <li>🧪 Experimental Thin Film Characterization</li> 
                     </ul>
                 </div>
             </div>
