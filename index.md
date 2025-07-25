@@ -534,7 +534,7 @@ layout: none
             <!-- Welcome section -->
             <div class="vertical-section welcome-section">
                 <h1>✨ Welcome to My Cosmic Journey ✨</h1>
-                <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
+                <p>Exploring the Universe Through Physics and Computation < Website under construction>🌌🪐🧠</p>
                 
                 <div class="cosmic-animation">
                     <div class="orbit" style="width: 280px; height: 280px;"></div>
