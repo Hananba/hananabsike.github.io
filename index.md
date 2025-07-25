@@ -518,13 +518,13 @@ layout: none
                     <h2><i class="fas fa-code"></i> Technical Expertise</h2>
                     <p>I leverage advanced computational tools to explore fundamental properties of materials:</p>
                     <ul>
-                        <li>🧮 Scientific Programming</li>
-                        <li>🔧 Modeling of Nanomaterials </li>
-                        <li>🛰️ High-Performance Computing</li>
-                        <li>⚙️ DFT & Quantum Transport Modeling </li>
+                        <li>Scientific Programming</li>
+                        <li>Modeling of Nanomaterials </li>
+                        <li>High-Performance Computing</li>
+                        <li>DFT & Quantum Transport Modeling </li>
                         <li>Data Analysis & Visualization</li>
-                        <li>🌍 Simulation-Experiment Coupling</li>
-                        <li>🧪 Experimental Thin Film Characterization</li> 
+                        <li>Simulation-Experiment Coupling</li>
+                        <li>Experimental Thin Film Characterization</li> 
                     </ul>
                 </div>
             </div>
