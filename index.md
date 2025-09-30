@@ -522,7 +522,7 @@ layout: none
     <nav class="navtop">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#experience"><i class="fas fa-flask"></i> Experience</a>
-        <a href="#publications"><i class="fas fa-book"></i> Publications</a>
+        <a href="publications.html"><i class="fas fa-book"></i> Publications</a>
         <a href="#teaching"><i class="fas fa-graduation-cap"></i> Teaching</a>
         <a href="#activities"><i class="fas fa-hands-helping"></i> Activities</a>
         <a href="#interests"><i class="fas fa-seedling"></i> Interests</a>
@@ -931,5 +931,6 @@ layout: none
     </script>
 </body>
 </html>
+
 
 
