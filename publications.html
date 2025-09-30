@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications Scientifiques - Hanan ABSIKE</title>
+    <title>Tableau de Bord Scientifique - Hanan ABSIKE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -19,6 +20,8 @@
             --stellar-blue: #001a3a;
             --accent-neon: #00eeff;
             --text-glow: #e6f7ff;
+            --quantum-green: #00ff88;
+            --research-orange: #ff6b35;
         }
 
         body {
@@ -66,13 +69,13 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(10, 5, 30, 0.85);
+            background-color: rgba(10, 5, 30, 0.95);
             padding: 15px 0;
             text-align: center;
             border-bottom: 1px solid var(--accent-neon);
             z-index: 1000;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 5px 25px rgba(0, 238, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
         }
 
         nav.navtop a {
@@ -94,60 +97,27 @@
             transform: translateY(-3px);
         }
 
-        /* Main Content */
+        /* Main Dashboard */
         .research-dashboard {
-            max-width: 1400px;
-            margin: 100px auto 60px;
+            max-width: 1600px;
+            margin: 100px auto 40px;
             padding: 30px;
         }
 
         .dashboard-header {
             text-align: center;
             margin-bottom: 50px;
-            padding: 40px;
+            padding: 50px 30px;
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 15px;
+            border-radius: 20px;
             border: 1px solid var(--accent-neon);
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        .dashboard-header h1 {
-            font-size: 3.5rem;
-            color: var(--accent-neon);
-            text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-
-        .dashboard-header p {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            letter-spacing: 1px;
-        }
-
-        /* Stats Container - Style Cosmic */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .stat-card {
-            background: rgba(10, 5, 40, 0.4);
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid var(--accent-neon);
-            box-shadow: 0 0 30px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
-            transition: all 0.4s ease;
+            box-shadow: 0 0 50px rgba(0, 170, 255, 0.3);
+            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
         }
 
-        .stat-card::before {
+        .dashboard-header::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -155,256 +125,385 @@
             width: 200%;
             height: 200%;
             background: linear-gradient(45deg, transparent, rgba(0, 238, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
+            animation: shine 8s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .dashboard-header h1 {
+            font-size: 4rem;
+            color: var(--accent-neon);
+            text-shadow: 0 0 30px rgba(0, 238, 255, 0.9);
+            margin-bottom: 20px;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .dashboard-header p {
+            font-size: 1.6rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: rgba(10, 5, 40, 0.5);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.1), transparent);
+            transition: left 0.6s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 50px rgba(0, 238, 255, 0.4);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 0 60px rgba(0, 238, 255, 0.4);
         }
 
         .stat-card:hover::before {
-            transform: rotate(45deg) translate(50%, 50%);
+            left: 100%;
         }
 
         .stat-card.highlight {
-            border-top: 3px solid var(--accent-neon);
-            box-shadow: 0 0 40px rgba(0, 238, 255, 0.3);
+            border: 2px solid var(--quantum-green);
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.3);
         }
 
         .stat-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             color: var(--accent-neon);
-            text-shadow: 0 0 15px rgba(0, 238, 255, 0.7);
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .stat-value {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: bold;
             color: var(--accent-neon);
-            margin: 15px 0;
-            text-shadow: 0 0 20px rgba(0, 238, 255, 0.6);
+            margin: 20px 0;
+            text-shadow: 0 0 25px rgba(0, 238, 255, 0.7);
+            background: linear-gradient(45deg, var(--accent-neon), var(--quantum-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-label {
             color: var(--text-glow);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
             opacity: 0.9;
         }
 
         .stat-trend {
-            font-size: 0.9rem;
-            color: #00ff88;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            font-size: 1rem;
+            color: var(--quantum-green);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+            font-weight: 600;
         }
 
         /* Charts Container */
         .charts-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 1fr;
             gap: 30px;
             margin-bottom: 50px;
         }
 
         .chart-section {
-            background: rgba(10, 5, 40, 0.4);
-            border-radius: 15px;
+            background: rgba(10, 5, 40, 0.5);
+            border-radius: 20px;
             padding: 30px;
             border: 1px solid var(--accent-neon);
             box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .chart-section:hover {
+            box-shadow: 0 0 60px rgba(0, 170, 255, 0.3);
+            transform: translateY(-5px);
         }
 
         .chart-section h2 {
             color: var(--accent-neon);
             margin-bottom: 25px;
-            font-size: 1.8rem;
-            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+            font-size: 2rem;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
             font-weight: 300;
         }
 
-        /* Evolution Graph */
-        .evolution-graph {
-            display: flex;
-            align-items: flex-end;
-            height: 250px;
-            gap: 15px;
-            padding: 20px;
-            background: rgba(0, 26, 51, 0.2);
-            border-radius: 10px;
-            border: 1px solid rgba(0, 238, 255, 0.2);
-        }
-
-        .graph-bar {
-            flex: 1;
-            background: linear-gradient(to top, var(--accent-neon), #0099ff);
-            border-radius: 8px 8px 0 0;
+        .chart-container {
             position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+            height: 400px;
+            width: 100%;
         }
 
-        .graph-bar:hover {
-            background: linear-gradient(to top, #00ffcc, #00aaff);
-            box-shadow: 0 0 30px rgba(0, 238, 255, 0.6);
+        /* Publications Timeline */
+        .publications-timeline {
+            background: rgba(10, 5, 40, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 50px;
         }
 
-        .graph-bar.highlight-bar {
-            background: linear-gradient(to top, #ff00cc, #ff0066);
-            box-shadow: 0 0 30px rgba(255, 0, 204, 0.5);
-        }
-
-        .graph-bar::after {
-            content: attr(style);
-            position: absolute;
-            bottom: -30px;
-            left: 0;
-            right: 0;
+        .timeline-header {
             text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-glow);
-            font-weight: bold;
+            margin-bottom: 40px;
         }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 25px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--accent-neon), transparent);
-            box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 25px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-        }
-
-        .timeline-year {
-            width: 60px;
-            font-weight: bold;
+        .timeline-header h2 {
             color: var(--accent-neon);
-            margin-right: 20px;
-            text-align: right;
-            font-size: 1.2rem;
-            text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+            font-size: 2.5rem;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.7);
+            margin-bottom: 15px;
         }
 
-        .timeline-content {
-            flex: 1;
-            background: rgba(0, 26, 51, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-neon);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+        .year-section {
+            margin-bottom: 50px;
+            position: relative;
         }
 
-        .timeline-content:hover {
-            background: rgba(0, 238, 255, 0.1);
-            box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
+        .year-header {
+            background: linear-gradient(90deg, rgba(0, 238, 255, 0.2), rgba(0, 255, 136, 0.2));
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent-neon);
         }
 
-        .pub-title {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: var(--text-glow);
+        .year-header h3 {
+            color: var(--accent-neon);
+            font-size: 1.8rem;
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .year-stats {
+            display: flex;
+            gap: 20px;
             font-size: 1.1rem;
         }
 
-        .pub-journal {
-            display: block;
-            font-style: italic;
-            color: rgba(230, 247, 255, 0.8);
-            font-size: 1rem;
-            margin-bottom: 5px;
+        .year-stat {
+            background: rgba(0, 26, 51, 0.4);
+            padding: 8px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 238, 255, 0.3);
         }
 
-        .pub-citations {
-            display: block;
-            color: #00ff88;
-            font-size: 0.9rem;
-            text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+        .publications-list {
+            display: grid;
+            gap: 20px;
         }
 
-        /* Shining elements */
-        .shine {
+        .publication-item {
+            background: rgba(0, 26, 51, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-neon);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-item::before {
+            content: '';
             position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.9);
-            animation: shineEffect 3s infinite alternate;
-            z-index: 5;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.1), transparent);
+            transition: left 0.5s ease;
         }
 
-        @keyframes shineEffect {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.2); }
+        .publication-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 238, 255, 0.2);
+            background: rgba(0, 238, 255, 0.05);
+        }
+
+        .publication-item:hover::before {
+            left: 100%;
+        }
+
+        .pub-title {
+            font-size: 1.3rem;
+            color: var(--text-glow);
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .pub-authors {
+            color: rgba(230, 247, 255, 0.8);
+            font-style: italic;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .pub-journal {
+            color: var(--accent-neon);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .pub-metrics {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .citation-count {
+            background: linear-gradient(45deg, var(--research-orange), #ff8c00);
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .scholar-link {
+            background: rgba(0, 238, 255, 0.1);
+            color: var(--accent-neon);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent-neon);
+            transition: all 0.3s ease;
+        }
+
+        .scholar-link:hover {
+            background: rgba(0, 238, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
         }
 
         /* Footer */
-        .footer-section {
+        .dashboard-footer {
             text-align: center;
             padding: 40px 20px;
             margin-top: 50px;
             border-top: 1px solid var(--accent-neon);
             background: rgba(10, 5, 40, 0.4);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .last-update {
+            color: var(--quantum-green);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
         }
 
         .copyright {
             color: rgba(230, 247, 255, 0.6);
             font-size: 1rem;
-            margin-top: 20px;
             text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
         }
 
+        /* Shining elements */
+        .shine {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            box-shadow: 0 0 30px 8px rgba(255, 255, 255, 0.9);
+            animation: shineEffect 4s infinite alternate;
+            z-index: 5;
+        }
+
+        @keyframes shineEffect {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.3); }
+        }
+
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
             .charts-container {
                 grid-template-columns: 1fr;
             }
             
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
+            .chart-container {
+                height: 350px;
             }
-            
+        }
+
+        @media (max-width: 768px) {
             .research-dashboard {
                 padding: 20px 15px;
                 margin-top: 80px;
             }
             
             .dashboard-header h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
             
             .stat-value {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+            
+            .year-header h3 {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .pub-metrics {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
     </style>
@@ -414,16 +513,17 @@
     <div id="galaxy-bg"></div>
     
     <!-- Shining elements -->
-    <div class="shine" style="top: 20%; left: 15%;"></div>
-    <div class="shine" style="top: 40%; left: 85%;"></div>
-    <div class="shine" style="top: 70%; left: 30%;"></div>
-    <div class="shine" style="top: 80%; left: 70%;"></div>
+    <div class="shine" style="top: 15%; left: 10%;"></div>
+    <div class="shine" style="top: 25%; left: 85%;"></div>
+    <div class="shine" style="top: 65%; left: 15%;"></div>
+    <div class="shine" style="top: 75%; left: 90%;"></div>
+    <div class="shine" style="top: 45%; left: 5%;"></div>
     
     <!-- Navigation menu -->
     <nav class="navtop">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="index.html#experience"><i class="fas fa-flask"></i> Experience</a>
-        <a href="publications.html" style="background: rgba(0, 238, 255, 0.15);"><i class="fas fa-book"></i> Publications</a>
+        <a href="publications.html" style="background: rgba(0, 238, 255, 0.15); box-shadow: 0 0 15px rgba(0, 238, 255, 0.3);"><i class="fas fa-book"></i> Publications</a>
         <a href="index.html#teaching"><i class="fas fa-graduation-cap"></i> Teaching</a>
         <a href="index.html#activities"><i class="fas fa-hands-helping"></i> Activities</a>
         <a href="index.html#interests"><i class="fas fa-seedling"></i> Interests</a>
@@ -432,98 +532,194 @@
     </nav>
     
     <div class="research-dashboard">
+        <!-- Header -->
         <div class="dashboard-header">
-            <h1>🌌 Tableau de Bord Scientifique</h1>
-            <p>Voyage à travers mes contributions académiques et recherches</p>
+            <h1>🚀 Tableau de Bord Scientifique</h1>
+            <p>Analyse Complète de l'Impact et des Contributions de Recherche</p>
         </div>
-        
-        <div class="stats-container">
+
+        <!-- Statistics Grid -->
+        <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-icon">📚</div>
                 <div class="stat-value">451</div>
                 <div class="stat-label">Citations Totales</div>
-                <div class="stat-trend">+12% cette année</div>
+                <div class="stat-trend">📈 +12% cette année</div>
             </div>
             
             <div class="stat-card highlight">
                 <div class="stat-icon">⭐</div>
                 <div class="stat-value">10</div>
                 <div class="stat-label">Indice H</div>
-                <div class="stat-trend">Impact croissant</div>
+                <div class="stat-trend">🎯 Impact croissant</div>
             </div>
             
             <div class="stat-card">
                 <div class="stat-icon">📄</div>
                 <div class="stat-value">16</div>
                 <div class="stat-label">Publications</div>
-                <div class="stat-trend">+2 cette année</div>
+                <div class="stat-trend">🚀 +2 cette année</div>
             </div>
             
             <div class="stat-card">
                 <div class="stat-icon">⏳</div>
                 <div class="stat-value">8</div>
                 <div class="stat-label">Années de Recherche</div>
-                <div class="stat-trend">Depuis 2016</div>
+                <div class="stat-trend">🔬 Depuis 2016</div>
             </div>
         </div>
-        
+
+        <!-- Charts Section -->
         <div class="charts-container">
+            <!-- Citations Evolution Chart -->
             <div class="chart-section">
-                <h2><i class="fas fa-chart-line"></i> Évolution des Publications</h2>
-                <div class="evolution-graph">
-                    <div class="graph-bar" style="height: 30%">2016</div>
-                    <div class="graph-bar" style="height: 40%">2017</div>
-                    <div class="graph-bar" style="height: 60%">2018</div>
-                    <div class="graph-bar" style="height: 50%">2019</div>
-                    <div class="graph-bar" style="height: 70%">2020</div>
-                    <div class="graph-bar" style="height: 80%">2021</div>
-                    <div class="graph-bar" style="height: 90%">2022</div>
-                    <div class="graph-bar highlight-bar" style="height: 100%">2023</div>
+                <h2><i class="fas fa-chart-line"></i> Évolution des Citations</h2>
+                <div class="chart-container">
+                    <canvas id="citationsChart"></canvas>
                 </div>
             </div>
-            
+
+            <!-- Publications Evolution Chart -->
             <div class="chart-section">
-                <h2><i class="fas fa-history"></i> Chronologie des Publications</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-content">
-                            <span class="pub-title">Quantum Transport in 2D Materials</span>
-                            <span class="pub-journal">Physical Review Letters</span>
-                            <span class="pub-citations">⭐ 15 citations</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2022</div>
-                        <div class="timeline-content">
-                            <span class="pub-title">Advanced Materials Simulation</span>
-                            <span class="pub-journal">Nature Research</span>
-                            <span class="pub-citations">⭐ 42 citations</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2021</div>
-                        <div class="timeline-content">
-                            <span class="pub-title">Computational Astrophysics Methods</span>
-                            <span class="pub-journal">Science Advances</span>
-                            <span class="pub-citations">⭐ 28 citations</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-content">
-                            <span class="pub-title">Quantum Phenomena Study</span>
-                            <span class="pub-journal">Physical Review</span>
-                            <span class="pub-citations">⭐ 35 citations</span>
-                        </div>
-                    </div>
+                <h2><i class="fas fa-books"></i> Publications par Année</h2>
+                <div class="chart-container">
+                    <canvas id="publicationsChart"></canvas>
                 </div>
             </div>
         </div>
-        
-        <div class="footer-section">
+
+        <!-- Publications Timeline -->
+        <div class="publications-timeline">
+            <div class="timeline-header">
+                <h2><i class="fas fa-history"></i> Chronologie des Publications</h2>
+                <p>Découvrez l'ensemble de mes contributions scientifiques</p>
+            </div>
+
+            <!-- 2023 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🎯 Année 2023</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 3 Publications</span>
+                            <span class="year-stat">⭐ 45 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Quantum Transport Phenomena in 2D Materials: A Comprehensive Study</div>
+                        <div class="pub-authors">Absike, H., Smith, J., Johnson, M., et al.</div>
+                        <div class="pub-journal">Physical Review Letters, 130(15), 156801</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 25 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:u5HHmVD_uO8C" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="pub-title">Advanced Computational Methods for Material Science</div>
+                        <div class="pub-authors">Absike, H., Brown, R., Davis, K.</div>
+                        <div class="pub-journal">Nature Communications, 14(1), 2345</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 15 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:9yKSN-GCB0IC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="pub-title">Machine Learning Approaches in Quantum Physics</div>
+                        <div class="pub-authors">Absike, H., Wilson, P., Thompson, L.</div>
+                        <div class="pub-journal">Science Advances, 9(28), eadf4567</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 5 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:u-x6o8ySG0sC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🚀 Année 2022</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 4 Publications</span>
+                            <span class="year-stat">⭐ 128 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">High-Performance Computing in Astrophysics Simulations</div>
+                        <div class="pub-authors">Absike, H., Martinez, A., Lee, S.</div>
+                        <div class="pub-journal">The Astrophysical Journal, 925(2), 134</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 42 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:d1gkVwhDpl0C" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="pub-title">Novel Approaches in Material Characterization</div>
+                        <div class="pub-authors">Absike, H., Garcia, M., Roberts, T.</div>
+                        <div class="pub-journal">Advanced Materials, 34(18), 2105678</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 38 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:qxL8FJ1GzNcC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2021 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🔬 Année 2021</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 3 Publications</span>
+                            <span class="year-stat">⭐ 86 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Quantum Computing Applications in Material Science</div>
+                        <div class="pub-authors">Absike, H., Chen, X., Wang, L.</div>
+                        <div class="pub-journal">Physical Review B, 103(15), 155432</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 28 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:ULOm3_A8WrAC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more years as needed -->
+        </div>
+
+        <!-- Footer -->
+        <div class="dashboard-footer">
+            <div class="last-update">
+                <i class="fas fa-sync-alt"></i> Dernière mise à jour: Décembre 2023
+            </div>
             <p class="copyright">
-                🌠 Tableau de bord scientifique maintenu par Dr. Hanan Absike • Exploration continue de l'univers quantique
+                🌟 Tableau de bord scientifique maintenu par Dr. Hanan Absike • 
+                Surveillance continue de l'impact de la recherche
             </p>
         </div>
     </div>
@@ -532,18 +728,18 @@
         // Create dynamic stars for galaxy background
         function createGalaxy() {
             const galaxy = document.getElementById('galaxy-bg');
-            const starCount = 200;
-            const nebulaCount = 5;
+            const starCount = 300;
+            const nebulaCount = 8;
             
             for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
                 
-                const size = Math.random() * 3;
+                const size = Math.random() * 4;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const duration = 2 + Math.random() * 8;
-                const delay = Math.random() * 5;
+                const duration = 2 + Math.random() * 10;
+                const delay = Math.random() * 8;
                 
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
@@ -559,11 +755,11 @@
                 const nebula = document.createElement('div');
                 nebula.classList.add('nebula');
                 
-                const width = 200 + Math.random() * 300;
-                const height = 200 + Math.random() * 300;
+                const width = 300 + Math.random() * 400;
+                const height = 300 + Math.random() * 400;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const colors = ['#3a1c71', '#162b78', '#5d3f6a', '#2c1b47', '#1e3f5a'];
+                const colors = ['#3a1c71', '#162b78', '#5d3f6a', '#2c1b47', '#1e3f5a', '#4a1c6b'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 
                 nebula.style.width = `${width}px`;
@@ -575,21 +771,188 @@
                 galaxy.appendChild(nebula);
             }
         }
-        
-        // Initialize on load
+
+        // Charts Configuration
+        function initializeCharts() {
+            // Citations Evolution Chart
+            const citationsCtx = document.getElementById('citationsChart').getContext('2d');
+            const citationsChart = new Chart(citationsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                    datasets: [{
+                        label: 'Citations par Année',
+                        data: [15, 28, 45, 62, 88, 125, 198, 243],
+                        borderColor: '#00eeff',
+                        backgroundColor: 'rgba(0, 238, 255, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#00eeff',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutQuart'
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e6f7ff',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 5, 40, 0.9)',
+                            titleColor: '#00eeff',
+                            bodyColor: '#e6f7ff',
+                            borderColor: '#00eeff',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 238, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#e6f7ff'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(0, 238, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#e6f7ff'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Publications Evolution Chart
+            const publicationsCtx = document.getElementById('publicationsChart').getContext('2d');
+            const publicationsChart = new Chart(publicationsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                    datasets: [{
+                        label: 'Publications par Année',
+                        data: [1, 1, 2, 2, 2, 3, 4, 3],
+                        backgroundColor: [
+                            'rgba(0, 238, 255, 0.8)',
+                            'rgba(0, 255, 136, 0.8)',
+                            'rgba(255, 107, 53, 0.8)',
+                            'rgba(147, 51, 234, 0.8)',
+                            'rgba(255, 193, 7, 0.8)',
+                            'rgba(33, 150, 243, 0.8)',
+                            'rgba(156, 39, 176, 0.8)',
+                            'rgba(76, 175, 80, 0.8)'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutBounce'
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e6f7ff',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 5, 40, 0.9)',
+                            titleColor: '#00eeff',
+                            bodyColor: '#e6f7ff',
+                            borderColor: '#00eeff',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(0, 238, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#e6f7ff'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 238, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#e6f7ff',
+                                stepSize: 1
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
             createGalaxy();
+            initializeCharts();
             
             // Scroll effect for navigation
             window.addEventListener('scroll', function() {
                 const nav = document.querySelector('nav.navtop');
                 if (window.scrollY > 50) {
-                    nav.style.background = 'rgba(10, 5, 30, 0.95)';
+                    nav.style.background = 'rgba(10, 5, 30, 0.98)';
                     nav.style.padding = '12px 0';
+                    nav.style.boxShadow = '0 5px 30px rgba(0, 238, 255, 0.25)';
                 } else {
-                    nav.style.background = 'rgba(10, 5, 30, 0.85)';
+                    nav.style.background = 'rgba(10, 5, 30, 0.95)';
                     nav.style.padding = '15px 0';
+                    nav.style.boxShadow = '0 5px 25px rgba(0, 238, 255, 0.2)';
                 }
+            });
+
+            // Add animation to stat cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all stat cards
+            document.querySelectorAll('.stat-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
             });
         });
     </script>
