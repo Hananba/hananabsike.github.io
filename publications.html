@@ -1,1 +1,351 @@
+---
+layout: none
+---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Hanan ABSIKE, PhD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --deep-space: #000720;
+            --cosmic-purple: #1a063d;
+            --stellar-blue: #001a3a;
+            --accent-neon: #00eeff;
+            --text-glow: #e6f7ff;
+        }
+
+        body {
+            background: radial-gradient(ellipse at bottom, #0a0a2e 0%, #000013 100%);
+            color: var(--text-glow);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Galaxy Background */
+        #galaxy-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 4s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+        }
+
+        /* Navigation menu */
+        nav.navtop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 5, 30, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--accent-neon);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 25px rgba(0, 238, 255, 0.1);
+        }
+
+        nav.navtop a {
+            color: var(--accent-neon);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.4s ease;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-shadow: 0 0 5px rgba(0, 238, 255, 0.7);
+        }
+
+        nav.navtop a:hover {
+            color: white;
+            background: rgba(0, 238, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Main content */
+        .content {
+            max-width: 1200px;
+            margin: 100px auto 60px;
+            padding: 30px;
+        }
+
+        /* Publications section */
+        .publications-container {
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 8px;
+            padding: 40px;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .page-title {
+            text-align: center;
+            color: var(--accent-neon);
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
+        }
+
+        /* Publications styling */
+        .publications-list {
+            margin-top: 20px;
+        }
+
+        .publication-item {
+            margin-bottom: 30px;
+        }
+
+        .publication-item h3 {
+            color: var(--accent-neon);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 238, 255, 0.3);
+        }
+
+        .publication-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .publication-item li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(0, 26, 51, 0.3);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-neon);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .publication-item li:hover {
+            background: rgba(0, 238, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .publication-item li strong {
+            color: var(--accent-neon);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .publication-item li em {
+            color: rgba(230, 247, 255, 0.8);
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+            font-size: 0.95rem;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-home a {
+            color: var(--accent-neon);
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 1px solid var(--accent-neon);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-home a:hover {
+            background: rgba(0, 238, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Shining elements */
+        .shine {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.9);
+            animation: shineEffect 3s infinite alternate;
+            z-index: 5;
+        }
+
+        @keyframes shineEffect {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px 15px;
+                margin-top: 80px;
+            }
+            
+            .publications-container {
+                padding: 30px 20px;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            nav.navtop a {
+                font-size: 0.9rem;
+                margin: 0 8px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Galaxy Background -->
+    <div id="galaxy-bg"></div>
+    
+    <!-- Shining elements -->
+    <div class="shine" style="top: 20%; left: 15%;"></div>
+    <div class="shine" style="top: 40%; left: 85%;"></div>
+    <div class="shine" style="top: 70%; left: 30%;"></div>
+    <div class="shine" style="top: 80%; left: 70%;"></div>
+    
+    <!-- Navigation menu -->
+    <nav class="navtop">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html#experience"><i class="fas fa-flask"></i> Experience</a>
+        <a href="publications.html"><i class="fas fa-book"></i> Publications</a>
+        <a href="index.html#teaching"><i class="fas fa-graduation-cap"></i> Teaching</a>
+        <a href="index.html#activities"><i class="fas fa-hands-helping"></i> Activities</a>
+        <a href="index.html#interests"><i class="fas fa-seedling"></i> Interests</a>
+        <a href="index.html#phd"><i class="fas fa-brain"></i> PhD Project</a>
+        <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+    
+    <div class="content">
+        <div class="publications-container">
+            <h1 class="page-title">📚 Publications Scientifiques</h1>
+            
+            <div class="publications-list">
+                <!-- COLLEZ ICI TOUT LE CONTENU DES PUBLICATIONS QUE JE VOUS AI DÉJÀ DONNÉ -->
+                <!-- (le même code HTML des publications que dans votre index.md) -->
+                
+                <div class="publication-item">
+                    <h3>2025</h3>
+                    <ul>
+                        <li>
+                            <strong>Computational Study of RbaL1WXe (X = Cl, Br): Electronic, Mechanical, Optical, and Thermoelectric Properties for Energy Applications</strong><br>
+                            N. Baaolla, R. Ibad Ur, <strong>H. Absike</strong>, M. Waqas Iqbal, S. Sarwar, N.A. Ismayilova, H. Airobel, M. Akbar.<br>
+                            <em>Micro and Nanostructures, Volume 207, 202285</em>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ajoutez toutes les autres années ici -->
+                <!-- ... -->
+
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(0, 238, 255, 0.1); border-radius: 8px; border: 1px solid var(--accent-neon);">
+                <h4 style="color: var(--accent-neon); margin-bottom: 10px;">
+                    <i class="fas fa-chart-line"></i> Métriques de Recherche
+                </h4>
+                <p><strong>Google Scholar:</strong> 451 citations | h-index: 10 (mis à jour le 30/09/2025)</p>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Retour à la page principale</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create dynamic stars for galaxy background
+        function createGalaxy() {
+            const galaxy = document.getElementById('galaxy-bg');
+            const starCount = 200;
+            const nebulaCount = 5;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                const size = Math.random() * 3;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = 2 + Math.random() * 8;
+                const delay = Math.random() * 5;
+                
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${posX}%`;
+                star.style.top = `${posY}%`;
+                star.style.animationDelay = `${delay}s`;
+                star.style.setProperty('--duration', `${duration}s`);
+                
+                galaxy.appendChild(star);
+            }
+            
+            for (let i = 0; i < nebulaCount; i++) {
+                const nebula = document.createElement('div');
+                nebula.classList.add('nebula');
+                
+                const width = 200 + Math.random() * 300;
+                const height = 200 + Math.random() * 300;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const colors = ['#3a1c71', '#162b78', '#5d3f6a', '#2c1b47', '#1e3f5a'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                nebula.style.width = `${width}px`;
+                nebula.style.height = `${height}px`;
+                nebula.style.left = `${posX}%`;
+                nebula.style.top = `${posY}%`;
+                nebula.style.backgroundColor = color;
+                
+                galaxy.appendChild(nebula);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            createGalaxy();
+        });
+    </script>
+</body>
+</html>
