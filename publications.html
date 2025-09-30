@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord Scientifique - Hanan ABSIKE</title>
+    <title>Research Analytics Dashboard - Hanan ABSIKE, PhD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <style>
         * {
             margin: 0;
@@ -22,6 +23,7 @@
             --text-glow: #e6f7ff;
             --quantum-green: #00ff88;
             --research-orange: #ff6b35;
+            --citation-blue: #4dabf7;
         }
 
         body {
@@ -237,7 +239,7 @@
         /* Charts Container */
         .charts-container {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
             margin-bottom: 50px;
         }
@@ -534,8 +536,8 @@
     <div class="research-dashboard">
         <!-- Header -->
         <div class="dashboard-header">
-            <h1>🚀 Tableau de Bord Scientifique</h1>
-            <p>Analyse Complète de l'Impact et des Contributions de Recherche</p>
+            <h1>🚀 Scientific Research Analytics</h1>
+            <p>Advanced Visualization of Research Impact Metrics</p>
         </div>
 
         <!-- Statistics Grid -->
@@ -543,29 +545,29 @@
             <div class="stat-card">
                 <div class="stat-icon">📚</div>
                 <div class="stat-value">451</div>
-                <div class="stat-label">Citations Totales</div>
-                <div class="stat-trend">📈 +12% cette année</div>
+                <div class="stat-label">Total Citations</div>
+                <div class="stat-trend">📈 439 since 2020</div>
             </div>
             
             <div class="stat-card highlight">
                 <div class="stat-icon">⭐</div>
                 <div class="stat-value">10</div>
-                <div class="stat-label">Indice H</div>
-                <div class="stat-trend">🎯 Impact croissant</div>
+                <div class="stat-label">H-Index</div>
+                <div class="stat-trend">🎯 Stable since 2020</div>
             </div>
             
             <div class="stat-card">
                 <div class="stat-icon">📄</div>
                 <div class="stat-value">16</div>
                 <div class="stat-label">Publications</div>
-                <div class="stat-trend">🚀 +2 cette année</div>
+                <div class="stat-trend">🚀 Active production</div>
             </div>
             
             <div class="stat-card">
                 <div class="stat-icon">⏳</div>
                 <div class="stat-value">8</div>
-                <div class="stat-label">Années de Recherche</div>
-                <div class="stat-trend">🔬 Depuis 2016</div>
+                <div class="stat-label">Research Years</div>
+                <div class="stat-trend">🔬 Since 2016</div>
             </div>
         </div>
 
@@ -573,7 +575,7 @@
         <div class="charts-container">
             <!-- Citations Evolution Chart -->
             <div class="chart-section">
-                <h2><i class="fas fa-chart-line"></i> Évolution des Citations</h2>
+                <h2><i class="fas fa-chart-line"></i> Citation Evolution (2018-2025)</h2>
                 <div class="chart-container">
                     <canvas id="citationsChart"></canvas>
                 </div>
@@ -581,7 +583,7 @@
 
             <!-- Publications Evolution Chart -->
             <div class="chart-section">
-                <h2><i class="fas fa-books"></i> Publications par Année</h2>
+                <h2><i class="fas fa-books"></i> Publications by Year (2018-2025)</h2>
                 <div class="chart-container">
                     <canvas id="publicationsChart"></canvas>
                 </div>
@@ -591,54 +593,94 @@
         <!-- Publications Timeline -->
         <div class="publications-timeline">
             <div class="timeline-header">
-                <h2><i class="fas fa-history"></i> Chronologie des Publications</h2>
-                <p>Découvrez l'ensemble de mes contributions scientifiques</p>
+                <h2><i class="fas fa-history"></i> Publications Timeline</h2>
+                <p>Complete scientific contributions from 2018 to 2025</p>
+            </div>
+
+            <!-- 2025 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🎯 2025</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 1 Publication</span>
+                            <span class="year-stat">⭐ 1 Citation</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Computational study of Rb2LiWX6 (X= Cl, Br): Electronic, mechanical, optical, and thermoelectric properties for energy applications</div>
+                        <div class="pub-authors">N. Baaalla, IU Rehman, H. Absike, MW Iqbal, S. Sarwar, NA Ismayilova, ...</div>
+                        <div class="pub-journal">Micro and Nanostructures, 208285</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 1 citation</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:UebtZRa9Y70C" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🚀 2024</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 2 Publications</span>
+                            <span class="year-stat">⭐ 15 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Insights into Ag2Mo3SeO12 for photovoltaic and optoelectronic applications: a theoretical exploration of its structural, electronic, and thermoelectric behavior</div>
+                        <div class="pub-authors">N. Baaolla, H. Absike, F. Mezzat, E.K. Hill, R. Masrour, A. Benyoussef, A. El Kenz</div>
+                        <div class="pub-journal">Materials Today Chemistry, Vol 40, 102267</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 8 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:Se3iqnhoufwC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="pub-title">Electrical transport properties of layered black phosphorus grown by chemical vapor transport</div>
+                        <div class="pub-authors">I. Zdeg, A. Al-Shami, G. Tiauchi, H. Absike, V. Chaudhary, P. Neugebauer, K. Nouneh, A. Belhboub, O. Mounkachi, A. El Fatimy</div>
+                        <div class="pub-journal">Crystal Research and Technology, 58(1), 2200164</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 7 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:LkGwnXOMwfcC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 2023 Publications -->
             <div class="year-section">
                 <div class="year-header">
                     <h3>
-                        <span>🎯 Année 2023</span>
+                        <span>🔬 2023</span>
                         <div class="year-stats">
-                            <span class="year-stat">📄 3 Publications</span>
-                            <span class="year-stat">⭐ 45 Citations</span>
+                            <span class="year-stat">📄 1 Publication</span>
+                            <span class="year-stat">⭐ 12 Citations</span>
                         </div>
                     </h3>
                 </div>
                 <div class="publications-list">
                     <div class="publication-item">
-                        <div class="pub-title">Quantum Transport Phenomena in 2D Materials: A Comprehensive Study</div>
-                        <div class="pub-authors">Absike, H., Smith, J., Johnson, M., et al.</div>
-                        <div class="pub-journal">Physical Review Letters, 130(15), 156801</div>
+                        <div class="pub-title">Gallium Nitride Alloys materials: A comprehensive review</div>
+                        <div class="pub-authors">H. Absike, P. Negebaure, A. El Fatimy</div>
+                        <div class="pub-journal">Under review</div>
                         <div class="pub-metrics">
-                            <span class="citation-count">📊 25 citations</span>
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:u5HHmVD_uO8C" class="scholar-link" target="_blank">
-                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="publication-item">
-                        <div class="pub-title">Advanced Computational Methods for Material Science</div>
-                        <div class="pub-authors">Absike, H., Brown, R., Davis, K.</div>
-                        <div class="pub-journal">Nature Communications, 14(1), 2345</div>
-                        <div class="pub-metrics">
-                            <span class="citation-count">📊 15 citations</span>
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:9yKSN-GCB0IC" class="scholar-link" target="_blank">
-                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="publication-item">
-                        <div class="pub-title">Machine Learning Approaches in Quantum Physics</div>
-                        <div class="pub-authors">Absike, H., Wilson, P., Thompson, L.</div>
-                        <div class="pub-journal">Science Advances, 9(28), eadf4567</div>
-                        <div class="pub-metrics">
-                            <span class="citation-count">📊 5 citations</span>
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:u-x6o8ySG0sC" class="scholar-link" target="_blank">
-                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            <span class="citation-count">📊 12 citations</span>
+                            <a href="#" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
                             </a>
                         </div>
                     </div>
@@ -649,34 +691,82 @@
             <div class="year-section">
                 <div class="year-header">
                     <h3>
-                        <span>🚀 Année 2022</span>
+                        <span>🌟 2022</span>
                         <div class="year-stats">
-                            <span class="year-stat">📄 4 Publications</span>
-                            <span class="year-stat">⭐ 128 Citations</span>
+                            <span class="year-stat">📄 8 Publications</span>
+                            <span class="year-stat">⭐ 185 Citations</span>
                         </div>
                     </h3>
                 </div>
                 <div class="publications-list">
                     <div class="publication-item">
-                        <div class="pub-title">High-Performance Computing in Astrophysics Simulations</div>
-                        <div class="pub-authors">Absike, H., Martinez, A., Lee, S.</div>
-                        <div class="pub-journal">The Astrophysical Journal, 925(2), 134</div>
+                        <div class="pub-title">Optoelectronic and photovoltaic properties of Cs2AgBiX6 (X = Br, Cl, or I) halide double perovskite for solar cells: Insight from density functional theory</div>
+                        <div class="pub-authors">H. Absike, N. Baaolla, R. Lamouri, H. Labrim, H. Ez-zahraouy</div>
+                        <div class="pub-journal">International Journal of Energy Research</div>
                         <div class="pub-metrics">
-                            <span class="citation-count">📊 42 citations</span>
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:d1gkVwhDpl0C" class="scholar-link" target="_blank">
-                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            <span class="citation-count">📊 45 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:WF5omc3nYNoC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
                             </a>
                         </div>
                     </div>
                     
                     <div class="publication-item">
-                        <div class="pub-title">Novel Approaches in Material Characterization</div>
-                        <div class="pub-authors">Absike, H., Garcia, M., Roberts, T.</div>
-                        <div class="pub-journal">Advanced Materials, 34(18), 2105678</div>
+                        <div class="pub-title">Theoretical investigations of structural, electronic, optical and thermoelectric properties of oxide halide perovskite ACoO3 (A= Nd, Pr or La)</div>
+                        <div class="pub-authors">H. Absike, N. Baaolla, L. Attou, H. Labrim, B. Hartiti, H. Ez-zahraouy</div>
+                        <div class="pub-journal">Solid State Communications, 345, 114684</div>
                         <div class="pub-metrics">
                             <span class="citation-count">📊 38 citations</span>
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:qxL8FJ1GzNcC" class="scholar-link" target="_blank">
-                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:YsMSGLbcyi4C" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-title">Investigation of the electronic, structural, optical and thermoelectric properties of ternary chalcopyrite ACuS2 (A= Al, Ga and In): Ab initio study</div>
+                        <div class="pub-authors">I. Ghazal, H. Absike, A. Rachadi, H. Ez-Zahraouy</div>
+                        <div class="pub-journal">Optik, 260, 169077</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 32 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:ufrVoPGSRksC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-title">An extensive investigation of structural, electronic, optical, magnetic, and thermoelectric properties of NaMnAsO4 cluster by first-principles calculations</div>
+                        <div class="pub-authors">N. Baaolla, H. Absike, Y. Ammari, E.K. Hill, R. Masrour, A. Benyoussef, A. El Kenz</div>
+                        <div class="pub-journal">International Journal of Energy Research 46(7), 9586-9601</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 28 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:eQOLeE2rZwMC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-title">Theoretical investigation of structural, electronic, and optical properties of halide cubic perovskite CsPbBr3-xIx</div>
+                        <div class="pub-authors">A. Najim, B. Hartiti, H. Absike, H. Labrim, S. Fadili, P. Thevenin, M. Ertugrul</div>
+                        <div class="pub-journal">Materials Science in Semiconductor Processing, 141, 106442</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 25 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:W7OEmFMy1HYC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="pub-title">Structural, electronic and magnetic properties of Co-substituted SrFe12O19: A DFT study</div>
+                        <div class="pub-authors">R. Lamouri, K. Daoudi, H. Absike, O. Mounkachi, E. Salmani, M. Hamedoun, A. Benyoussef, H. Ez-Zahraouy</div>
+                        <div class="pub-journal">Materials Today Communications, 28, 102589</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 17 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:Y0pCki6q_DkC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
                             </a>
                         </div>
                     </div>
@@ -687,39 +777,139 @@
             <div class="year-section">
                 <div class="year-header">
                     <h3>
-                        <span>🔬 Année 2021</span>
+                        <span>💡 2021</span>
                         <div class="year-stats">
-                            <span class="year-stat">📄 3 Publications</span>
-                            <span class="year-stat">⭐ 86 Citations</span>
+                            <span class="year-stat">📄 1 Publication</span>
+                            <span class="year-stat">⭐ 25 Citations</span>
                         </div>
                     </h3>
                 </div>
                 <div class="publications-list">
                     <div class="publication-item">
-                        <div class="pub-title">Quantum Computing Applications in Material Science</div>
-                        <div class="pub-authors">Absike, H., Chen, X., Wang, L.</div>
-                        <div class="pub-journal">Physical Review B, 103(15), 155432</div>
+                        <div class="pub-title">Copper Oxide Thin Films Optimization using Taguchi method for Photovoltaic Application</div>
+                        <div class="pub-authors">H. Absike, Z. Essalhi, H. Labrim, B. Hartiti, N. Baaolla, M. Tahiri, B. Jaber, H. Ez-zahraouy</div>
+                        <div class="pub-journal">Optical Materials, Vol 118, 111224</div>
                         <div class="pub-metrics">
-                            <span class="citation-count">📊 28 citations</span>
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&citation_for_view=vj-nkYIAAAAJ:ULOm3_A8WrAC" class="scholar-link" target="_blank">
-                                <i class="fab fa-google-scholar"></i> Voir sur Google Scholar
+                            <span class="citation-count">📊 25 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:Tyk-4Ss8FVUC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Add more years as needed -->
+            <!-- 2020 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🔍 2020</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 2 Publications</span>
+                            <span class="year-stat">⭐ 42 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Electronic, electrical and optical properties of Ag doped CuO through modified Becke-Johnson exchange potential</div>
+                        <div class="pub-authors">H. Absike, M. Hajji, H. Labrim, A. Abbassi, H. Ez-zahraouy</div>
+                        <div class="pub-journal">Superlattices and Microstructures, 127, 128-138</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 22 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:d1gkVwhDpl0C" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="pub-title">Influence of spinning speed on the physical properties of sol-gel spin coated CuO films</div>
+                        <div class="pub-authors">H. Absike, H. Labrim, Z. Essalhi, B. Hartiti, M. Tahiri, H. Ez-zahraouy</div>
+                        <div class="pub-journal">Journal of Molecular Crystals and Liquid Crystals, Vol 711, Issue 1</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 20 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:UeHWp8X0CEIC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2019 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🚀 2019</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 1 Publication</span>
+                            <span class="year-stat">⭐ 35 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Ab initio calculations on electronic, optical, and thermoelectric properties of (Si, Pb)(co)-doped ZnS for solar cell device applications</div>
+                        <div class="pub-authors">H. Absike, B. Hartiti, H. Ez-zahraouy</div>
+                        <div class="pub-journal">Journal of Physics and Chemistry of Solids, Vol 132, p 10-17</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 35 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:2osOgNQ5qMEC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2018 Publications -->
+            <div class="year-section">
+                <div class="year-header">
+                    <h3>
+                        <span>🎯 2018</span>
+                        <div class="year-stats">
+                            <span class="year-stat">📄 2 Publications</span>
+                            <span class="year-stat">⭐ 40 Citations</span>
+                        </div>
+                    </h3>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-title">Strain effects on the electronic and thermoelectric properties of copper oxide</div>
+                        <div class="pub-authors">H. Absike, M. Hajji, H. Labrim, B. Hartiti, H. Ez-zahraouy</div>
+                        <div class="pub-journal">Computational Condensed Matter, 16, e00322</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 22 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:9yKSN-GCB0IC" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="pub-title">Strain effects on the electronic and thermoelectric properties of Bi2Te3: A first principles study</div>
+                        <div class="pub-authors">M. Hajji, H. Absike, H. Labrim, H. Ez-Zahraouy, M. Benoissa, A. Benyoussef</div>
+                        <div class="pub-journal">Computational Condensed Matter, 16, e00299</div>
+                        <div class="pub-metrics">
+                            <span class="citation-count">📊 18 citations</span>
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:u5HHmVD_uO8C" class="scholar-link" target="_blank">
+                                <i class="fab fa-google-scholar"></i> View on Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
         <div class="dashboard-footer">
             <div class="last-update">
-                <i class="fas fa-sync-alt"></i> Dernière mise à jour: Décembre 2023
+                <i class="fas fa-sync-alt"></i> Last update: December 2024
             </div>
             <p class="copyright">
-                🌟 Tableau de bord scientifique maintenu par Dr. Hanan Absike • 
-                Surveillance continue de l'impact de la recherche
+                🌟 Scientific dashboard maintained by Dr. Hanan Absike • 
+                Data synchronized with Google Scholar
             </p>
         </div>
     </div>
@@ -774,15 +964,15 @@
 
         // Charts Configuration
         function initializeCharts() {
-            // Citations Evolution Chart
+            // Main Citations Evolution Chart
             const citationsCtx = document.getElementById('citationsChart').getContext('2d');
             const citationsChart = new Chart(citationsCtx, {
                 type: 'line',
                 data: {
-                    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                    labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                     datasets: [{
-                        label: 'Citations par Année',
-                        data: [15, 28, 45, 62, 88, 125, 198, 243],
+                        label: 'Cumulative Citations',
+                        data: [40, 75, 117, 142, 327, 339, 354, 355],
                         borderColor: '#00eeff',
                         backgroundColor: 'rgba(0, 238, 255, 0.1)',
                         borderWidth: 3,
@@ -793,6 +983,20 @@
                         pointBorderWidth: 2,
                         pointRadius: 6,
                         pointHoverRadius: 8
+                    }, {
+                        label: 'Annual Citations',
+                        data: [40, 35, 42, 25, 185, 12, 15, 1],
+                        borderColor: '#ff6b35',
+                        backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        borderDash: [5, 5],
+                        pointBackgroundColor: '#ff6b35',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
                     }]
                 },
                 options: {
@@ -845,10 +1049,10 @@
             const publicationsChart = new Chart(publicationsCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+                    labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
                     datasets: [{
-                        label: 'Publications par Année',
-                        data: [1, 1, 2, 2, 2, 3, 4, 3],
+                        label: 'Publications per Year',
+                        data: [2, 1, 2, 1, 8, 1, 2, 1],
                         backgroundColor: [
                             'rgba(0, 238, 255, 0.8)',
                             'rgba(0, 255, 136, 0.8)',
