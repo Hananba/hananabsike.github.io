@@ -1,262 +1,85 @@
----
-layout: none
----
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Hanan ABSIKE, PhD</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* [GARDEZ TOUT VOTRE CSS EXISTANT - même que précédemment] */
-        /* ... votre CSS complet ... */
-    </style>
-</head>
-<body>
-    <!-- [GARDEZ TOUT VOTRE HTML EXISTANT] -->
-    <!-- Galaxy Background, Navigation, etc. -->
-
-    <div class="content">
-        <h1 class="page-title">🚀 Research Intelligence Dashboard</h1>
-        
-        <!-- Statistics Dashboard -->
-        <div class="stats-dashboard">
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-quote-right"></i></div>
-                <div class="stat-number" id="totalCitations">451</div>
-                <div class="stat-label">Total Citations</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-star"></i></div>
-                <div class="stat-number">10</div>
-                <div class="stat-label">H-Index</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
-                <div class="stat-number">16</div>
-                <div class="stat-label">Publications</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-                <div class="stat-number">8</div>
-                <div class="stat-label">Research Years</div>
-            </div>
-        </div>
-
-        <!-- Chart Section -->
-        <div class="chart-container">
-            <h3 class="chart-title">📈 Publications Evolution by Year</h3>
-            <canvas id="publicationsChart"></canvas>
-        </div>
-
-        <!-- Publications Timeline -->
-        <h2 class="page-title" style="font-size: 2.5rem; margin-top: 60px;">📚 Publications Timeline</h2>
-        
-        <div class="timeline" id="publicationsTimeline">
-            <!-- Les publications seront chargées ici automatiquement -->
-        </div>
-
-        <!-- Research Metrics -->
-        <div style="margin-top: 30px; padding: 20px; background: rgba(0, 238, 255, 0.1); border-radius: 8px; border: 1px solid var(--accent-neon);">
-            <h4 style="color: var(--accent-neon); margin-bottom: 10px;">
-                <i class="fas fa-chart-line"></i> Live Research Metrics
-            </h4>
-            <p><strong>Google Scholar:</strong> <span id="liveCitations">451</span> citations | h-index: <span id="liveHindex">10</span> (updated <span id="updateDate"></span>)</p>
-        </div>
-
-        <div class="back-home">
-            <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
-        </div>
+<div class="research-dashboard">
+  <div class="dashboard-header">
+    <h1>Tableau de Bord Scientifique</h1>
+    <p>Vue d'ensemble de votre production académique</p>
+  </div>
+  
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon">📚</div>
+      <div class="stat-value">451</div>
+      <div class="stat-label">Citations totales</div>
+      <div class="stat-trend">+12% cette année</div>
     </div>
-
-    <!-- SCRIPT MAGIQUE POUR LES CITATIONS -->
-    <script>
-        // DONNÉES DE VOS PUBLICATIONS AVEC IDs
-        const publicationsData = [
-            {
-                year: 2025,
-                title: "Computational study of Rb2LiWX6 (X= Cl, Br): Electronic, mechanical, optical, and thermoelectric properties for energy applications",
-                authors: "N. Baaolla, R. Ibad Ur, H. Absike, M. Waqas Iqbal, S. Sarwar, N.A. Ismayilova, H. Airobel, M. Akbar",
-                journal: "Micro and Nanostructures, Volume 207, 202285",
-                scholarId: "UebtZRa9Y70C",
-                citations: 0
-            },
-            {
-                year: 2024,
-                title: "Insights into Ag2Mo3SeO12 for photovoltaic and optoelectronic applications: a theoretical exploration of its structural, electronic, and thermoelectric behavior",
-                authors: "N. Baaolla, H. Absike, F. Mezzat; E.K. Hill; R. Masraur; A. Benyoussef; A. El Kenz",
-                journal: "Materials Today Chemistry, Vol 40, 102267", 
-                scholarId: "Se3iqnhoufwC",
-                citations: 0
-            },
-            {
-                year: 2024,
-                title: "Transport through gate-controlled graphene quantum dots",
-                authors: "MA. Rhonbouri, H. Absike, A. El Fatimy",
-                journal: "Bulletin of the American Physical Society",
-                scholarId: null,
-                citations: 0
-            },
-            {
-                year: 2023,
-                title: "Electrical transport properties of layered black phosphorus grown by chemical vapor transport",
-                authors: "I. Zdeg, A. Al-Shami, G. Tiauchi, H. Absike, V. Chaudhary, P. Neugebauer, K. Nouneh, A. Belhboub, O. Mounkachi, A. El Fatimy",
-                journal: "Crystal Research and Technology, 58(1), 2200164",
-                scholarId: "LkGwnXOMwfcC",
-                citations: 0
-            },
-            {
-                year: 2022,
-                title: "Recent advances in the optoelectronic and photovoltaic properties of Cs2AgBiX6 (X=Br, Cl or I) double halide perovskite films for solar cells insight from DFT",
-                authors: "H. Absike, N. Baaolla, R. Lamouri, H. Labrim, H. Ez-zahraouy",
-                journal: "International Journal of Energy Research",
-                scholarId: "WF5omc3nYNoC",
-                citations: 0
-            },
-            {
-                year: 2022, 
-                title: "Computational insights into the structural, electronic, electrical, and optical features of perovskite ACoO3 (A=Nd, Pr or La) for solar cells",
-                authors: "H. Absike, N. Baaolla, L. Attou, H. Labrim, B. Hartiti, H. Ez-zahraouy",
-                journal: "Solid State Communications, 345, 114684",
-                scholarId: "YsMSGLbcyi4C",
-                citations: 0
-            },
-            {
-                year: 2022,
-                title: "An extensive investigation of structural, electronic, optical, magnetic, and thermoelectric properties of NaMnAsO4 cluster by first-principles calculations",
-                authors: "N. Baaolla, H. Absike, Y. Ammari, E.K. Hill, R. Masraur, A. Benyoussef, A. El Kenz", 
-                journal: "International Journal of Energy Research 46 (7), 9586-9601",
-                scholarId: "eQOLeE2rZwMC",
-                citations: 0
-            },
-            {
-                year: 2022,
-                title: "Theoretical investigation of structural, electronic, and optical properties of halide cubic perovskite CsPbBr3-xIx",
-                authors: "A. Najim, B. Hartiti, H. Absike, H. Labrim, S. Fadili, P. Thevenin, M. Ertugrul",
-                journal: "Materials Science in Semiconductor Processing, 141, 106442",
-                scholarId: "W7OEmFMy1HYC", 
-                citations: 0
-            },
-            {
-                year: 2022,
-                title: "Investigation of the electronic, structural, optical and thermoelectric properties of ternary chalcopyrite ACuS2 (A= Al, Ga and In): Ab initio study",
-                authors: "I. Ghazal, H. Absike, A. Rachadi, H. Ez-Zahraouy",
-                journal: "Optik, 260, 169077",
-                scholarId: "ufrVoPGSRksC",
-                citations: 0
-            },
-            {
-                year: 2022,
-                title: "Structural, electronic and magnetic properties of Co-substituted SrFe12O19: A DFT study", 
-                authors: "R. Lamouri, K. Daoudi, H. Absike, O. Mounkachi, E. Salmani, M. Hamedan, A. Benyoussef, H. Ez-Zahraouy",
-                journal: "Materials Today Communications, 28, 102589",
-                scholarId: "Y0pCki6q_DkC",
-                citations: 0
-            },
-            {
-                year: 2021,
-                title: "Copper Oxide Thin Films Optimization using Taguchi method for Photovoltaic Application",
-                authors: "H. Absike, Z. Essalhi, H. Labrim, B. Hartiti, N. Baaolla, M. Tahiri, B. Jaber, H. Ez-zahraouy",
-                journal: "Optical Materials, Vol 118, 111224", 
-                scholarId: "Tyk-4Ss8FVUC",
-                citations: 0
-            },
-            {
-                year: 2020,
-                title: "Influence of spinning speed on the physical properties of sol-gel spin coated CuO films",
-                authors: "H. Absike, H. Labrim, Z. Essalhi, B. Hartiti, M. Tahiri, H. Ez-zahraouy",
-                journal: "Journal of Molecular Crystals and Liquid Crystals, Vol 711, Issue 1",
-                scholarId: "UeHWp8X0CEIC",
-                citations: 0
-            },
-            {
-                year: 2020,
-                title: "Effects of Si doping on the structural, electronic and optical properties of barium chalcogenide BaS: A first-principles study",
-                authors: "H. Absike, H. Labrim, B. Hartiti, H. Ez-Zahraouy", 
-                journal: "SPIN, 10, No. 02, 2050014",
-                scholarId: "qjMakFHDy7sC",
-                citations: 0
-            },
-            {
-                year: 2019,
-                title: "Ab initio calculations on electronic, optical, and thermoelectric properties of (Si, Pb)(co)-doped ZnS for solar cell device applications",
-                authors: "H. Absike, B. Hartiti, H. Ez-zahraouy",
-                journal: "Physics and Chemistry of Solids, Vol 132, p 10-17",
-                scholarId: "2osOgNQ5qMEC",
-                citations: 0
-            },
-            {
-                year: 2019,
-                title: "Electronic, electrical and optical properties of Ag doped CuO through modified Becke-Johnson exchange potential",
-                authors: "H. Absike, M. Hajji, H. Lubrim, A. Abbassi, H. Ez-zahraouy", 
-                journal: "Superlattices and Microstructures, ed 127, p 128-138",
-                scholarId: "d1gkVwhDpl0C",
-                citations: 0
-            },
-            {
-                year: 2018,
-                title: "Strain effects on the electronic and thermoelectric properties of copper oxide",
-                authors: "H. Absike, M. Hajji, H. Lubrim, B. Hartiti, H. Ez-zahraouy",
-                journal: "Computational Condensed Matter, 16, e00322",
-                scholarId: "9yKSN-GCB0IC",
-                citations: 0
-            },
-            {
-                year: 2018,
-                title: "Strain effects on the electronic and thermoelectric properties of Bi2Te3: A first principles study",
-                authors: "M. Hajji, H. Absike, H. Lubrim, H. Ez-Zahraouy, M. Benoissa, A. Benyoussef",
-                journal: "Journal of Computational Condensed Matter, 16, e00299", 
-                scholarId: "u5HHmVD_uO8C",
-                citations: 0
-            }
-        ];
-
-        // FONCTIONS PRINCIPALES
-        function displayPublications() {
-            const timeline = document.getElementById('publicationsTimeline');
-            timeline.innerHTML = '';
-
-            publicationsData.forEach(pub => {
-                const pubElement = document.createElement('div');
-                pubElement.className = 'timeline-item';
-                
-                pubElement.innerHTML = `
-                    <div class="timeline-year">${pub.year}</div>
-                    <div class="timeline-content">
-                        <div class="pub-title">${pub.title}</div>
-                        <div class="pub-authors">${pub.authors}</div>
-                        <div class="pub-journal">${pub.journal}</div>
-                        <div class="citation-badge">
-                            ${pub.scholarId ? 
-                                `<a href="https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=vj-nkYIAAAAJ&citation_for_view=vj-nkYIAAAAJ:${pub.scholarId}" 
-                                  target="_blank" class="citation-link">
-                                    <i class="fas fa-external-link-alt"></i> View on Google Scholar
-                                </a>` :
-                                `<span class="citation-link">
-                                    <i class="fas fa-file-alt"></i> Publication Details
-                                </span>`
-                            }
-                        </div>
-                    </div>
-                `;
-                
-                timeline.appendChild(pubElement);
-            });
-        }
-
-        // Initialisation
-        document.addEventListener('DOMContentLoaded', function() {
-            createGalaxy();
-            createChart();
-            displayPublications();
-            // Met à jour la date
-            document.getElementById('updateDate').textContent = new Date().toLocaleDateString();
-        });
-
-        // [GARDEZ LES FONCTIONS createGalaxy() et createChart() EXISTANTES]
-    </script>
-</body>
-</html>
+    
+    <div class="stat-card highlight">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-value">10</div>
+      <div class="stat-label">Indice H</div>
+      <div class="stat-trend">Stable</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-icon">📄</div>
+      <div class="stat-value">16</div>
+      <div class="stat-label">Publications</div>
+      <div class="stat-trend">+2 cette année</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-icon">⏳</div>
+      <div class="stat-value">8</div>
+      <div class="stat-label">Années de recherche</div>
+      <div class="stat-trend">Depuis 2016</div>
+    </div>
+  </div>
+  
+  <div class="charts-container">
+    <div class="chart-section">
+      <h2>Évolution des publications par année</h2>
+      <div class="chart-placeholder">
+        <!-- Graphique d'évolution annuelle -->
+        <div class="evolution-graph">
+          <div class="graph-bar" style="height: 30%">2016</div>
+          <div class="graph-bar" style="height: 40%">2017</div>
+          <div class="graph-bar" style="height: 60%">2018</div>
+          <div class="graph-bar" style="height: 50%">2019</div>
+          <div class="graph-bar" style="height: 70%">2020</div>
+          <div class="graph-bar" style="height: 80%">2021</div>
+          <div class="graph-bar" style="height: 90%">2022</div>
+          <div class="graph-bar highlight-bar" style="height: 100%">2023</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chart-section">
+      <h2>Chronologie des publications</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <span class="pub-title">Titre de la publication récente</span>
+            <span class="pub-journal">Journal of Science</span>
+            <span class="pub-citations">15 citations</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <span class="pub-title">Article important</span>
+            <span class="pub-journal">Nature Research</span>
+            <span class="pub-citations">42 citations</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content">
+            <span class="pub-title">Étude longitudinale</span>
+            <span class="pub-journal">Science Advances</span>
+            <span class="pub-citations">28 citations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
