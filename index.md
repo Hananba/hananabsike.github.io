@@ -562,7 +562,155 @@ layout: none
                     </ul>
                 </div>
             </div>
-            
+            <!-- Publications Section -->
+<div class="vertical-section" id="publications">
+    <div class="content-section">
+        <h2><i class="fas fa-book"></i> Publications</h2>
+        <p>Voici la liste de mes publications scientifiques :</p>
+        
+        <div class="publications-list">
+            <div class="publication-item">
+                <h3>2025</h3>
+                <ul>
+                    <li>
+                        <strong>Computational Study of RbaL1WXe (X = Cl, Br): Electronic, Mechanical, Optical, and Thermoelectric Properties for Energy Applications</strong><br>
+                        N. Baaolla, R. Ibad Ur, <strong>H. Absike</strong>, M. Waqas Iqbal, S. Sarwar, N.A. Ismayilova, H. Airobel, M. Akbar.<br>
+                        <em>Micro and Nanostructures, Volume 207, 202285</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2024</h3>
+                <ul>
+                    <li>
+                        <strong>Insights into Ag2Mo3SeO12 for photovoltaic and optoelectronic applications: A theoretical exploration</strong><br>
+                        N. Baaolla, <strong>H. Absike</strong>, F. Mezzat; E.K. Hill; R. Masraur; A. Benyoussef; A. El Kenz<br>
+                        <em>Materials Today Chemistry, Vol 40, 102267</em>
+                    </li>
+                    <li>
+                        <strong>Transport through gate-controlled graphene quantum dots</strong><br>
+                        MA. Rhonbouri, <strong>H. Absike</strong>, A. El Fatimy<br>
+                        <em>Bulletin of the American Physical Society</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2023</h3>
+                <ul>
+                    <li>
+                        <strong>Electrical Transport Properties of Layered Black Phosphorus grown by Chemical Vapor Transport</strong><br>
+                        I. Zdeg, A. Al-Shami, G. Tiauchi, <strong>H. Absike</strong>, V. Chaudhary, P. Neugebauer, K. Nouneh, A. Belhboub, O. Mounkachi, A. El Fatimy.<br>
+                        <em>Crystal Research and Technology, 58(1), 2200164</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2022</h3>
+                <ul>
+                    <li>
+                        <strong>Investigation of the electronic, structural, optical and thermoelectric properties of ternary chalcopyrite ACuS2(A=Al, Ga and In): Ab initio study</strong><br>
+                        Ghazol, <strong>H. Absike</strong>, A. Rachadi, H. Ez-Zahraouy.<br>
+                        <em>Optik, 260, 169077</em>
+                    </li>
+                    <li>
+                        <strong>Computational insights into the structural, electronic, electrical, and optical features of perovskite AcoO3 (A=Nd, Pr or Lq) for solar cells</strong><br>
+                        <strong>H. Absike</strong>, N. Baaolla, L. Attou, H. Labrim, B. Hartiti, H. Ez-zahraouy.<br>
+                        <em>Solid State Communications, 345, 114684</em>
+                    </li>
+                    <li>
+                        <strong>An extensive investigation of structural, electronic, optical, magnetic, and thermoelectric properties of NcMnAsO4 cluster by first-principles calculations</strong><br>
+                        N. Baaolla, <strong>H. Absike</strong>, Y. Ammari, E.K. Hill, R. Masraur, A. Benyoussef, A. El Kenz.<br>
+                        <em>International Journal of Energy Research 46 (7), 9586-9601</em>
+                    </li>
+                    <li>
+                        <strong>Theoretical investigation of structural, electronic, and optical properties of halide cubic perovskite CsPbBr3-xix (x=0,1,2,3) for photovoltaic and optoelectronic device</strong><br>
+                        A. Najim, B. Hartiti, <strong>H. Absike</strong>, H. Labrim, S. Fadili, P. Thevenin, M. Ertugrul.<br>
+                        <em>Materials Science in Semiconductor Processing, 141, 106442</em>
+                    </li>
+                    <li>
+                        <strong>Recent advances in the optoelectronic and photovoltaic properties of Cs2AgBiX6 (X=Br, Cl or I) double halide perovskite films for solar cells insight from DFT</strong><br>
+                        <strong>H. Absike</strong>, N. Baaolla, R. Lamouri, H. Labrim, H. Ez-zahraouy.<br>
+                        <em>International Journal of Energy Research</em>
+                    </li>
+                    <li>
+                        <strong>Structural, electronic and magnetic properties of Co-substituted SrFe12019: A DFT study</strong><br>
+                        R. Lamouri, K. Daoudi, <strong>H. Absike</strong>, O. Mounkachi, E. Salmani, M. Hamedan, A. Benyoussef, H. Ez-Zahraouy.<br>
+                        <em>Materials Today Communications, 28, 102589</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2021</h3>
+                <ul>
+                    <li>
+                        <strong>Copper Oxide Thin Films Optimization using Taguchi method for Photovoltaic Application</strong><br>
+                        <strong>H. Absike</strong>, Z. Essalhi, H. Labrim, B. Hartiti, N. Baaolla, M. Tahiri, B. Jaber, H. Ez-zahraouy.<br>
+                        <em>Optical Materials, Vol 118, 111224</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2020</h3>
+                <ul>
+                    <li>
+                        <strong>Influence of Spinning Speed on the Physical Properties of Sol-Gel Spin Coated CuO Films</strong><br>
+                        <strong>H. Absike</strong>, H. Labrim, Z. Essalhi, B. Hartiti, M. Tahiri, H. Ez-zahraouy.<br>
+                        <em>Journal of Molecular Crystals and Liquid Crystals, Vol 711, Issue 1</em>
+                    </li>
+                    <li>
+                        <strong>Effects of Si Doping on the Structural, Electronic and Optical Properties of Barium Chalcogenide BaS: A First-Principles Study</strong><br>
+                        <strong>H. Absike</strong>, H. Labrim, B. Hartiti, H. Ez-Zahraouy.<br>
+                        <em>SPIN, 10, No. 02, 2050014</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2019</h3>
+                <ul>
+                    <li>
+                        <strong>Ab initio Calculations on Electronic, Optical, and Thermoelectric Properties of (Si, Pb) (co)-doped ZnS for Solar Cell Device Applications</strong><br>
+                        <strong>H. Absike</strong>, B. Hartiti, H. Ez-zahraouy.<br>
+                        <em>Physics and Chemistry of Solids, Vol 132, p 10-17</em>
+                    </li>
+                    <li>
+                        <strong>Electronic, electrical and optical properties of Ag doped CuO through modified Becke Johnson exchange potential</strong><br>
+                        <strong>H. Absike</strong>, M. Hajji, H. Lubrim, A. Abbassi, H. Ez-zahraouy.<br>
+                        <em>Superlattices and Microstructures, ed 127, p 128-138</em>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="publication-item">
+                <h3>2018</h3>
+                <ul>
+                    <li>
+                        <strong>Strain effects on the electronic and thermoelectric properties of copper oxide</strong><br>
+                        <strong>H. Absike</strong>, M. Hajji, H. Lubrim, B. Hartiti, H. Ez-zahraouy.<br>
+                        <em>Computational Condensed Matter, 16, e00322</em>
+                    </li>
+                    <li>
+                        <strong>Strain effects on the electronic and thermoelectric properties of Bi2Te3: A first principles study</strong><br>
+                        M. Hajji, <strong>H. Absike</strong>, H. Lubrim, H. Ez-Zahraouy, M. Benoissa, A. Benyoussef.<br>
+                        <em>Journal of Computational Condensed Matter, 16, e00299</em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: rgba(0, 238, 255, 0.1); border-radius: 8px; border: 1px solid var(--accent-neon);">
+            <h4 style="color: var(--accent-neon); margin-bottom: 10px;">
+                <i class="fas fa-chart-line"></i> Métriques de Recherche
+            </h4>
+            <p><strong>Google Scholar:</strong> 451 citations | h-index: 10 (mis à jour le 30/09/2025)</p>
+        </div>
+    </div>
+</div>
             <!-- Education -->
             <div class="vertical-section">
                 <div class="content-section">
@@ -733,3 +881,4 @@ layout: none
     </script>
 </body>
 </html>
+
