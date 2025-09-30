@@ -1,85 +1,597 @@
-<div class="research-dashboard">
-  <div class="dashboard-header">
-    <h1>Tableau de Bord Scientifique</h1>
-    <p>Vue d'ensemble de votre production académique</p>
-  </div>
-  
-  <div class="stats-container">
-    <div class="stat-card">
-      <div class="stat-icon">📚</div>
-      <div class="stat-value">451</div>
-      <div class="stat-label">Citations totales</div>
-      <div class="stat-trend">+12% cette année</div>
-    </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications Scientifiques - Hanan ABSIKE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --deep-space: #000720;
+            --cosmic-purple: #1a063d;
+            --stellar-blue: #001a3a;
+            --accent-neon: #00eeff;
+            --text-glow: #e6f7ff;
+        }
+
+        body {
+            background: radial-gradient(ellipse at bottom, #0a0a2e 0%, #000013 100%);
+            color: var(--text-glow);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Galaxy Background */
+        #galaxy-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 4s) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+        }
+
+        /* Navigation menu */
+        nav.navtop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 5, 30, 0.85);
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--accent-neon);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 25px rgba(0, 238, 255, 0.1);
+        }
+
+        nav.navtop a {
+            color: var(--accent-neon);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.4s ease;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-shadow: 0 0 5px rgba(0, 238, 255, 0.7);
+        }
+
+        nav.navtop a:hover {
+            color: white;
+            background: rgba(0, 238, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        .research-dashboard {
+            max-width: 1400px;
+            margin: 100px auto 60px;
+            padding: 30px;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 15px;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .dashboard-header h1 {
+            font-size: 3.5rem;
+            color: var(--accent-neon);
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .dashboard-header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        /* Stats Container - Style Cosmic */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 30px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 238, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 50px rgba(0, 238, 255, 0.4);
+        }
+
+        .stat-card:hover::before {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .stat-card.highlight {
+            border-top: 3px solid var(--accent-neon);
+            box-shadow: 0 0 40px rgba(0, 238, 255, 0.3);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--accent-neon);
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.7);
+        }
+
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--accent-neon);
+            margin: 15px 0;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.6);
+        }
+
+        .stat-label {
+            color: var(--text-glow);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .stat-trend {
+            font-size: 0.9rem;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Charts Container */
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .chart-section {
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid var(--accent-neon);
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .chart-section h2 {
+            color: var(--accent-neon);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 300;
+        }
+
+        /* Evolution Graph */
+        .evolution-graph {
+            display: flex;
+            align-items: flex-end;
+            height: 250px;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0, 26, 51, 0.2);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 238, 255, 0.2);
+        }
+
+        .graph-bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--accent-neon), #0099ff);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+        }
+
+        .graph-bar:hover {
+            background: linear-gradient(to top, #00ffcc, #00aaff);
+            box-shadow: 0 0 30px rgba(0, 238, 255, 0.6);
+        }
+
+        .graph-bar.highlight-bar {
+            background: linear-gradient(to top, #ff00cc, #ff0066);
+            box-shadow: 0 0 30px rgba(255, 0, 204, 0.5);
+        }
+
+        .graph-bar::after {
+            content: attr(style);
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-glow);
+            font-weight: bold;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--accent-neon), transparent);
+            box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-year {
+            width: 60px;
+            font-weight: bold;
+            color: var(--accent-neon);
+            margin-right: 20px;
+            text-align: right;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(0, 26, 51, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-neon);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: rgba(0, 238, 255, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
+        }
+
+        .pub-title {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-glow);
+            font-size: 1.1rem;
+        }
+
+        .pub-journal {
+            display: block;
+            font-style: italic;
+            color: rgba(230, 247, 255, 0.8);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .pub-citations {
+            display: block;
+            color: #00ff88;
+            font-size: 0.9rem;
+            text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Shining elements */
+        .shine {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.9);
+            animation: shineEffect 3s infinite alternate;
+            z-index: 5;
+        }
+
+        @keyframes shineEffect {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Footer */
+        .footer-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--accent-neon);
+            background: rgba(10, 5, 40, 0.4);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .copyright {
+            color: rgba(230, 247, 255, 0.6);
+            font-size: 1rem;
+            margin-top: 20px;
+            text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .research-dashboard {
+                padding: 20px 15px;
+                margin-top: 80px;
+            }
+            
+            .dashboard-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Galaxy Background -->
+    <div id="galaxy-bg"></div>
     
-    <div class="stat-card highlight">
-      <div class="stat-icon">⭐</div>
-      <div class="stat-value">10</div>
-      <div class="stat-label">Indice H</div>
-      <div class="stat-trend">Stable</div>
-    </div>
+    <!-- Shining elements -->
+    <div class="shine" style="top: 20%; left: 15%;"></div>
+    <div class="shine" style="top: 40%; left: 85%;"></div>
+    <div class="shine" style="top: 70%; left: 30%;"></div>
+    <div class="shine" style="top: 80%; left: 70%;"></div>
     
-    <div class="stat-card">
-      <div class="stat-icon">📄</div>
-      <div class="stat-value">16</div>
-      <div class="stat-label">Publications</div>
-      <div class="stat-trend">+2 cette année</div>
-    </div>
+    <!-- Navigation menu -->
+    <nav class="navtop">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html#experience"><i class="fas fa-flask"></i> Experience</a>
+        <a href="publications.html" style="background: rgba(0, 238, 255, 0.15);"><i class="fas fa-book"></i> Publications</a>
+        <a href="index.html#teaching"><i class="fas fa-graduation-cap"></i> Teaching</a>
+        <a href="index.html#activities"><i class="fas fa-hands-helping"></i> Activities</a>
+        <a href="index.html#interests"><i class="fas fa-seedling"></i> Interests</a>
+        <a href="index.html#phd"><i class="fas fa-brain"></i> PhD Project</a>
+        <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
     
-    <div class="stat-card">
-      <div class="stat-icon">⏳</div>
-      <div class="stat-value">8</div>
-      <div class="stat-label">Années de recherche</div>
-      <div class="stat-trend">Depuis 2016</div>
+    <div class="research-dashboard">
+        <div class="dashboard-header">
+            <h1>🌌 Tableau de Bord Scientifique</h1>
+            <p>Voyage à travers mes contributions académiques et recherches</p>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-value">451</div>
+                <div class="stat-label">Citations Totales</div>
+                <div class="stat-trend">+12% cette année</div>
+            </div>
+            
+            <div class="stat-card highlight">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value">10</div>
+                <div class="stat-label">Indice H</div>
+                <div class="stat-trend">Impact croissant</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">📄</div>
+                <div class="stat-value">16</div>
+                <div class="stat-label">Publications</div>
+                <div class="stat-trend">+2 cette année</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-value">8</div>
+                <div class="stat-label">Années de Recherche</div>
+                <div class="stat-trend">Depuis 2016</div>
+            </div>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-section">
+                <h2><i class="fas fa-chart-line"></i> Évolution des Publications</h2>
+                <div class="evolution-graph">
+                    <div class="graph-bar" style="height: 30%">2016</div>
+                    <div class="graph-bar" style="height: 40%">2017</div>
+                    <div class="graph-bar" style="height: 60%">2018</div>
+                    <div class="graph-bar" style="height: 50%">2019</div>
+                    <div class="graph-bar" style="height: 70%">2020</div>
+                    <div class="graph-bar" style="height: 80%">2021</div>
+                    <div class="graph-bar" style="height: 90%">2022</div>
+                    <div class="graph-bar highlight-bar" style="height: 100%">2023</div>
+                </div>
+            </div>
+            
+            <div class="chart-section">
+                <h2><i class="fas fa-history"></i> Chronologie des Publications</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <span class="pub-title">Quantum Transport in 2D Materials</span>
+                            <span class="pub-journal">Physical Review Letters</span>
+                            <span class="pub-citations">⭐ 15 citations</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <span class="pub-title">Advanced Materials Simulation</span>
+                            <span class="pub-journal">Nature Research</span>
+                            <span class="pub-citations">⭐ 42 citations</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <span class="pub-title">Computational Astrophysics Methods</span>
+                            <span class="pub-journal">Science Advances</span>
+                            <span class="pub-citations">⭐ 28 citations</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <span class="pub-title">Quantum Phenomena Study</span>
+                            <span class="pub-journal">Physical Review</span>
+                            <span class="pub-citations">⭐ 35 citations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <p class="copyright">
+                🌠 Tableau de bord scientifique maintenu par Dr. Hanan Absike • Exploration continue de l'univers quantique
+            </p>
+        </div>
     </div>
-  </div>
-  
-  <div class="charts-container">
-    <div class="chart-section">
-      <h2>Évolution des publications par année</h2>
-      <div class="chart-placeholder">
-        <!-- Graphique d'évolution annuelle -->
-        <div class="evolution-graph">
-          <div class="graph-bar" style="height: 30%">2016</div>
-          <div class="graph-bar" style="height: 40%">2017</div>
-          <div class="graph-bar" style="height: 60%">2018</div>
-          <div class="graph-bar" style="height: 50%">2019</div>
-          <div class="graph-bar" style="height: 70%">2020</div>
-          <div class="graph-bar" style="height: 80%">2021</div>
-          <div class="graph-bar" style="height: 90%">2022</div>
-          <div class="graph-bar highlight-bar" style="height: 100%">2023</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="chart-section">
-      <h2>Chronologie des publications</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">2023</div>
-          <div class="timeline-content">
-            <span class="pub-title">Titre de la publication récente</span>
-            <span class="pub-journal">Journal of Science</span>
-            <span class="pub-citations">15 citations</span>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2022</div>
-          <div class="timeline-content">
-            <span class="pub-title">Article important</span>
-            <span class="pub-journal">Nature Research</span>
-            <span class="pub-citations">42 citations</span>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2021</div>
-          <div class="timeline-content">
-            <span class="pub-title">Étude longitudinale</span>
-            <span class="pub-journal">Science Advances</span>
-            <span class="pub-citations">28 citations</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+    <script>
+        // Create dynamic stars for galaxy background
+        function createGalaxy() {
+            const galaxy = document.getElementById('galaxy-bg');
+            const starCount = 200;
+            const nebulaCount = 5;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                const size = Math.random() * 3;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = 2 + Math.random() * 8;
+                const delay = Math.random() * 5;
+                
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${posX}%`;
+                star.style.top = `${posY}%`;
+                star.style.animationDelay = `${delay}s`;
+                star.style.setProperty('--duration', `${duration}s`);
+                
+                galaxy.appendChild(star);
+            }
+            
+            for (let i = 0; i < nebulaCount; i++) {
+                const nebula = document.createElement('div');
+                nebula.classList.add('nebula');
+                
+                const width = 200 + Math.random() * 300;
+                const height = 200 + Math.random() * 300;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const colors = ['#3a1c71', '#162b78', '#5d3f6a', '#2c1b47', '#1e3f5a'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                nebula.style.width = `${width}px`;
+                nebula.style.height = `${height}px`;
+                nebula.style.left = `${posX}%`;
+                nebula.style.top = `${posY}%`;
+                nebula.style.backgroundColor = color;
+                
+                galaxy.appendChild(nebula);
+            }
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            createGalaxy();
+            
+            // Scroll effect for navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav.navtop');
+                if (window.scrollY > 50) {
+                    nav.style.background = 'rgba(10, 5, 30, 0.95)';
+                    nav.style.padding = '12px 0';
+                } else {
+                    nav.style.background = 'rgba(10, 5, 30, 0.85)';
+                    nav.style.padding = '15px 0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
