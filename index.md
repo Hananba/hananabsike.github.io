@@ -424,7 +424,57 @@ layout: none
             .welcome-section h1 {
                 font-size: 2rem;
             }
-            
+            /* Publications styling */
+.publications-list {
+    margin-top: 20px;
+}
+
+.publication-item {
+    margin-bottom: 30px;
+}
+
+.publication-item h3 {
+    color: var(--accent-neon);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 238, 255, 0.3);
+}
+
+.publication-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.publication-item li {
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(0, 26, 51, 0.3);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-neon);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.publication-item li:hover {
+    background: rgba(0, 238, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.publication-item li strong {
+    color: var(--accent-neon);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.publication-item li em {
+    color: rgba(230, 247, 255, 0.8);
+    font-style: italic;
+    display: block;
+    margin-top: 5px;
+    font-size: 0.95rem;
+}
             .welcome-section p {
                 font-size: 1.2rem;
             }
@@ -881,4 +931,5 @@ layout: none
     </script>
 </body>
 </html>
+
 
