@@ -633,6 +633,31 @@ layout: none
                     </div>
                 </div>
             </div>
+
+                        <!-- Experience Section -->
+            <div class="vertical-section" id="experience">
+                <div class="content-section">
+                    <h2><i class="fas fa-flask"></i> Experience</h2>
+                    
+                    <div class="education-item">
+                        <h3>Part-time Professor & Researcher</h3>
+                        <p><strong>Mohammed V University, Rabat</strong> | 2023 – Present</p>
+                        <ul>
+                            <li>Teaching DFT, Atomistic Modeling, and Machine Learning for Materials Science.</li>
+                            <li>Co-supervising Master's and PhD students.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3>Postdoctoral Researcher</h3>
+                        <p><strong>UM6P, Ben Guerir</strong> | 2021 – 2023</p>
+                        <ul>
+                            <li>Specialized in quantum transport modeling in nanoscale devices (DFT/NEGF).</li>
+                            <li>Utilized High-Performance Computing (HPC) for parallel scientific programming.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             
             <!-- Current Projects -->
             <div class="vertical-section">
@@ -782,6 +807,7 @@ layout: none
     </script>
 </body>
 </html>
+
 
 
 
