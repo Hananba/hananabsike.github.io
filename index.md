@@ -439,6 +439,27 @@ layout: none
             .cosmic-animation { width: 250px; height: 250px; }
         }
     </style>
+            @media (max-width: 768px) {
+            .content { padding: 20px 15px; margin-top: 80px; }
+            /* ... reste de votre code ... */
+        }
+    </style>
+    
+    <!-- 👇 COLLEZ LE CODE GOOGLE ANALYTICS ICI 👇 -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P674FBRHF5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P674FBRHF5');
+    </script>
+    <!-- 👆 FIN DU CODE GOOGLE ANALYTICS 👆 -->
+
+</head>
+<body>
+    <div id="galaxy-bg"></div>
 </head>
 <body>
     <div id="galaxy-bg"></div>
@@ -776,6 +797,7 @@ layout: none
     </script>
 </body>
 </html>
+
 
 
 
