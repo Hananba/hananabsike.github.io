@@ -8,6 +8,16 @@ layout: none
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Hanan ABSIKE, PhD </title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P674FBRHF5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P674FBRHF5');
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -34,7 +44,6 @@ layout: none
             position: relative;
         }
 
-        /* Galaxy Background */
         #galaxy-bg {
             position: fixed;
             top: 0;
@@ -64,7 +73,6 @@ layout: none
             opacity: 0.3;
         }
 
-        /* Navigation menu */
         nav.navtop {
             position: fixed;
             top: 0;
@@ -98,7 +106,6 @@ layout: none
             transform: translateY(-3px);
         }
 
-        /* Main content - Two-column layout */
         .content {
             max-width: 1400px;
             margin: 100px auto 60px;
@@ -134,7 +141,7 @@ layout: none
             position: relative;
             z-index: 10;
             width: 100%;
-            scroll-margin-top: 90px; /* Offset for fixed navbar */
+            scroll-margin-top: 90px;
         }
 
         .profile-section {
@@ -334,7 +341,6 @@ layout: none
             font-size: 1rem;
         }
 
-        /* Publications List */
         .publications-list {
             margin-top: 20px;
         }
@@ -376,6 +382,25 @@ layout: none
             display: block;
             margin-top: 5px;
             font-size: 0.95rem;
+        }
+
+        .btn-scholar {
+            display: inline-block;
+            background: var(--accent-neon);
+            color: var(--deep-space) !important;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            text-shadow: none !important;
+        }
+
+        .btn-scholar:hover {
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
+            transform: scale(1.05);
         }
 
         .shine {
@@ -439,27 +464,6 @@ layout: none
             .cosmic-animation { width: 250px; height: 250px; }
         }
     </style>
-            @media (max-width: 768px) {
-            .content { padding: 20px 15px; margin-top: 80px; }
-            /* ... reste de votre code ... */
-        }
-    </style>
-    
-    <!-- 👇 COLLEZ LE CODE GOOGLE ANALYTICS ICI 👇 -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P674FBRHF5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-P674FBRHF5');
-    </script>
-    <!-- 👆 FIN DU CODE GOOGLE ANALYTICS 👆 -->
-
-</head>
-<body>
-    <div id="galaxy-bg"></div>
 </head>
 <body>
     <div id="galaxy-bg"></div>
@@ -502,7 +506,7 @@ layout: none
                         <i class="fab fa-researchgate"></i> ResearchGate
                     </a>
                     <a href="https://orcid.org/0000-0003-3600-0937" target="_blank">
-                    <i class="fab fa-orcid"></i> ORCID Profile
+                        <i class="fab fa-orcid"></i> ORCID Profile
                     </a>
                     <a href="#">
                         <i class="fas fa-file-pdf"></i> Download CV (PDF)
@@ -549,6 +553,18 @@ layout: none
                     <div class="planet" id="planet1" style="width: 40px; height: 40px;"></div>
                     <div class="planet" id="planet2" style="width: 30px; height: 30px;"></div>
                     <div class="planet" id="planet3" style="width: 20px; height: 20px;"></div>
+                </div>
+            </div>
+
+            <!-- News & Highlights -->
+            <div class="vertical-section">
+                <div class="content-section">
+                    <h2><i class="fas fa-bullhorn"></i> News & Highlights</h2>
+                    <ul>
+                        <li><strong>Nov 2026:</strong> Published new research on quantum gas sensing in <em>ACS Omega</em>.</li>
+                        <li><strong>Nov 2026:</strong> Preparing an application for the ICTP-TRIL Programme (Italy).</li>
+                        <li><strong>Oct 2026:</strong> Serving as an active peer reviewer for <em>Solar Energy</em> journal.</li>
+                    </ul>
                 </div>
             </div>
             
@@ -654,6 +670,11 @@ layout: none
                                 <em>H. Absike, N. Baaalla, R. Lamouri, H. Labrim, H. Ez-zahraouy. Int. J. Energy Res. 46 (8), 11053-11064 (2022).</em>
                             </li>
                         </ul>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="https://scholar.google.com/citations?user=vj-nkYIAAAAJ" target="_blank" class="btn-scholar">
+                                View Full Publication List on Google Scholar
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -684,7 +705,7 @@ layout: none
                 </div>
             </div>
             
-                       <!-- Footer section -->
+            <!-- Footer section -->
             <div class="footer-section">
                 <div class="visitor-counter">
                     <img src="https://visitor-badge.laobi.icu/badge?page_id=hananabsike.github.io&left_color=black&right_color=cyan" alt="visitor badge">
@@ -800,8 +821,3 @@ layout: none
     </script>
 </body>
 </html>
-
-
-
-
-
