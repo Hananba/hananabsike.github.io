@@ -501,6 +501,9 @@ layout: none
                     <a href="https://www.researchgate.net/profile/H-Absike" target="_blank">
                         <i class="fab fa-researchgate"></i> ResearchGate
                     </a>
+                    <a href="https://orcid.org/0000-0003-3600-0937" target="_blank">
+                    <i class="fab fa-orcid"></i> ORCID Profile
+                    </a>
                     <a href="#">
                         <i class="fas fa-file-pdf"></i> Download CV (PDF)
                     </a>
@@ -797,6 +800,7 @@ layout: none
     </script>
 </body>
 </html>
+
 
 
 
