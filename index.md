@@ -653,7 +653,7 @@ layout: none
                     <h2><i class="fas fa-envelope"></i> Contact</h2>
                     <p>I am open to collaborations, postdoctoral opportunities, and academic exchanges. Feel free to reach out!</p>
                     <ul>
-                        <li><strong>Email:</strong> <a href="mailto:ab.hananham@gmail.com or hanan.absike@um5r.ac.ma" style="color: var(--accent-neon);">ab.hananham@gmail.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:ab.hananham@gmail.com" style="color: var(--accent-neon);">ab.hananham@gmail.com</a></li>
                         <li><strong>Location:</strong> Rabat, Morocco</li>
                         <li><strong>Institution:</strong> Faculty of Sciences, Mohammed V University</li>
                     </ul>
@@ -776,5 +776,6 @@ layout: none
     </script>
 </body>
 </html>
+
 
 
