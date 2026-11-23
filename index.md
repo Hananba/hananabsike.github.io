@@ -108,7 +108,6 @@ layout: none
             gap: 30px;
         }
 
-        /* Left column - Profile section */
         .left-column {
             flex: 1;
             min-width: 350px;
@@ -117,7 +116,6 @@ layout: none
             gap: 30px;
         }
 
-        /* Right column - Content sections */
         .right-column {
             flex: 2;
             min-width: 500px;
@@ -126,7 +124,6 @@ layout: none
             gap: 30px;
         }
 
-        /* Vertical sections */
         .vertical-section {
             background: rgba(10, 5, 40, 0.4);
             border-radius: 8px;
@@ -137,9 +134,9 @@ layout: none
             position: relative;
             z-index: 10;
             width: 100%;
+            scroll-margin-top: 90px; /* Offset for fixed navbar */
         }
 
-        /* Profile section */
         .profile-section {
             display: flex;
             flex-direction: column;
@@ -220,7 +217,6 @@ layout: none
             text-shadow: 0 0 8px rgba(0, 238, 255, 0.7);
         }
 
-        /* Welcome section */
         .welcome-section {
             text-align: center;
             padding: 50px 30px;
@@ -273,7 +269,6 @@ layout: none
             transform: translate(-50%, -50%);
         }
 
-        /* Content sections */
         .content-section {
             margin-bottom: 20px;
         }
@@ -328,32 +323,18 @@ layout: none
             margin-bottom: 8px;
         }
 
-        /* Shining elements */
-        .shine {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.9);
-            animation: shineEffect 3s infinite alternate;
-            z-index: 5;
+        .education-item p {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
         }
 
-        @keyframes shineEffect {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.2); }
+        .education-item em {
+            color: rgba(230, 247, 255, 0.8);
+            font-style: italic;
+            font-size: 1rem;
         }
 
-        /* Footer section */
-        
-        .footer-section {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 20px;
-            border-top: 1px solid var(--accent-neon);
-        }
-        /* Publications styling */
+        /* Publications List */
         .publications-list {
             margin-top: 20px;
         }
@@ -362,18 +343,10 @@ layout: none
             margin-bottom: 30px;
         }
 
-        .publication-item h3 {
-            color: var(--accent-neon);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid rgba(0, 238, 255, 0.3);
-        }
-
         .publication-item ul {
             list-style: none;
             padding-left: 0;
-            }
+        }
 
         .publication-item li {
             padding: 15px;
@@ -391,7 +364,7 @@ layout: none
         }
 
         .publication-item li strong {
-        color: var(--accent-neon);
+            color: var(--accent-neon);
             font-size: 1.1rem;
             display: block;
             margin-bottom: 8px;
@@ -403,6 +376,29 @@ layout: none
             display: block;
             margin-top: 5px;
             font-size: 0.95rem;
+        }
+
+        .shine {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.9);
+            animation: shineEffect 3s infinite alternate;
+            z-index: 5;
+        }
+
+        @keyframes shineEffect {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .footer-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-top: 1px solid var(--accent-neon);
         }
 
         .visitor-counter {
@@ -427,89 +423,26 @@ layout: none
             text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
         }
 
-        /* Responsive design */
         @media (max-width: 992px) {
-            .content {
-                flex-direction: column;
-            }
-            
-            .left-column, .right-column {
-                min-width: 100%;
-            }
+            .content { flex-direction: column; }
+            .left-column, .right-column { min-width: 100%; }
         }
 
         @media (max-width: 768px) {
-            .content {
-                padding: 20px 15px;
-                margin-top: 80px;
-            }
-            
-            .vertical-section {
-                padding: 30px 20px;
-            }
-            
-            .welcome-section h1 {
-                font-size: 2.5rem;
-            }
-            
-            .welcome-section p {
-                font-size: 1.4rem;
-            }
-            
-            nav.navtop a {
-                font-size: 0.9rem;
-                margin: 0 8px;
-                padding: 6px 12px;
-            }
-            
-            .profile-title h1 {
-                font-size: 2.2rem;
-            }
-            
-            .cosmic-animation {
-                width: 250px;
-                height: 250px;
-            }
-        }
-
-            .welcome-section p {
-                font-size: 1.2rem;
-            }
-            
-            nav.navtop {
-                padding: 12px 0;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav.navtop a {
-                font-size: 0.8rem;
-                margin: 5px;
-                padding: 5px 8px;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .profile-photo {
-                width: 180px;
-                height: 220px;
-            }
-            
-            .cosmic-animation {
-                width: 200px;
-                height: 200px;
-            }
+            .content { padding: 20px 15px; margin-top: 80px; }
+            .vertical-section { padding: 30px 20px; }
+            .welcome-section h1 { font-size: 2.5rem; }
+            .welcome-section p { font-size: 1.4rem; }
+            nav.navtop { padding: 12px 0; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav.navtop a { font-size: 0.8rem; margin: 5px; padding: 5px 8px; }
+            .profile-title h1 { font-size: 2.2rem; }
+            .cosmic-animation { width: 250px; height: 250px; }
         }
     </style>
 </head>
 <body>
-    <!-- Galaxy Background -->
     <div id="galaxy-bg"></div>
     
-    <!-- Shining elements -->
     <div class="shine" style="top: 20%; left: 15%;"></div>
     <div class="shine" style="top: 40%; left: 85%;"></div>
     <div class="shine" style="top: 70%; left: 30%;"></div>
@@ -519,8 +452,8 @@ layout: none
     <nav class="navtop">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
         <a href="#experience"><i class="fas fa-flask"></i> Experience</a>
-        <a href="publications.html"><i class="fas fa-book"></i> Publications</a>
-        <a href="#teaching"><i class="fas fa-graduation-cap"></i> Teaching</a>
+        <a href="#publications"><i class="fas fa-book"></i> Publications</a>
+        <a href="#teaching"><i class="fas fa-chalkboard-teacher"></i> Teaching</a>
         <a href="#activities"><i class="fas fa-hands-helping"></i> Activities</a>
         <a href="#interests"><i class="fas fa-seedling"></i> Interests</a>
         <a href="#phd"><i class="fas fa-brain"></i> PhD Project</a>
@@ -536,7 +469,7 @@ layout: none
                 
                 <div class="profile-title">
                     <h1>Hanan ABSIKE, PhD</h1>
-                    <p>PhD in Physics </p>
+                    <p>PhD in Physics | Computational Materials Scientist</p>
                 </div>
                 
                 <h2 class="section-title"><i class="fas fa-link"></i> Connect With Me</h2>
@@ -550,7 +483,7 @@ layout: none
                     <a href="#">
                         <i class="fas fa-file-pdf"></i> Download CV (PDF)
                     </a>
-                    <a href="mailto:hanan@example.com">
+                    <a href="mailto:ab.hananham@gmail.com">
                         <i class="fas fa-envelope"></i> Email Me
                     </a>
                     <a href="https://linkedin.com/in/hananabsike" target="_blank">
@@ -560,14 +493,14 @@ layout: none
             </div>
             
             <!-- Technical Expertise -->
-            <div class="vertical-section">
+            <div class="vertical-section" id="interests">
                 <div class="content-section">
                     <h2><i class="fas fa-code"></i> Technical Expertise</h2>
                     <p>I leverage advanced computational tools to explore fundamental properties of materials:</p>
                     <ul>
                         <li>Scientific Programming</li>
                         <li>Modeling of Nanomaterials </li>
-                        <li>High-Performance Computing</li>
+                        <li>High-Performance Computing (HPC)</li>
                         <li>DFT & Quantum Transport Modeling </li>
                         <li>Data Analysis & Visualization</li>
                         <li>Simulation-Experiment Coupling</li>
@@ -582,7 +515,7 @@ layout: none
             <!-- Welcome section -->
             <div class="vertical-section welcome-section">
                 <h1>✨ Welcome to My Cosmic Journey ✨</h1>
-                <p>Exploring the Universe Through Physics and Computation < Website under construction>🌌🪐🧠</p>
+                <p>Exploring the Universe Through Physics and Computation 🌌🪐🧠</p>
                 
                 <div class="cosmic-animation">
                     <div class="orbit" style="width: 280px; height: 280px;"></div>
@@ -595,46 +528,7 @@ layout: none
                 </div>
             </div>
             
-            <!-- Research Interests -->
-            <div class="vertical-section">
-                <div class="content-section">
-                    <h2><i class="fas fa-seedling"></i> Research Interests</h2>
-                    <p>My research explores the intersection of computational physics and material science, focusing on quantum phenomena at atomic scales.</p>
-                    <ul>
-                        <li>Material Modelling & Simulation</li>
-                        <li>Quantum Transport Phenomena</li>
-                        <li>Experimental Physics Techniques</li>
-                        <li>High-Performance Computing</li>
-                        <li>Computational Astrophysics</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Publications Section -->
-<div class
-    
-            <!-- Education -->
-            <div class="vertical-section">
-                <div class="content-section">
-                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                    <div class="education-item">
-                        <h3>PhD in Physics (2019)</h3>
-                        <p>University of Mohammed V, Rabat</p>
-                        <p>Thesis: Advanced Materials Simulation Techniques</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>MSc in Computational Physics (2015)</h3>
-                        <p>University of Mohammed V, Rabat</p>
-                        <p>Focus: Quantum Systems Modeling</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>BSc in Physics (2013)</h3>
-                        <p>University of Mohammed V, Rabat</p>
-                        <p>Specialization: Theoretical Physics</p>
-                    </div>
-                </div>
-            </div>
-
-                        <!-- Experience Section -->
+            <!-- Experience -->
             <div class="vertical-section" id="experience">
                 <div class="content-section">
                     <h2><i class="fas fa-flask"></i> Experience</h2>
@@ -658,18 +552,110 @@ layout: none
                     </div>
                 </div>
             </div>
-            
-            <!-- Current Projects -->
+
+            <!-- Education -->
             <div class="vertical-section">
                 <div class="content-section">
-                    <h2><i class="fas fa-project-diagram"></i> Current Projects</h2>
-                    <p>My current research focuses on cutting-edge problems in computational physics and material science.</p>
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <h3>PhD in Physics (2019)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Thesis: Advanced Materials Simulation Techniques</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>MSc in Computational Physics (2015)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Focus: Quantum Systems Modeling</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>BSc in Physics (2013)</h3>
+                        <p>University of Mohammed V, Rabat</p>
+                        <p>Specialization: Theoretical Physics</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teaching -->
+            <div class="vertical-section" id="teaching">
+                <div class="content-section">
+                    <h2><i class="fas fa-chalkboard-teacher"></i> Teaching & Supervision</h2>
+                    <div class="education-item">
+                        <h3>University Teaching (340+ hours)</h3>
+                        <p><strong>Faculty of Sciences, Mohammed V University</strong></p>
+                        <ul>
+                            <li>Atomic Modeling & Simulation and Machine Learning for Materials Science.</li>
+                            <li>Materials Physics: Modeling and Simulation using DFT.</li>
+                            <li>Fluid Mechanics & Light-Matter Interaction.</li>
+                        </ul>
+                    </div>
+                    <div class="education-item">
+                        <h3>Student Supervision</h3>
+                        <p><strong>Master's & PhD Level</strong></p>
+                        <ul>
+                            <li>Supervising Master's final-year projects (PFE), with top-ranked students.</li>
+                            <li>Co-supervising PhD students in computational materials science.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activities -->
+            <div class="vertical-section" id="activities">
+                <div class="content-section">
+                    <h2><i class="fas fa-hands-helping"></i> Scientific Activities</h2>
                     <ul>
-                        <li>Quantum transport in 2D materials</li>
-                        <li>HPC programming simulations </li>
-                        <li>Machine learning for material discovery</li>
-                        <li>Experimental validation of computational models</li>
-                        <li>Development of new simulation algorithms & data science</li>
+                        <li><strong>Peer Review:</strong> Invited reviewer for 13 international journals (58 reviews), including <em>Solar Energy</em> and <em>Materials & Design</em>.</li>
+                        <li><strong>Organizing Committee:</strong> Winter School on Computational Physics Modeling (2022) and JMCon-2021 Conference.</li>
+                        <li><strong>Conferences:</strong> Active participation and poster/oral presentations at numerous international events (APS, ECS, etc.).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Publications -->
+            <div class="vertical-section" id="publications">
+                <div class="content-section">
+                    <h2><i class="fas fa-book"></i> Selected Publications</h2>
+                    <div class="publication-item">
+                        <ul>
+                            <li>
+                                <strong>Quantum Transport Signatures of Gas Sensing in Ultra-Narrow Graphene Nanoribbons</strong>
+                                <em>N. Ennassiri, H. Absike, E. M. Feddi, A. El Fatimy. ACS Omega (2026).</em>
+                            </li>
+                            <li>
+                                <strong>Insights into Ag2Mo3SeO12 for photovoltaic and optoelectronic applications</strong>
+                                <em>N. Baaalla, H. Absike, F. Mezzat, et al. Materials Today Chemistry 40, 102267 (2024).</em>
+                            </li>
+                            <li>
+                                <strong>Optoelectronic and photovoltaic properties of Cs2AgBiX6 halide double perovskite</strong>
+                                <em>H. Absike, N. Baaalla, R. Lamouri, H. Labrim, H. Ez-zahraouy. Int. J. Energy Res. 46 (8), 11053-11064 (2022).</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PhD Project -->
+            <div class="vertical-section" id="phd">
+                <div class="content-section">
+                    <h2><i class="fas fa-brain"></i> PhD Project</h2>
+                    <div class="education-item">
+                        <h3>Copper Oxide (CuO) for Optoelectronic and Photovoltaic Applications</h3>
+                        <p><strong>PhD in Physics (2019) - Mohammed V University</strong></p>
+                        <p><em>Thesis Title:</em> Theoretical and Experimental Study of the Structural, Electronic, Optical, and Thermoelectric Properties of Copper Oxide (CuO).</p>
+                        <p><em>Supervisors:</em> Pr. H. Ez-Zahraouy, Pr. B. Hartiti, Pr. H. Labrim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="vertical-section" id="contact">
+                <div class="content-section">
+                    <h2><i class="fas fa-envelope"></i> Contact</h2>
+                    <p>I am open to collaborations, postdoctoral opportunities, and academic exchanges. Feel free to reach out!</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:ab.hananham@gmail.com" style="color: var(--accent-neon);">ab.hananham@gmail.com</a></li>
+                        <li><strong>Location:</strong> Rabat, Morocco</li>
+                        <li><strong>Institution:</strong> Faculty of Sciences, Mohammed V University</li>
                     </ul>
                 </div>
             </div>
@@ -689,18 +675,14 @@ layout: none
     </div>
 
     <script>
-        // Create dynamic stars for galaxy background
         function createGalaxy() {
             const galaxy = document.getElementById('galaxy-bg');
             const starCount = 200;
             const nebulaCount = 5;
             
-            // Create stars
             for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
-                
-                // Random properties
                 const size = Math.random() * 3;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
@@ -713,16 +695,12 @@ layout: none
                 star.style.top = `${posY}%`;
                 star.style.animationDelay = `${delay}s`;
                 star.style.setProperty('--duration', `${duration}s`);
-                
                 galaxy.appendChild(star);
             }
             
-            // Create nebulas
             for (let i = 0; i < nebulaCount; i++) {
                 const nebula = document.createElement('div');
                 nebula.classList.add('nebula');
-                
-                // Random properties
                 const width = 200 + Math.random() * 300;
                 const height = 200 + Math.random() * 300;
                 const posX = Math.random() * 100;
@@ -735,39 +713,30 @@ layout: none
                 nebula.style.left = `${posX}%`;
                 nebula.style.top = `${posY}%`;
                 nebula.style.backgroundColor = color;
-                
                 galaxy.appendChild(nebula);
             }
         }
         
-        // Animate planets
         function animatePlanets() {
             const planet1 = document.getElementById('planet1');
             const planet2 = document.getElementById('planet2');
             const planet3 = document.getElementById('planet3');
             
-            let angle1 = 0;
-            let angle2 = 0;
-            let angle3 = 0;
+            let angle1 = 0, angle2 = 0, angle3 = 0;
             
             setInterval(() => {
-                angle1 += 0.005;
-                angle2 += 0.008;
-                angle3 += 0.012;
+                angle1 += 0.005; angle2 += 0.008; angle3 += 0.012;
                 
-                // Planet 1 (outer orbit)
                 const x1 = Math.cos(angle1) * 140;
                 const y1 = Math.sin(angle1) * 140;
                 planet1.style.left = `calc(50% + ${x1}px)`;
                 planet1.style.top = `calc(50% + ${y1}px)`;
                 
-                // Planet 2 (middle orbit)
                 const x2 = Math.cos(angle2) * 100;
                 const y2 = Math.sin(angle2) * 100;
                 planet2.style.left = `calc(50% + ${x2}px)`;
                 planet2.style.top = `calc(50% + ${y2}px)`;
                 
-                // Planet 3 (inner orbit)
                 const x3 = Math.cos(angle3) * 60;
                 const y3 = Math.sin(angle3) * 60;
                 planet3.style.left = `calc(50% + ${x3}px)`;
@@ -775,12 +744,10 @@ layout: none
             }, 20);
         }
         
-        // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
             createGalaxy();
             animatePlanets();
             
-            // Add scroll effect to navigation
             window.addEventListener('scroll', function() {
                 const nav = document.querySelector('nav.navtop');
                 if (window.scrollY > 50) {
@@ -794,22 +761,18 @@ layout: none
                 }
             });
             
-            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
