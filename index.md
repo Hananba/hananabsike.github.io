@@ -660,10 +660,10 @@ layout: none
                 </div>
             </div>
             
-            <!-- Footer section -->
+                       <!-- Footer section -->
             <div class="footer-section">
                 <div class="visitor-counter">
-                    <img src="https://visitor-badge.glitch.me/badge?page_id=hananabsike.hananabsike" alt="visitor badge">
+                    <img src="https://visitor-badge.laobi.icu/badge?page_id=hananabsike.github.io&left_color=black&right_color=cyan" alt="visitor badge">
                     <p style="margin-top: 15px; font-size: 1.1rem;">🔭 You are visitor number above 👆 — thank you for exploring my universe!</p>
                 </div>
                 
@@ -776,3 +776,4 @@ layout: none
     </script>
 </body>
 </html>
+
